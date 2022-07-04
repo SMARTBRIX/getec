@@ -542,3 +542,29 @@ table.dr-property-energy tbody .energy-H:after {
   }
 }
 
+
+.dr-property-page {
+  .container {
+    .row {
+      .dr-map {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+
+body {
+  main {
+    > .o_portal.container-fluid {
+        padding: 0 15px !important;
+        margin-bottom: 15px;
+    }
+    > #wrap.o_portal_wrap {
+      padding: 0 15px;
+      #leaflet_map {
+        z-index: 1;
+      }
+    }
+  }
+}

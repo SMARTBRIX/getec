@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="documents_document_form_view_inherit_smartbrix" model="ir.ui.view">
+            <field name="name">documents.document.view.form.inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group[1]/field[@name='partner_id']" position="after">
+                <field name="property_id"/>
+            </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

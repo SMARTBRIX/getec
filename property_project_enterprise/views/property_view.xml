@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_property_property_project_management" model="ir.ui.view">
+            <field name="name">property.property.project.management</field>
+            <field name="model">property.property</field>
+            <field name="inherit_id" ref="property_management.property_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_published']" position="before">
+                    <button class="oe_stat_button" type="object" name="action_view_projects" icon="fa-puzzle-piece">
+                        <field string="Projects" name="project_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_property_property_project_administraion" model="ir.ui.view">
+            <field name="name">property.property.project.administration</field>
+            <field name="model">property.property</field>
+            <field name="inherit_id" ref="property_administration.property_form_administration" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" type="object" name="action_view_projects" icon="fa-puzzle-piece">
+                        <field string="Projects" name="project_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

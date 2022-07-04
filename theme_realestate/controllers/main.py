@@ -228,12 +228,16 @@ class RealEstate(http.Controller):
 
         return request.render('theme_realestate.properties', data)
 
-    @http.route('/real_estate/property/<model("property.property"):property_id>', type='http', auth='public', website=True)
+    @http.route('/real_estate/property/<model("property.property"):property_id>', type='http', auth='public', website=True, sitemap=True)
     def property_detail(self, property_id, **kwargs):
+        if not property_id.is_published and not request.env.user.has_group('base.group_user'):
+            return request.redirect('/real_estate/properties')
         data = {
             'property': property_id,
             'countries': request.env['res.country'].sudo().search([]),
             'main_object': property_id,
+            'additional_title': property_id.external_headline,
+            'contact_subject': _("Inquiry about ") + _(property_id.external_headline) + _(" property (Ref.") + property_id.reference_id + ')',
         }
         return request.render('theme_realestate.property', data)
 
@@ -286,15 +290,21 @@ class RealEstate(http.Controller):
 
     @http.route('/real_estate/add_to_favorite/<model(property.property):property_id>', type='json', auth='user', website=True)
     def add_to_favorite(self, property_id, **kwargs):
-        return request.env['crm.lead'].sudo().create({
-            'name': property_id.name,
-            'type': 'opportunity',
-            'partner_id': request.env.user.partner_id.id,
-            'property_id': property_id.id,
-            'user_id': property_id.sales_person_id.id,
-            'team_id': request.website.dr_property_sales_team.id,
-            'stage_id': request.website.dr_property_crm_stage.id,
-        })
+        crm_lead = request.env['crm.lead'].sudo()
+        lead = crm_lead.search([('property_id','=', property_id.id)])
+        if lead:
+            lead.write({'active': False});
+            return False
+        else:
+            return crm_lead.create({
+                'name': property_id.name,
+                'type': 'opportunity',
+                'partner_id': request.env.user.partner_id.id,
+                'property_id': property_id.id,
+                'user_id': property_id.sales_person_id.id,
+                'team_id': request.website.dr_property_sales_team.id,
+                'stage_id': request.website.dr_property_crm_stage.id,
+            })
 
     @http.route(['/real_estate/country_infos/<model("res.country"):country>'], type='json', auth="public", methods=['POST'], website=True)
     def country_infos(self, country, **kw):

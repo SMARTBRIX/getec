@@ -609,8 +609,10 @@
                                         <t t-set="has_favorite"
                                            t-value="request.env['crm.lead'].sudo().search([('type', '=', 'opportunity'), ('partner_id', '=', request.env.user.partner_id.id), ('property_id', '=', property.id)])"/>
                                         <a href="#" t-att-property-id="property.id"
-                                           t-attf-class="btn btn-primary-soft btn-sm mb-2 dr-add-to-favorite-btn #{has_favorite and 'disabled' or ''}"><i
-                                                class="fa fa-star"/> Add to Favorite</a>
+                                           t-attf-class="btn btn-primary-soft btn-sm mb-2 dr-add-to-favorite-btn #{has_favorite and 'active' or ''}"><i class="fa fa-star"/>
+                                            <span t-attf-class="oe_favorite #{has_favorite and 'd-none' or ''}">Add to Favorite</span>
+                                            <span t-attf-class="oe_remove_favorite #{not has_favorite and 'd-none' or ''}">Remove From Favorite</span>
+                                        </a>
                                     </t>
                                 </div>
                                 <div class="col-md-auto text-md-center">
@@ -788,6 +790,11 @@
                                         <h5 class="py-2">Furnishing</h5>
                                         <div class="lead" t-field="property.furnishing_info"/>
                                     </t>
+                                    <t t-if="property._is_html_field_value_set('other_info')">
+                                        <hr/>
+                                        <h5 class="py-2">Other</h5>
+                                        <div class="lead" t-field="property.other_info"/>
+                                    </t>
                                 </div>
                             </div>
                         </div>
@@ -826,8 +833,7 @@
                                     <hr class="m-0"/>
                                 </div>
                                 <div class="p-4">
-                                    <div id="leaflet_map" t-att-data-latitude="property.latitude"
-                                         t-att-data-longitude="property.longitude"/>
+                                    <div id="leaflet_map" t-attf-data-max-size="#{'18' if property.show_street_on_website else '13'}" t-att-data-latitude="property.latitude" t-att-data-longitude="property.longitude"/>
                                 </div>
                             </div>
                         </div>
@@ -1004,7 +1010,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-md-6">
+                                            <!-- <div class="col-12 col-md-6">
                                                 <div class="form-group form-field mb-4 o_website_form_field_hidden">
                                                     <label for="property_id">
                                                         <h6>Property</h6>
@@ -1013,7 +1019,7 @@
                                                            class="form-control form-control-lg o_website_form_input"
                                                            name="property_id" t-att-value="property.id" required=""/>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
@@ -1024,7 +1030,7 @@
                                                     <input type="text"
                                                            class="form-control form-control-lg o_website_form_input"
                                                            name="name" required=""
-                                                           t-attf-value="Inquiry about #{property.name} property (Ref.#{property.reference_id})"/>
+                                                           t-att-value="contact_subject"/>
                                                 </div>
                                             </div>
                                             <div class="col-12">

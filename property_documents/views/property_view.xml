@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="property_property_document_form_view" model="ir.ui.view">
+        <field name="name">property.property.document.form</field>
+        <field name="model">property.property</field>
+        <field name="inherit_id" ref="property_administration.property_form_administration"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="action_view_properties_documents" attrs="{'invisible': [('document_count', '=', 0)]}" icon="fa-file">
+                    <field string="Documents" name="document_count" widget="statinfo"/>
+                </button>
+            </xpath>
+           
+        </field>
+    </record>
+
+        
+    </data>
+</odoo>

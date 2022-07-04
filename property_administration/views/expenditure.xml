@@ -17,7 +17,7 @@
                                 <field name="date_start"/>
                                 <field name="date_end"/>
                                 <field name="amount"/>
-                                <field name="tax_id"/>
+                                <field name="tax_id" required="1"/>
                                 <field name="documents" widget="dr_field_multi_attachments"/>
                                 <field name="cleared"/>
                             </group>
@@ -72,6 +72,7 @@
         <field name="context">{'search_default_expenditure_not_splitted':1}</field>
     </record>
 
-    <menuitem id="menu_expenditure" parent="main_menu_property_admin"
-          action="action_list_expenditure" sequence="30"/>
+    <menuitem id="menu_invoicing_administration" parent="main_menu_property_admin" name="Invoicing" sequence="30"/>
+    <menuitem id="menu_expenditure" parent="property_administration.menu_invoicing_administration"
+          action="action_list_expenditure" sequence="1"/>
 </odoo>

@@ -7,7 +7,7 @@ from odoo.addons.website.controllers.form import WebsiteForm
 
 class RealEstateWebsiteForm(WebsiteForm):
 
-    @http.route('/website_form/<string:model_name>', type='http', auth="public", methods=['POST'], website=True)
+    @http.route(['/website_form/<string:model_name>', '/website/form/<string:model_name>'], type='http', auth="public", methods=['POST'], website=True)
     def website_form(self, model_name, **kwargs):
         model_record = request.env['ir.model'].sudo().search([('model', '=', model_name), ('website_form_access', '=', True)])
         if model_record and hasattr(request.env[model_name], 'phone_format'):

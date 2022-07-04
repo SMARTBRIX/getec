@@ -20,7 +20,7 @@ class PropertyExpenditure(models.Model):
         'property.expenditure.factor', 'expenditure_id', string="Property Factor")
     bill_id = fields.Many2one('account.move', string="Vendor Bill")
     allocation_formula = fields.Selection([('ls', 'Living Space (sqm)'), ('p', 'Persons'), (
-        'ru', 'Number of Residential Units'), ('da', 'Direct Assignment')], string="Allocation Formula", related="cost_type_id.allocation_formula")
+        'ru', 'Number of Residential Units'), ('da', 'Direct Assignment'), ('co', 'Co-Ownership')], string="Allocation Formula", related="cost_type_id.allocation_formula")
     tax_id = fields.Many2one('account.tax', 'Tax')
 
     @api.model

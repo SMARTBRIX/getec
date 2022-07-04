@@ -9,4 +9,9 @@ from . import property
 from . import account
 # from . import product
 from . import user
+from . import company
+from . import partner
+from . import businessplan_expenditure
+from . import businessplan_journal
+from . import businessplan
 # from . import mail_template

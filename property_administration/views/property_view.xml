@@ -22,11 +22,19 @@
                     name="action_redirect_administration" icon="fa-database" string="Go to Administration" attrs="{'invisible': [('administration_stage', '=', False)]}">
                 </button>
             </xpath>
-            <xpath expr="//field[@name='provision_client']" position="before">
+            <xpath expr="//field[@name='is_lease_including_vat']" position="before">
                 <field name="analytic_account_id" attrs="{'invisible': [('administration_stage', '=', False)], 'required': [('administration_stage', '!=', False)]}"/>
             </xpath>
             <xpath expr="//field[@name='heating_space']" position="after">
                 <field name="co_owenership"/>
+            </xpath>
+            <xpath expr="//field[@name='is_published']" position="before">
+                <button class="oe_stat_button" type="object" name="action_view_tenancies" icon="fa-home">
+                    <field string="Tenancies" name="tenancy_count" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='living_space']" position="after">
+                <field name="gross_floor_area" />
             </xpath>
         </field>
     </record>

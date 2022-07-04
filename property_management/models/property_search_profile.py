@@ -2,6 +2,7 @@
 
 from odoo import api, fields, models, _
 from math import sin, cos, sqrt, atan2, radians
+import sys
 
 
 class PropertySearchProfile(models.Model):
@@ -23,6 +24,8 @@ class PropertySearchProfile(models.Model):
                                     compute='_match_properties', store=True, string="Properties")
     property_ids_count = fields.Integer(compute='compute_property_count')
     auto_marketing = fields.Boolean('Automatic Marketing')
+    location_id = fields.Many2one('property.location', string="Location")
+    sub_location_ids = fields.Many2many('property.sub.location', string="Sub Locations", domain="[('parent_location_id', '=', location_id)]")
 
     def compute_property_count(self):
         for rec in self:
@@ -42,24 +45,35 @@ class PropertySearchProfile(models.Model):
         if not self:
             self = self.env['property.search.profile'].search([])
         for rec in self:
+            if rec.max_living_space:
+                max_living_space = rec.max_living_space
+            else:
+                max_living_space = sys.maxsize
+            if rec.max_price:
+                max_price = rec.max_price
+            else:
+                max_price = sys.maxsize
             args = [
                     #('property_type_id', '=', rec.property_type_id.id),
                     ('living_space', '>=', rec.min_living_space),
-                    ('living_space', '<=', rec.max_living_space)]
+                    ('living_space', '<=', max_living_space)]
 
             if rec.property_type_id:
                 args.extend([('property_type_id', '=', rec.property_type_id.id)])
             if rec.contract_type == 'buy':
-                args.extend([('for_sale', '=', True), ('purchase_price', '<=', rec.max_price)])
+                args.extend([('for_sale', '=', True), ('purchase_price', '<=', max_price)])
             elif rec.contract_type == 'rent':
-                args.extend([('for_rent', '=', True), ('rent_incl_heat', '<=', rec.max_price)])
+                args.extend([('for_rent', '=', True), ('rent_incl_heat', '<=', max_price)])
             elif rec.contract_type in ('both', False):
-                args.extend(['|', ('purchase_price', '<=', rec.max_price), ('rent_incl_heat', '<=', rec.max_price)])
-
+                args.extend(['|', ('purchase_price', '<=', rec.max_price), ('rent_incl_heat', '<=', max_price)])
             match_distance_property = self.env['property.distance'].search(
                 [('partner_id', '=', rec.partner_id.id), ('distance', '<=', rec.max_distance)]).mapped('property_id')
             if match_distance_property:
                 args.extend([('id', 'in', match_distance_property.ids)])
+            if rec.location_id:
+                args.extend([('location_id', '=', rec.location_id.id)])
+            if rec.sub_location_ids:
+                args.extend([('sub_location_id', 'in', rec.sub_location_ids.ids)])
             property_ids = property_obj.search(args)
             if property_ids:
                 rec.property_ids = property_ids.ids

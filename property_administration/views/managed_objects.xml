@@ -58,6 +58,7 @@
             <field name="model">property.property</field>
             <field name="arch" type="xml">
             	<search string="Managed Objects Search">
+                    <field name="name"/>
                     <filter string="Not Parent Property" name="parent_property" domain="[('parent_property_id', '=', False)]"/>
                     <separator/>
                     <filter string="Administration Stage" name="administration_stage" domain="[('property_stage_ids.administration_stage','=', True)]"/>

@@ -327,7 +327,6 @@ publicWidget.registry.DrAddToFavorite = publicWidget.Widget.extend({
     _onClickBtn: function (ev) {
         var self = this;
         ev.preventDefault();
-        $(ev.currentTarget).addClass('disabled');
         this._rpc({
             route: '/real_estate/add_to_favorite/' + $(ev.currentTarget).attr('property-id'),
         }).then(function (res) {
@@ -337,6 +336,19 @@ publicWidget.registry.DrAddToFavorite = publicWidget.Widget.extend({
                     title: _t('Success'),
                     message: _t('Added to Favorite'),
                 });
+                $(ev.currentTarget).addClass('active');
+                $(ev.currentTarget).find('.oe_remove_favorite').removeClass('d-none');
+                $(ev.currentTarget).find('.oe_favorite').addClass('d-none');
+            }
+            else {
+                self.displayNotification({
+                    type: 'danger',
+                    title: _t('Remove'),
+                    message: _t('Remove From Favorite'),
+                });
+                $(ev.currentTarget).removeClass('active');
+                $(ev.currentTarget).find('.oe_remove_favorite').addClass('d-none');
+                $(ev.currentTarget).find('.oe_favorite').removeClass('d-none');
             }
         });
     },
@@ -347,10 +359,11 @@ publicWidget.registry.DrLeafletMap = publicWidget.Widget.extend({
     start: function () {
         var latitude = this.$el.data('latitude') || 0;
         var longitude = this.$el.data('longitude') || 0;
+        var maxzoom = this.$el.data('max-size') || 18;
         var map = L.map('leaflet_map', {
             attributionControl: false,
             doubleClickZoom: false,
-            maxZoom: 18,
+            maxZoom: parseInt(maxzoom),
             boxZoom: false,
             touchZoom: false,
         }).setView([latitude, longitude], 16);

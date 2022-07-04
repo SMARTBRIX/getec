@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_liquidity_report_tree" model="ir.ui.view">
+         <field name="name">Liquidity Report</field>
+         <field name="model">liquidity.report</field>
+         <field name="arch" type="xml">
+             <tree string="Liquidity Report">
+                 <field name="start_date" />
+                 <field name="start_value"/>
+                 <field name="practical_budgets"/>
+                 <field name="theoritical_budgets"/>
+                 <field name="charges"/>
+                 <field name="repayments"/>
+                 <field name="rents"/>
+                 <field name="sale_price"/>
+                 <field name="amount"/>
+             </tree>
+         </field>
+     </record>
+
+    <record id="view_liquidity_graph" model="ir.ui.view">
+         <field name="name">Liquidity Graph</field>
+         <field name="model">liquidity.report</field>
+         <field name="arch" type="xml">
+             <graph string="Liquidity Graph" type="line">
+                 <field name="start_date" type="row" interval="month"/>
+                 <field name="amount" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+</odoo>

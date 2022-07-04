@@ -25,6 +25,7 @@ class ResPartner(models.Model):
     longitude = fields.Float()
     latitude = fields.Float()
     business_hours = fields.Text('Business Hours')
+    newsletter = fields.Boolean(string="Newsletter")
 
     def find_distance(self, customer, property):
         # location1 = self.env['res.partner']._geo_localize(customer.street,
@@ -68,37 +69,37 @@ class ResPartner(models.Model):
             distance = self.find_distance(rec.customer_id, rec.property_id)
             rec.distance = distance
 
-    @api.model
-    def create(self, vals):
-        res = super(ResPartner, self).create(vals)
-        location = self._geo_localize(res.street,
-                                      res.zip,
-                                      res.city,
-                                      res.state_id.name,
-                                      res.country_id.name
-                                      )
-        # if not location:
-        #     raise UserError(_('Please Correct the address to Find Proper location !'))
-        if location:
-            res.write({'partner_latitude': location[0], 'partner_longitude': location[1]})
-            property_ids = self.env['property.property'].search([])
-            for property_id in property_ids:
-                self.env['property.distance'].create({'partner_id': res.id, 'property_id': property_id.id})
-        return res
+    # @api.model
+    # def create(self, vals):
+    #     res = super(ResPartner, self).create(vals)
+    #     location = self._geo_localize(res.street,
+    #                                   res.zip,
+    #                                   res.city,
+    #                                   res.state_id.name,
+    #                                   res.country_id.name
+    #                                   )
+    #     # if not location:
+    #     #     raise UserError(_('Please Correct the address to Find Proper location !'))
+    #     if location:
+    #         res.write({'partner_latitude': location[0], 'partner_longitude': location[1]})
+    #         property_ids = self.env['property.property'].search([])
+    #         for property_id in property_ids:
+    #             self.env['property.distance'].create({'partner_id': res.id, 'property_id': property_id.id})
+    #     return res
 
-    def write(self, vals):
-        res = super().write(vals)
-        if 'street' in vals or 'zip' in vals or 'city' in vals or 'country_id' in vals:
-            for rec in self:
-                location = self._geo_localize(rec.street,
-                                              rec.zip,
-                                              rec.city,
-                                              rec.state_id.name,
-                                              rec.country_id.name
-                                              )
-                if location:
-                    rec.write({'partner_latitude': location[0], 'partner_longitude': location[1]})
-        return res
+    # def write(self, vals):
+    #     res = super().write(vals)
+    #     if 'street' in vals or 'zip' in vals or 'city' in vals or 'country_id' in vals:
+    #         for rec in self:
+    #             location = self._geo_localize(rec.street,
+    #                                           rec.zip,
+    #                                           rec.city,
+    #                                           rec.state_id.name,
+    #                                           rec.country_id.name
+    #                                           )
+    #             if location:
+    #                 rec.write({'partner_latitude': location[0], 'partner_longitude': location[1]})
+    #     return res
 
     # @api.depends('property_type_id', 'min_living_space', 'max_living_space',
     #              'contract_type', 'max_distance', 'max_price')

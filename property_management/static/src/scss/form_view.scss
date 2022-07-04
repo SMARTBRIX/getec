@@ -2,6 +2,21 @@
 $dr-chatter-min-width: 530px;
 $dr-form-sheet-min-width: 990px;
 
+@media screen and (min-width: 1534px) {
+    .o_web_client {
+        .o_action_manager {
+            .o_content {
+                .o_form_view {
+                    .o_FormRenderer_chatterContainer {
+                        max-width: 700px;
+                        min-width: 550px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .o_form_view {
 
     @mixin o-form-sheet-inner-left-padding {

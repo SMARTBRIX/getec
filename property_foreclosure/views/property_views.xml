@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="property_foreclosure_view_form" model="ir.ui.view">
+            <field name="name">property_foreclosure.form</field>
+            <field name="model">property.property</field>
+            <field name="inherit_id" ref="property_management.property_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[5]" position="after">
+                    <page string="Foreclosure">
+                        <group>
+                            <group>
+                                <field name="district_court"/>
+                                <field name="date"/>
+                                <field name="room"/>
+                                <field name="remarks"/>
+                                <field name="status"/>
+                                <field name="loan_number"/>
+                                <field name="principal_borrower"/>
+                                <field name="chief_clerk"/>
+                                <field name="main_appointment_represent"/>
+                            </group>
+                            <group>
+                                <field name="status_foreclosure"/>
+                                <field name="forclosure_market_value"/>
+                                <field name="market_value_70"/>
+                                <field name="market_value_50"/>
+                                <field name="market_value_30"/>
+                                <field name="market_value_5"/>
+                                <field name="file_district_court"/>
+
+                            </group>
+
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

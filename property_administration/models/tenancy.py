@@ -8,8 +8,7 @@ import math
 class PropertyTenancy(models.Model):
     _name = 'property.tenancy'
     _description = "Tenancy"
-    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin',
-                'utm.mixin', 'website.seo.metadata', 'website.published.multi.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char('Name', required=True)
     property_id = fields.Many2one('property.property', string="Property")
@@ -19,6 +18,7 @@ class PropertyTenancy(models.Model):
     resident_ids = fields.Many2many('res.partner', string="Residents")
     date_start = fields.Date("Start Date")
     date_end = fields.Date("End Date")
+    access_token = fields.Char('Invitation Token')
     billing_type = fields.Selection([('separate', 'Separate advance payments for ancillary costs and heating'), (
         'combined', 'Combined advance payment for all ancillary costs'), ('flatrate', 'Flatrate Rent')], string="Billing Type")
     rent_ids = fields.One2many('property.rent', 'tenancy_id', string="Rent Price")
@@ -33,6 +33,67 @@ class PropertyTenancy(models.Model):
     heating_cost_type_id = fields.Many2one('property.cost.type', string="Heating Cost Type")
     ancillary_cost_type_id = fields.Many2one('property.cost.type', string="Ancillary Cost Type")
     company_id = fields.Many2one('res.company', related='property_id.company_id', string="Company", store=True)
+    is_graduated_rent = fields.Boolean("Is graduated rent?")
+    last_rent_increase = fields.Date("Date of last rent increase")
+    rent = fields.Float(compute='_compute_rent_values', store=True)
+    space = fields.Float(compute='_compute_rent_values', store=True)
+    persons = fields.Integer(compute='_compute_rent_values', store=True)
+    current_rent_id = fields.Many2one("property.rent", string="Current Rent")
+    next_rent_id = fields.Many2one("property.rent", string="Next Rent")
+
+    @api.model
+    def create(self, vals):
+        res = super(PropertyTenancy, self).create(vals)
+        for rec in res:
+            if rec.documents:
+                rec.documents.write({'public': True})
+        return res
+
+    def write(self, vals):
+        res = super().write(vals)
+        for rec in self:
+            if rec.documents:
+                rec.documents.write({'public': True})
+        return res
+
+    @api.depends('rent_ids', 'rent_ids.rent', 'rent_ids.space', 'rent_ids.persons', 'rent_ids.date_start')
+    def _compute_rent_values(self):
+        for rec in self:
+            rec.rent = 0
+            rec.persons = 0
+            rec.space = 0
+            rents = rec.rent_ids.search([('date_start', '<=', date.today()), ('tenancy_id', '=', rec.id)], order='date_start desc')
+            if rents:
+                rec.rent = rents[0].rent
+                rec.persons = rents[0].persons
+                rec.space = rents[0].space
+
+    @api.model
+    def _cron_last_rent_increase(self):
+        tenancy_ids = self.search([])
+        for rec in tenancy_ids:
+            rents = rec.rent_ids.search(
+                [("date_start", "<=", date.today()), ("tenancy_id", "=", rec.id)],
+                order="date_start desc",
+            )
+            if rents:
+                if rec.last_rent_increase != rents[0].date_start:
+                    rec.write({"last_rent_increase": rents[0].date_start})
+
+            current_rent = rec.rent_ids.search(
+                [("date_start", "<=", date.today()), ("tenancy_id", "=", rec.id)],
+                order="date_start desc",
+                limit=1,
+            )
+            next_rent = rec.rent_ids.search(
+                [("date_start", ">=", date.today()), ("tenancy_id", "=", rec.id)],
+                order="date_start",
+                limit=1,
+            )
+            if current_rent:
+                rec.current_rent_id = current_rent.id
+            if next_rent:
+                rec.next_rent_id = next_rent.id
 
     @api.onchange('property_id')
     def _onchange_property(self):
@@ -52,71 +113,72 @@ class PropertyTenancy(models.Model):
             if date.today() >= rec.date_start and date.today() <= rec.date_end:
                 month_name = datetime.now().strftime('%B')
                 rents = self.env['property.rent'].search([('tenancy_id', '=', rec.id), ('date_start', '<=', date.today()),
-                                                          ('day_of_invoice', '=', date.today().day)])
-                rent_product = rec.rent_product_id
-                ancillary_product = rec.ancillary_cost_type_id.product_id
-                heating_product = rec.heating_cost_type_id.product_id
-                tax_rent_product = rent_product.taxes_id.filtered(lambda t: t.company_id == rec.property_id.company_id)
-                tax_ancillary_product = ancillary_product.taxes_id.filtered(lambda t: t.company_id == rec.property_id.company_id)
-                tax_heating_product = heating_product.taxes_id.filtered(lambda t: t.company_id == rec.property_id.company_id)
-                fiscal_position = rec.partner_id.property_account_position_id.id
-                for line in rents:
-                    period = ''
-                    billing_period = ''
-                    mydate = datetime.now()
-                    quarters = [['January', 'February', 'March'], ['April', 'May', 'June'], [
-                        'July', 'August', 'September'], ['October', 'November', 'December']]
+                                                          ('day_of_invoice', '=', date.today().day)], order="date_start desc", limit=1)
+                if rents:
+                    rent_product = rec.rent_product_id
+                    ancillary_product = rec.ancillary_cost_type_id.product_id
+                    heating_product = rec.heating_cost_type_id.product_id
+                    tax_rent_product = rent_product.taxes_id.filtered(lambda t: t.company_id == rec.property_id.company_id)
+                    tax_ancillary_product = ancillary_product.taxes_id.filtered(lambda t: t.company_id == rec.property_id.company_id)
+                    tax_heating_product = heating_product.taxes_id.filtered(lambda t: t.company_id == rec.property_id.company_id)
+                    fiscal_position = rec.partner_id.property_account_position_id.id
+                    for line in rents:
+                        period = ''
+                        billing_period = ''
+                        mydate = datetime.now()
+                        quarters = [['January', 'February', 'March'], ['April', 'May', 'June'], [
+                            'July', 'August', 'September'], ['October', 'November', 'December']]
 
-                    if line.billing_period == 'monthly':
-                        period = period + \
-                            mydate.strftime("%B") + ' ' + mydate.strftime("%Y")
-                        billing_period = 'monthly'
-                    elif line.billing_period == 'quarterly':
-                        quarter = quarters[math.ceil(float(mydate.strftime("%m")) / 3) - 1]
-                        period = period + \
-                            ' ' .join(str(i) for i in quarter)
-                        billing_period = 'quarterly'
-                    else:
-                        period = period + mydate.strftime("%Y")
-                        billing_period = 'yearly'
+                        if line.billing_period == 'monthly':
+                            period = period + \
+                                mydate.strftime("%B") + ' ' + mydate.strftime("%Y")
+                            billing_period = 'monthly'
+                        elif line.billing_period == 'quarterly':
+                            quarter = quarters[math.ceil(float(mydate.strftime("%m")) / 3) - 1]
+                            period = period + \
+                                ' ' .join(str(i) for i in quarter)
+                            billing_period = 'quarterly'
+                        else:
+                            period = period + mydate.strftime("%Y")
+                            billing_period = 'yearly'
 
-                    end_date = self.get_billing_end_date(datetime.today(), billing_period)
+                        end_date = self.get_billing_end_date(datetime.today(), billing_period)
 
-                    if line.billing_period == 'monthly' or (line.billing_period == 'quarterly' and month_name in ('January', 'April', 'July', 'October')) or (line.billing_period == 'yearly' and month_name == 'January'):
-                        narration = 'Contractual Partners: ' + ', '.join([partner.name for partner in rec.contractual_partner_ids]) + "\n" + 'Residents: ' + \
-                            ','.join([recident.name for recident in rec.resident_ids]) + "\n" + 'Billing Period: ' + period + "\n" + 'Property Name: ' + line.tenancy_id.property_id.name or ' ' + "\n" + 'Property Address: ' + line.tenancy_id.property_id.street or ' ' + line.tenancy_id.property_id.city or ' ' + line.tenancy_id.property_id.zip or ' '
-                        invoice_id = self.env['account.move'].create(
-                            {'company_id': line.tenancy_id.company_id.id, 'partner_id': line.tenancy_id.partner_id.id,
-                             'ref': line.tenancy_id.name, 'type': 'out_invoice',
-                             'narration': narration})
-                        rec.property_id.bill_id = invoice_id.id
-                        description = "Your rent for property " + \
-                            line.tenancy_id.property_id.name + ", billed " + line.billing_period + ""
-                        rent_product_account = rent_product.get_product_accounts(fiscal_pos=fiscal_position)['income']
-                        self.env['account.move.line'].with_context({'check_move_validity': False}).create(
-                            {'move_id': invoice_id.id, 'product_id': rent_product.id, 'account_id': rent_product_account.id,
-                             'name': description, 'quantity': 1, 'analytic_account_id': rec.property_id.analytic_account_id.id,
-                             'price_unit': line.rent, 'tax_ids': tax_rent_product.ids, 'company_id': line.tenancy_id.company_id.id})
-                        if rec.billing_type == 'combined' or rec.billing_type == 'separate':
-                            description = 'Advance payment for ancillary costs'
-                            ancillary_product_account = ancillary_product.product_tmpl_id.get_product_accounts(
-                                fiscal_pos=fiscal_position)['income']
+                        if line.billing_period == 'monthly' or (line.billing_period == 'quarterly' and month_name in ('January', 'April', 'July', 'October')) or (line.billing_period == 'yearly' and month_name == 'January'):
+                            narration = 'Contractual Partners: ' + ', '.join([partner.name for partner in rec.contractual_partner_ids]) + "\n" + 'Residents: ' + \
+                                ','.join([recident.name for recident in rec.resident_ids]) + "\n" + 'Billing Period: ' + period + "\n" + 'Property Name: ' + line.tenancy_id.property_id.name or ' ' + "\n" + 'Property Address: ' + line.tenancy_id.property_id.street or ' ' + line.tenancy_id.property_id.city or ' ' + line.tenancy_id.property_id.zip or ' '
+                            invoice_id = self.env['account.move'].create(
+                                {'company_id': line.tenancy_id.company_id.id, 'partner_id': line.tenancy_id.partner_id.id,
+                                 'ref': line.tenancy_id.name, 'move_type': 'out_invoice',
+                                 'narration': narration})
+                            rec.property_id.bill_id = invoice_id.id
+                            description = "Your rent for property " + \
+                                line.tenancy_id.property_id.name + ", billed " + line.billing_period + ""
+                            rent_product_account = rent_product.get_product_accounts(fiscal_pos=fiscal_position)['income']
                             self.env['account.move.line'].with_context({'check_move_validity': False}).create(
-                                {'move_id': invoice_id.id, 'product_id': ancillary_product.id, 'account_id': ancillary_product_account.id,
+                                {'move_id': invoice_id.id, 'product_id': rent_product.id, 'account_id': rent_product_account.id,
                                  'name': description, 'quantity': 1, 'analytic_account_id': rec.property_id.analytic_account_id.id,
-                                 'price_unit': line.ancillary_costs, 'tax_ids': tax_ancillary_product.ids, 'company_id': line.tenancy_id.company_id.id})
-                            self.env['property.journal'].create({'tenancy_id': rec.id, 'cost_type_id': rec.ancillary_cost_type_id.id, 'date_start': datetime.today(), 'date_end': end_date, 'amount': -line.ancillary_costs})
-                        if rec.billing_type == 'separate':
-                            description = 'Separate advance payment for heating costs'
-                            heating_product_account = heating_product.product_tmpl_id.get_product_accounts(
-                                fiscal_pos=fiscal_position)['income']
-                            self.env['account.move.line'].with_context({'check_move_validity': False}).create(
-                                {'move_id': invoice_id.id, 'product_id': heating_product.id, 'account_id': heating_product_account.id,
-                                 'name': description, 'quantity': 1, 'analytic_account_id': rec.property_id.analytic_account_id.id,
-                                 'price_unit': line.heating_costs, 'tax_ids': tax_heating_product.ids, 'company_id': line.tenancy_id.company_id.id})
-                            self.env['property.journal'].create({'tenancy_id': rec.id, 'cost_type_id': rec.heating_cost_type_id.id, 'date_start': datetime.today(), 'date_end': end_date, 'amount': -line.heating_costs})
-                        invoice_id.with_context({'check_move_validity': False})._recompute_tax_lines()
-                        invoice_id.with_context({'check_move_validity': False})._onchange_recompute_dynamic_lines()
+                                 'price_unit': line.rent, 'tax_ids': tax_rent_product.ids, 'company_id': line.tenancy_id.company_id.id})
+                            if rec.billing_type == 'combined' or rec.billing_type == 'separate':
+                                description = 'Advance payment for ancillary costs'
+                                ancillary_product_account = ancillary_product.product_tmpl_id.get_product_accounts(
+                                    fiscal_pos=fiscal_position)['income']
+                                self.env['account.move.line'].with_context({'check_move_validity': False}).create(
+                                    {'move_id': invoice_id.id, 'product_id': ancillary_product.id, 'account_id': ancillary_product_account.id,
+                                     'name': description, 'quantity': 1, 'analytic_account_id': rec.property_id.analytic_account_id.id,
+                                     'price_unit': line.ancillary_costs, 'tax_ids': tax_ancillary_product.ids, 'company_id': line.tenancy_id.company_id.id})
+                                self.env['property.journal'].create({'tenancy_id': rec.id, 'cost_type_id': rec.ancillary_cost_type_id.id, 'date_start': datetime.today(), 'date_end': end_date, 'amount': -line.ancillary_costs})
+                            if rec.billing_type == 'separate':
+                                description = 'Separate advance payment for heating costs'
+                                heating_product_account = heating_product.product_tmpl_id.get_product_accounts(
+                                    fiscal_pos=fiscal_position)['income']
+                                self.env['account.move.line'].with_context({'check_move_validity': False}).create(
+                                    {'move_id': invoice_id.id, 'product_id': heating_product.id, 'account_id': heating_product_account.id,
+                                     'name': description, 'quantity': 1, 'analytic_account_id': rec.property_id.analytic_account_id.id,
+                                     'price_unit': line.heating_costs, 'tax_ids': tax_heating_product.ids, 'company_id': line.tenancy_id.company_id.id})
+                                self.env['property.journal'].create({'tenancy_id': rec.id, 'cost_type_id': rec.heating_cost_type_id.id, 'date_start': datetime.today(), 'date_end': end_date, 'amount': -line.heating_costs})
+                            invoice_id.with_context({'check_move_validity': False})._recompute_tax_lines()
+                            invoice_id.with_context({'check_move_validity': False})._onchange_recompute_dynamic_lines()
 
     def get_billing_end_date(self, date, type):
         if type == 'monthly':

@@ -25,10 +25,8 @@
                 <div class="row">
                     <div class="col-3 mt-2" t-att-class="'col-3 mt-4' if property.sales_person_id else 'col-3 mt-4'">
                         <div class="text-center">
-                            <img class="img img-fluid" style="width: 360px;"
-                                 src="/property_management/static/src/imgs/Mallorca Dream Living.png"/>
-                            <!--                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"-->
-                            <!--                             style="max-height: 45px;"/>-->
+                            <img t-if="property.company_id and property.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(property.company_id.logo)"  style="max-height: 45px;"/>
+                            <img t-else="" class="img img-fluid" style="width: 360px;" src="/property_management/static/src/imgs/no_image.png"/>
                         </div>
                     </div>
                     <div class="col-9">
@@ -273,7 +271,8 @@
                     <style>
                         #leaflet_map {
                         height: 200px;
-                        width:800px;
+                        min-width:1000px;
+                        width:100%;
                         }
                     </style>
                 </t>
@@ -281,7 +280,8 @@
                     <style>
                         #leaflet_map {
                         height: 395px;
-                        width:800px;
+                        min-width:1000px;
+                        width:100%;
                         }
                     </style>
                 </t>

@@ -20,6 +20,7 @@
         'views/property_search_profile_view.xml',
         'views/mail_view.xml',
         'security/ir.model.access.csv',
+        'security/security.xml',
         'data/cron.xml',
         'data/mail.xml',
         'data/sequence.xml',
@@ -42,7 +43,9 @@
             # 'theme_realestate/static/lib/leaflet/leaflet.js'
         ],
         'web.report_assets_common': [
-            'property_management/static/src/scss/property_booking_report.scss'],
+            'property_management/static/src/scss/property_booking_report.scss',
+            'property_management/static/lib/leaflet/leaflet.css',
+            'property_management/static/lib/leaflet/leaflet.js'],
         'web.assets_frontend': [
             'property_management/static/src/scss/portal.scss',
             'property_management/static/src/js/portal.js'],

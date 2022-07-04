@@ -55,8 +55,7 @@ class PropertyMonetaryConverter(models.AbstractModel):
             pre = u'{symbol}\N{NO-BREAK SPACE}'.format(symbol=display_currency.symbol or '')
         else:
             post = u'\N{NO-BREAK SPACE}{symbol}'.format(symbol=display_currency.symbol or '')
-
-        return u'{pre}<span class="oe_currency_value">{0}</span>{post}'.format(formatted_amount, pre=pre, post=post)
+        return u'{pre}{0}{post}'.format(formatted_amount, pre=pre, post=post)
 
     @api.model
     def record_to_html(self, record, field_name, options):

@@ -223,9 +223,11 @@ class Property(models.Model):
     location_info = fields.Html('Location', translate=True)
     freitext = fields.Html('Frietext', translate=True)
     furnishing_info = fields.Html('Furnishing', translate=True)
+    other_info = fields.Html('Other', translate=True)
     construction_year = fields.Char('Construction Year')
     # Photos/Documents
     cover_photo = fields.Binary('Cover Photo')
+    file_name = fields.Char("File Name")
     public_photos_ids = fields.Many2many('ir.attachment', 'public_photos_ir_attachments_rel', 'property_id', 'attachment_id', string='Public Photos')
     internal_photos_ids = fields.Many2many('ir.attachment', 'internal_photos_ir_attachments_rel', 'property_id', 'attachment_id', string='Internal Photos')
     protected_photos_ids = fields.Many2many('ir.attachment', 'protected_photos_ir_attachments_rel', 'property_id', 'attachment_id', string='Protected Photos')
@@ -246,6 +248,22 @@ class Property(models.Model):
     administration_stage = fields.Boolean(compute="compute_administration_stage")
     # purchase_price_on_demand = fields.Boolean("Purchase Price On Demand")
     # purchase_price_desc = fields.Char("Purchase Price Description", translate=True)
+    original_price = fields.Float("Original Price")
+    sale_date = fields.Date("Sale Date")
+    factor_market_value = fields.Float("Factor Market Value")
+    market_value = fields.Float("Market Value", compute='compute_market_value', store=True)
+    land_register = fields.Char("Land Register")
+    corridor = fields.Char("Corridor")
+    parcel = fields.Char("Parcel")
+    standard_land_value = fields.Integer("Standard Land Value")
+    commission_internal = fields.Float("Commission Internal")
+    condo_fee = fields.Float("Condo Fee")
+    show_street_on_website = fields.Boolean(string="Show Street on Website")
+
+    @api.depends('factor_market_value', 'rent_price')
+    def compute_market_value(self):
+        for rec in self:
+            rec.market_value = rec.rent_price * rec.factor_market_value * 12
 
     def action_view_public_photos(self):
         self.env.cr.execute("SELECT attachment_id from public_photos_ir_attachments_rel where property_id = %s" % (self.id))
@@ -368,22 +386,21 @@ class Property(models.Model):
 
     def geo_localize(self):
         for property in self.with_context(lang='en_US'):
-            result = self._geo_localize(
-                property.street, property.zip, property.city, '', property.country_id.name)
-            if result:
-                property.write({
-                    'latitude': result[0],
-                    'longitude': result[1],
-                })
+            if property.show_street_on_website:
+                result = self._geo_localize(property.street, property.zip, property.city, '', property.country_id.name)
+                if result:
+                    property.write({'latitude': result[0], 'longitude': result[1]})
+            else:
+                result = self._geo_localize('', '', property.city, '', property.country_id.name)
+                if result:
+                    property.write({'latitude': result[0], 'longitude': result[1]})
 
     @api.constrains('reference_id')
     def check_duplicate_reference(self):
         for rec in self:
-            exist = self.search(
-                [('reference_id', '=', rec.reference_id), ('id', '!=', rec.id)])
+            exist = self.search([('reference_id', '=', rec.reference_id), ('id', '!=', rec.id)])
             if exist:
-                raise UserError(
-                    _('Property with the same reference already exist !'))
+                raise UserError(_('Property with the same reference already exist !'))
 
     def copy(self, default=None):
         if self.name:
@@ -403,7 +420,6 @@ class Property(models.Model):
         res.public_photos_ids.public = True
         res.protected_photos_ids.public = True
         res.protected_documents_ids.public = True
-
         return res
 
     def write(self, vals):
@@ -411,16 +427,14 @@ class Property(models.Model):
             vals['published_date'] = fields.Datetime.now()
 
         res = super().write(vals)
-        if 'street' in vals or 'zip' in vals or 'city' in vals or 'country_id' in vals:
+        if 'street' in vals or 'zip' in vals or 'city' in vals or 'country_id' in vals or 'show_street_on_website' in vals:
             self.geo_localize()
-
         if 'public_photos_ids' in vals:
             self.public_photos_ids.public = True
         if 'protected_photos_ids' in vals:
             self.protected_photos_ids.public = True
         if 'protected_documents_ids' in vals:
             self.protected_documents_ids.public = True
-
         return res
 
     def create_opportuniy(self):

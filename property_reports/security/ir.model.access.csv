@@ -3,3 +3,5 @@ access_portfolio_report,access_portfolio_report,model_portfolio_report,base.grou
 access_portfolio_report_graph,access_portfolio_report_graph,model_portfolio_report_graph,base.group_user,1,1,1,1
 property_reports.access_portfolio_report_wizard,access_portfolio_report_wizard,property_reports.model_portfolio_report_wizard,base.group_user,1,1,1,1
 property_reports.access_portfolio_graph,access_portfolio_graph,property_reports.model_portfolio_graph,base.group_user,1,1,1,1
+property_reports.access_liquidity_graph,access_liquidity_graph,property_reports.model_liquidity_graph,base.group_user,1,1,1,1
+property_reports.access_liquidity_report,access_liquidity_report,property_reports.model_liquidity_report,base.group_user,1,1,1,1

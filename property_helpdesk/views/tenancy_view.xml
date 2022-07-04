@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="property_tenancy_view_helpdesk_form" model="ir.ui.view">
+            <field name="name">property_helpdesk.form</field>
+            <field name="model">property.tenancy</field>
+            <field name="inherit_id" ref="property_administration.tenancy_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="before">
+                    <div name="button_box" class="oe_button_box">
+                        <button class="oe_stat_button" name="show_tickets" type="object" icon="fa-ticket">
+                            <field name="ticket_count" widget="statinfo" string="Tickets"/>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

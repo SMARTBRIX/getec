@@ -10,6 +10,7 @@ class LandlordCertificateReport(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
+        print("AAAAAAAAAAAAAA", data)
         if data['context'].get('active_ids'):
             tenancy = self.env['property.tenancy'].browse(data['context']['active_ids'])
             partner = self.env['res.partner'].browse(data['docs'])

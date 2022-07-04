@@ -16,10 +16,12 @@
                     <field name="partner_id"/>
                     <field name="property_type_id"/>
                     <field name="contract_type"/>
-                    <field name="min_living_space"/>
-                    <field name="max_living_space"/>
-                    <field name="max_price"/>
-                    <field name="max_distance"/>
+                    <field name="location_id" optional="hide"/>
+                    <field name="sub_location_ids" optional="hide" widget="many2many_tags"/>
+                    <field name="min_living_space" optional="hide"/>
+                    <field name="max_living_space" optional="hide"/>
+                    <field name="max_price" optional="hide"/>
+                    <field name="max_distance" optional="hide"/>
 	            </tree>
         	</field>
 	    </record>
@@ -41,6 +43,8 @@
                                  <field name="partner_id"/>
                                 <field name="property_type_id"/>
                                 <field name="contract_type"/>
+                                <field name="location_id"/>
+                                <field name="sub_location_ids" widget="many2many_tags"/>
                                 <field name="auto_marketing"/>
                             </group>
                             <group>

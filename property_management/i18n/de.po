@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-08 12:47+0000\n"
-"PO-Revision-Date: 2022-03-08 15:51+0100\n"
+"POT-Creation-Date: 2022-06-30 06:53+0000\n"
+"PO-Revision-Date: 2022-06-30 08:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 msgid "&amp;times;"
-msgstr "&amp;times;"
+msgstr ""
 
 #. module: property_management
 #: model:ir.actions.report,print_report_name:property_management.expose_overview_report_id
@@ -46,32 +46,27 @@ msgstr "10 Std."
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "<b>Baujahr</b>"
-msgstr "<b>Baujahr</b>"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "<b>Energieeffizienzklasse</b>"
-msgstr "<b>Energieeffizienzklasse</b>"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "<b>Energiequelle</b>"
-msgstr "<b>Energiequelle</b>"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "<b>Energieverbrauch</b>"
-msgstr "<b>Energieverbrauch</b>"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "<b>Zertifikatstype</b>"
-msgstr "<b>Zertifikatstype</b>"
-
-#. module: property_management
-#: model_terms:ir.ui.view,arch_db:property_management.crm_case_kanban_view_leads_inherit_crm
-msgid "<i class=\"fa fa-comments\" aria-label=\"Unread messages\" role=\"img\"/>"
-msgstr "<i class=\"fa fa-comments\" aria-label=\"Ungelesene Nachrichten\" role=\"img\"/>"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
@@ -101,11 +96,11 @@ msgstr "<small>(Zuzüglich Betriebskosten)</small>"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
 msgid ""
-"<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" "
-"groups=\"website.group_multi_website\"/>"
+"<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-"
+"specific.\" groups=\"website.group_multi_website\"/>"
 msgstr ""
-"<span class=\"fa fa-lg fa-globe\" title=\"hier gesetzte Werte sind websitespezifisch."
-"\" groups=\"website.group_multi_website\"/>"
+"<span class=\"fa fa-lg fa-globe\" title=\"hier gesetzte Werte sind "
+"websitespezifisch.\" groups=\"website.group_multi_website\"/>"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
@@ -115,32 +110,35 @@ msgstr "<strong>Kommunikationsverlauf</strong>"
 #. module: property_management
 #: model:mail.template,body_html:property_management.inquiry_mail
 msgid ""
-"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; "
-"background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; "
-"width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
-"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: "
-"16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-"
+"top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-"
+"serif; color: #454748; width: 100%; border-collapse:separate;\"><tr><td "
+"align=\"center\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style="
+"\"padding: 16px; background-color: white; color: #454748; border-collapse:"
+"separate;\">\n"
 "<tbody>\n"
 "    <!-- HEADER -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
-"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
-"collapse:separate;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width="
+"\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px "
+"0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"middle\">\n"
-"                    <span style=\"font-size: 10px;\">Your Account</span><br/>\n"
+"                    <span style=\"font-size: 10px;\">Your Account</span><br/"
+">\n"
 "                    <span style=\"font-size: 20px; font-weight: bold;\">\n"
 "                        ${ctx['user'].name}\n"
 "                    </span>\n"
 "                </td><td valign=\"middle\" align=\"right\">\n"
-"                    <img src=\"/logo.png?company=${ctx['user'].company_id.id}\" style="
-"\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${ctx['user']."
-"company_id.name}\"/>\n"
+"                    <img src=\"/logo.png?company=${ctx['user'].company_id."
+"id}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt="
+"\"${ctx['user'].company_id.name}\"/>\n"
 "                </td></tr>\n"
 "                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
-"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
-"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
-"margin:16px 0px 16px 0px;\"/>\n"
+"                  <hr width=\"100%\" style=\"background-color:"
+"rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;"
+"min-height:1px;line-height:0; margin:16px 0px 16px 0px;\"/>\n"
 "                </td></tr>\n"
 "            </table>\n"
 "        </td>\n"
@@ -148,30 +146,32 @@ msgid ""
 "    <!-- CONTENT -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
-"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
-"collapse:separate;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width="
+"\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px "
+"0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"top\" style=\"font-size: 13px;\">\n"
 "                    %if ctx['is_new']:\n"
 "                        <div>\n"
 "                            Dear ${ctx['user'].name or ''},<br/> <br/>\n"
-"                            You have been given access to ${ctx['user'].company_id."
-"name}'s portal.<br/>\n"
+"                            You have been given access to ${ctx['user']."
+"company_id.name}'s portal.<br/>\n"
 "                            Your login account data is:\n"
 "                            <ul>\n"
-"                                <li>Username: ${ctx['user'].login or ''}</li>\n"
-"                                <li>Password: ${ctx['password'] or ''}</li>\n"
-"                                <li>Portal: <a href=\"${'portal_url' in ctx and "
-"ctx['portal_url'] or ''}\">${'portal_url' in ctx and ctx['portal_url'] or ''}</a></"
+"                                <li>Username: ${ctx['user'].login or ''}</"
 "li>\n"
-"                                <li>Database: ${'dbname' in ctx and ctx['dbname'] or "
-"''}</li>\n"
-"                                <li>Property: <a href=\"${'object_url' in ctx and "
-"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
+"                                <li>Password: ${ctx['password'] or ''}</"
 "li>\n"
+"                                <li>Portal: <a href=\"${'portal_url' in ctx "
+"and ctx['portal_url'] or ''}\">${'portal_url' in ctx and ctx['portal_url'] "
+"or ''}</a></li>\n"
+"                                <li>Database: ${'dbname' in ctx and "
+"ctx['dbname'] or ''}</li>\n"
+"                                <li>Property: <a href=\"${'object_url' in "
+"ctx and ctx['object_url'] or ''}\">${'object_url' in ctx and "
+"ctx['object_url'] or ''}</a></li>\n"
 "                            </ul>\n"
-"                            You can set or change your password via the following "
-"url:\n"
+"                            You can set or change your password via the "
+"following url:\n"
 "                            <ul>\n"
 "                                <li><a href=\"${ctx['user'].signup_url}\">"
 "${ctx['user'].signup_url}</a></li>\n"
@@ -180,20 +180,20 @@ msgid ""
 "                    %else:\n"
 "                        <div>\n"
 "                            Dear ${ctx['user'].name or ''},<br/> <br/>\n"
-"                            You have been given access to ${ctx['user'].company_id."
-"name}'s portal.<br/>\n"
+"                            You have been given access to ${ctx['user']."
+"company_id.name}'s portal.<br/>\n"
 "                            <ul>\n"
-"                                <li>Property: <a href=\"${'object_url' in ctx and "
-"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
-"li>\n"
+"                                <li>Property: <a href=\"${'object_url' in "
+"ctx and ctx['object_url'] or ''}\">${'object_url' in ctx and "
+"ctx['object_url'] or ''}</a></li>\n"
 "                            </ul>\n"
 "                        </div>\n"
 "                    %endif\n"
 "                </td></tr>\n"
 "                <tr><td style=\"text-align:center;\">\n"
-"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
-"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
-"margin: 16px 0px 16px 0px;\"/>\n"
+"                  <hr width=\"100%\" style=\"background-color:"
+"rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;"
+"min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
 "                </td></tr>\n"
 "            </table>\n"
 "        </td>\n"
@@ -201,21 +201,23 @@ msgid ""
 "    <!-- FOOTER -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
-"style=\"min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px "
-"0px 8px; border-collapse:separate;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width="
+"\"590\" style=\"min-width: 590px; background-color: white; font-size: 11px; "
+"padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"middle\" align=\"left\">\n"
 "                    ${ctx['user'].company_id.name}\n"
 "                </td></tr>\n"
-"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: 0.7;\">\n"
+"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: "
+"0.7;\">\n"
 "                    ${ctx['user'].company_id.phone}\n"
 "                    % if ctx['user'].company_id.email\n"
-"                        | <a href=\"'mailto:%s' % ${ctx['user'].company_id.email}\" "
-"style=\"text-decoration:none; color: #454748;\">${ctx['user'].company_id.email}</a>\n"
+"                        | <a href=\"'mailto:%s' % ${ctx['user'].company_id."
+"email}\" style=\"text-decoration:none; color: #454748;\">${ctx['user']."
+"company_id.email}</a>\n"
 "                    % endif\n"
 "                    % if ctx['user'].company_id.website\n"
-"                        | <a href=\"'%s' % ${ctx['user'].company_id.website}\" style="
-"\"text-decoration:none; color: #454748;\">\n"
+"                        | <a href=\"'%s' % ${ctx['user'].company_id."
+"website}\" style=\"text-decoration:none; color: #454748;\">\n"
 "                        ${ctx['user'].company_id.website}\n"
 "                    </a>\n"
 "                    % endif\n"
@@ -228,44 +230,47 @@ msgid ""
 "</td></tr>\n"
 "<!-- POWERED BY -->\n"
 "<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
-"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-"
-"width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:"
-"separate;\">\n"
+"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: #F1F1F1; color: #454748; "
+"padding: 8px; border-collapse:separate;\">\n"
 "      <tr><td style=\"text-align: center; font-size: 13px;\">\n"
 "        Powered by <a target=\"_blank\" href=\"https://www.smartbrix.io?"
-"utm_source=db&amp;utm_medium=portalinvite\" style=\"color: #875A7B;\">SmartBrix</a>\n"
+"utm_source=db&amp;utm_medium=portalinvite\" style=\"color: #875A7B;"
+"\">SmartBrix</a>\n"
 "      </td></tr>\n"
 "    </table>\n"
 "</td></tr>\n"
 "</table>\n"
 "            "
 msgstr ""
-"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; "
-"background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; "
-"width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
-"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: "
-"16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-"
+"top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-"
+"serif; color: #454748; width: 100%; border-collapse:separate;\"><tr><td "
+"align=\"center\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style="
+"\"padding: 16px; background-color: white; color: #454748; border-collapse:"
+"separate;\">\n"
 "<tbody>\n"
 "    <!-- HEADER -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
-"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
-"collapse:separate;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width="
+"\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px "
+"0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"middle\">\n"
 "                    <span style=\"font-size: 10px;\">Ihr Konto</span><br/>\n"
 "                    <span style=\"font-size: 20px; font-weight: bold;\">\n"
 "                        ${ctx['user'].name}\n"
 "                    </span>\n"
 "                </td><td valign=\"middle\" align=\"right\">\n"
-"                    <img src=\"/logo.png?company=${ctx['user'].company_id.id}\" style="
-"\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${ctx['user']."
-"company_id.name}\"/>\n"
+"                    <img src=\"/logo.png?company=${ctx['user'].company_id."
+"id}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt="
+"\"${ctx['user'].company_id.name}\"/>\n"
 "                </td></tr>\n"
 "                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
-"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
-"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
-"margin:16px 0px 16px 0px;\"/>\n"
+"                  <hr width=\"100%\" style=\"background-color:"
+"rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;"
+"min-height:1px;line-height:0; margin:16px 0px 16px 0px;\"/>\n"
 "                </td></tr>\n"
 "            </table>\n"
 "        </td>\n"
@@ -273,29 +278,33 @@ msgstr ""
 "    <!-- CONTENT -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
-"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
-"collapse:separate;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width="
+"\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px "
+"0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"top\" style=\"font-size: 13px;\">\n"
 "                    %if ctx['is_new']:\n"
 "                        <div>\n"
-"                            Sehr geehrte/r ${ctx['user'].name or ''},<br/> <br/>\n"
-"                            Ihnen wurde Zugriff auf das Portal von ${ctx['user']."
-"company_id.name} gewährt.<br/>\n"
+"                            Sehr geehrte/r ${ctx['user'].name or ''},<br/> "
+"<br/>\n"
+"                            Ihnen wurde Zugriff auf das Portal von "
+"${ctx['user'].company_id.name} gewährt.<br/>\n"
 "                            Ihre Zugangsdaten lauten:\n"
 "                            <ul>\n"
-"                                <li>Benutzername: ${ctx['user'].login or ''}</li>\n"
-"                                <li>Passwort: ${ctx['password'] or ''}</li>\n"
-"                                <li>Portal: <a href=\"${'portal_url' in ctx and "
-"ctx['portal_url'] or ''}\">${'portal_url' in ctx and ctx['portal_url'] or ''}</a></"
+"                                <li>Benutzername: ${ctx['user'].login or ''}"
+"</li>\n"
+"                                <li>Passwort: ${ctx['password'] or ''}</"
 "li>\n"
-"                                <li>Datenbank: ${'dbname' in ctx and ctx['dbname'] or "
-"''}</li>\n"
-"                                <li>Objekt: <a href=\"${'object_url' in ctx and "
-"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
-"li>\n"
+"                                <li>Portal: <a href=\"${'portal_url' in ctx "
+"and ctx['portal_url'] or ''}\">${'portal_url' in ctx and ctx['portal_url'] "
+"or ''}</a></li>\n"
+"                                <li>Datenbank: ${'dbname' in ctx and "
+"ctx['dbname'] or ''}</li>\n"
+"                                <li>Objekt: <a href=\"${'object_url' in ctx "
+"and ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] "
+"or ''}</a></li>\n"
 "                            </ul>\n"
-"                            Sie können Ihr Passwort über die folgende Adresse ändern:\n"
+"                            Sie können Ihr Passwort über die folgende "
+"Adresse ändern:\n"
 "                            <ul>\n"
 "                                <li><a href=\"${ctx['user'].signup_url}\">"
 "${ctx['user'].signup_url}</a></li>\n"
@@ -303,21 +312,22 @@ msgstr ""
 "                        </div>\n"
 "                    %else:\n"
 "                        <div>\n"
-"                            Sehr geehrte/r ${ctx['user'].name or ''},<br/> <br/>\n"
-"                            Ihnen wurde Zugriff auf das Portal von ${ctx['user']."
-"company_id.name} gewährt<br/>\n"
+"                            Sehr geehrte/r ${ctx['user'].name or ''},<br/> "
+"<br/>\n"
+"                            Ihnen wurde Zugriff auf das Portal von "
+"${ctx['user'].company_id.name} gewährt<br/>\n"
 "                            <ul>\n"
-"                                <li>Objekt: <a href=\"${'object_url' in ctx and "
-"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
-"li>\n"
+"                                <li>Objekt: <a href=\"${'object_url' in ctx "
+"and ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] "
+"or ''}</a></li>\n"
 "                            </ul>\n"
 "                        </div>\n"
 "                    %endif\n"
 "                </td></tr>\n"
 "                <tr><td style=\"text-align:center;\">\n"
-"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
-"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
-"margin: 16px 0px 16px 0px;\"/>\n"
+"                  <hr width=\"100%\" style=\"background-color:"
+"rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;"
+"min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
 "                </td></tr>\n"
 "            </table>\n"
 "        </td>\n"
@@ -325,21 +335,23 @@ msgstr ""
 "    <!-- FOOTER -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
-"style=\"min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px "
-"0px 8px; border-collapse:separate;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width="
+"\"590\" style=\"min-width: 590px; background-color: white; font-size: 11px; "
+"padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"middle\" align=\"left\">\n"
 "                    ${ctx['user'].company_id.name}\n"
 "                </td></tr>\n"
-"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: 0.7;\">\n"
+"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: "
+"0.7;\">\n"
 "                    ${ctx['user'].company_id.phone}\n"
 "                    % if ctx['user'].company_id.email\n"
-"                        | <a href=\"'mailto:%s' % ${ctx['user'].company_id.email}\" "
-"style=\"text-decoration:none; color: #454748;\">${ctx['user'].company_id.email}</a>\n"
+"                        | <a href=\"'mailto:%s' % ${ctx['user'].company_id."
+"email}\" style=\"text-decoration:none; color: #454748;\">${ctx['user']."
+"company_id.email}</a>\n"
 "                    % endif\n"
 "                    % if ctx['user'].company_id.website\n"
-"                        | <a href=\"'%s' % ${ctx['user'].company_id.website}\" style="
-"\"text-decoration:none; color: #454748;\">\n"
+"                        | <a href=\"'%s' % ${ctx['user'].company_id."
+"website}\" style=\"text-decoration:none; color: #454748;\">\n"
 "                        ${ctx['user'].company_id.website}\n"
 "                    </a>\n"
 "                    % endif\n"
@@ -352,12 +364,13 @@ msgstr ""
 "</td></tr>\n"
 "<!-- POWERED BY -->\n"
 "<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
-"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-"
-"width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:"
-"separate;\">\n"
+"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: #F1F1F1; color: #454748; "
+"padding: 8px; border-collapse:separate;\">\n"
 "      <tr><td style=\"text-align: center; font-size: 13px;\">\n"
 "        Powered by <a target=\"_blank\" href=\"https://www.smartbrix.io?"
-"utm_source=db&amp;utm_medium=portalinvite\" style=\"color: #875A7B;\">SmartBrix</a>\n"
+"utm_source=db&amp;utm_medium=portalinvite\" style=\"color: #875A7B;"
+"\">SmartBrix</a>\n"
 "      </td></tr>\n"
 "    </table>\n"
 "</td></tr>\n"
@@ -382,7 +395,7 @@ msgstr "Zugriffsbenachrichtigung"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 msgid "Acquisition"
-msgstr "Akquise"
+msgstr "Stammdaten"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__message_needaction
@@ -439,7 +452,7 @@ msgstr "Preisvorstellung"
 #: code:addons/property_management/static/src/xml/fields.xml:0
 #, python-format
 msgid "Attach"
-msgstr "Anhängen"
+msgstr "Anfügen"
 
 #. module: property_management
 #: model:ir.model,name:property_management.model_ir_attachment
@@ -500,7 +513,7 @@ msgstr "Schlafzimmer"
 #. module: property_management
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate_type__b
 msgid "Bedarfsausweis"
-msgstr "Bedarfsausweis"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
@@ -625,17 +638,22 @@ msgstr "gewerblich?"
 #: model:ir.model.fields,field_description:property_management.field_crm_lead__commission_client
 #: model:ir.model.fields,field_description:property_management.field_property_property__commission_client
 msgid "Commission Client"
-msgstr "Provision Klient"
+msgstr "Außenprovision"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__provision_client
 msgid "Commission Customer"
-msgstr "Provision Käufer"
+msgstr "Außenprovision"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__comm_incl_vat
 msgid "Commission Including VAT?"
 msgstr "Provision inkl. USt.?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__commission_internal
+msgid "Commission Internal"
+msgstr "Innenprovision"
 
 #. module: property_management
 #: model:ir.model,name:property_management.model_res_company
@@ -646,6 +664,11 @@ msgstr "Unternehmen"
 #: model:ir.model.fields,field_description:property_management.field_property_property__company_id
 msgid "Company"
 msgstr "Unternehmen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__condo_fee
+msgid "Condo Fee"
+msgstr "Hausgeld"
 
 #. module: property_management
 #: model:ir.model,name:property_management.model_res_config_settings
@@ -691,6 +714,11 @@ msgstr "Vertragstyp"
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 msgid "Contract and Qualification"
 msgstr "Vertrag und Qualifikation"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__corridor
+msgid "Corridor"
+msgstr "Flur"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__country_id
@@ -906,7 +934,7 @@ msgstr "Vertragsende"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Energieausweis"
-msgstr "Energieausweis"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
@@ -964,6 +992,11 @@ msgid "Extra Pictures"
 msgstr "Weitere Bilder"
 
 #. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__factor_market_value
+msgid "Factor Market Value"
+msgstr "Verkehrswert-Faktor"
+
+#. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_features_values__feature_id
 #: model:ir.model.fields,field_description:property_management.field_property_features__feature_id
 msgid "Feature"
@@ -1008,8 +1041,14 @@ msgstr "Datei"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__name
+#: model:ir.model.fields,field_description:property_management.field_property_property__file_name
 msgid "File Name"
 msgstr "Dateiname"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Financial Data"
+msgstr "Finanzdaten"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__message_follower_ids
@@ -1061,12 +1100,12 @@ msgstr "Zu Verkaufen?"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 msgid "Freitext"
-msgstr "Freitext"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__freitext
 msgid "Frietext"
-msgstr "Freitext"
+msgstr "Objektbeschreibung"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__furnish_quality
@@ -1080,7 +1119,7 @@ msgstr "Qualität der Möblierung"
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Furnishing"
-msgstr "Möblierung"
+msgstr "Ausstattung"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
@@ -1139,7 +1178,7 @@ msgstr "Hoch"
 #: model:ir.model.fields,field_description:property_management.field_property_type__id
 #: model:ir.model.fields,field_description:property_management.field_sale_reason__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__activity_exception_icon
@@ -1155,20 +1194,22 @@ msgstr "Symbol zur Anzeige einer Ausnahmeaktivität."
 #: model:ir.model.fields,help:property_management.field_property_property__message_needaction
 #: model:ir.model.fields,help:property_management.field_property_property__message_unread
 msgid "If checked, new messages require your attention."
-msgstr "Wenn diese Option aktiviert ist, erfordern neue Nachrichten Ihre Aufmerksamkeit."
+msgstr ""
+"Wenn diese Option aktiviert ist, erfordern neue Nachrichten Ihre "
+"Aufmerksamkeit."
 
 #. module: property_management
 #: model:ir.model.fields,help:property_management.field_property_property__message_has_error
 #: model:ir.model.fields,help:property_management.field_property_property__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
-"Wenn diese Option aktiviert ist, weisen einige Nachrichten einen Übermittlungsfehler "
-"auf."
+"Wenn diese Option aktiviert ist, weisen einige Nachrichten einen "
+"Übermittlungsfehler auf."
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.view_import_lead_wizard
 msgid "Import"
-msgstr "Import"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.view_import_lead_wizard
@@ -1231,6 +1272,11 @@ msgstr "Erforderlich?"
 #: model:ir.model.fields,field_description:property_management.field_property_property__is_published
 msgid "Is Published"
 msgstr "Ist veröffentlicht"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__land_register
+msgid "Land Register"
+msgstr "Grundbuch"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields____last_update
@@ -1341,12 +1387,13 @@ msgstr "Wohnfläche"
 #: model:ir.model.fields,field_description:property_management.field_property_location__name
 #: model:ir.model.fields,field_description:property_management.field_property_property__location_id
 #: model:ir.model.fields,field_description:property_management.field_property_property__location_info
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__location_id
 #: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Location"
-msgstr "Region"
+msgstr "Lage"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__longitude
@@ -1384,6 +1431,11 @@ msgstr "Karte"
 #: model:ir.cron,name:property_management.map_customer_property_distance
 msgid "Map Customer Property Distance"
 msgstr "Kundenentferung berechnen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__market_value
+msgid "Market Value"
+msgstr "Verkehrswert"
 
 #. module: property_management
 #: model:ir.actions.server,name:property_management.match_profile_property_ir_actions_server
@@ -1443,7 +1495,7 @@ msgstr "Nachrichten"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Mietpreis"
-msgstr "Mietpreis"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_search_profile__min_living_space
@@ -1459,7 +1511,7 @@ msgstr "Minimale Wohnfläche"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 msgid "Multimedia"
-msgstr "Multimedia"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__my_activity_date_deadline
@@ -1496,13 +1548,19 @@ msgstr "Meine Suchprofile"
 #: model:ir.model.fields,field_description:property_management.field_sale_reason__name
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #. module: property_management
 #: code:addons/property_management/models/realestate.py:0
 #, python-format
 msgid "New"
-msgstr "Neu"
+msgstr "neu"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_res_partner__newsletter
+#: model:ir.model.fields,field_description:property_management.field_res_users__newsletter
+msgid "Newsletter"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__activity_calendar_event_id
@@ -1537,13 +1595,13 @@ msgstr "Für diese Immobilie wird kein Energieausweis benötigt."
 #. module: property_management
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate__no
 msgid "Noch nicht vorhanden"
-msgstr "Noch nicht vorhanden"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__furnish_quality__0
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__prob_complete__0
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
@@ -1593,7 +1651,7 @@ msgstr "Objekte"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 msgid "Ok"
-msgstr "Ok"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__opportunity_ids
@@ -1607,10 +1665,26 @@ msgid "Opportunity Count"
 msgstr "Anzahl Verkaufschancen"
 
 #. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__original_price
+msgid "Original Price"
+msgstr "Einkaufspreis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__other_info
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Other"
+msgstr "Sonstiges"
+
+#. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__owner_id
 #: model:ir.model.fields,field_description:property_management.field_property_property__owner_id_d
 msgid "Owner"
 msgstr "Eigentümer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__parcel
+msgid "Parcel"
+msgstr "Flurstück"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__parent_id
@@ -1812,7 +1886,7 @@ msgstr "Regionen"
 #: model:ir.ui.menu,name:property_management.main_menu_real_estate
 #: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
 msgid "Property Management"
-msgstr "Objektverwaltung"
+msgstr "Objekte"
 
 #. module: property_management
 #: model:mail.template,name:property_management.inquiry_mail
@@ -1951,12 +2025,12 @@ msgstr "Kaufdatum"
 #: model:ir.model.fields,field_description:property_management.field_property_property__purchase_price_d
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Purchase Price"
-msgstr "Kaufpreis"
+msgstr "Verkaufspreis"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_kanban_view
 msgid "Purchase Price:"
-msgstr "Kaufpreis:"
+msgstr "Verkaufspreis:"
 
 #. module: property_management
 #: model:ir.model,name:property_management.model_ir_qweb_field_property_monetary
@@ -1977,7 +2051,7 @@ msgstr "Grund des Verkaufs"
 #: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Ref."
-msgstr "Ref."
+msgstr ""
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
@@ -2077,6 +2151,11 @@ msgid "SMS Delivery error"
 msgstr "SMS-Zustellungsfehler"
 
 #. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__sale_date
+msgid "Sale Date"
+msgstr "Verkaufsdatum"
+
+#. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 msgid "Sale Price"
@@ -2091,7 +2170,7 @@ msgstr "Verkaufsgrund"
 #: model:ir.model.fields,field_description:property_management.field_property_property__sales_person_id
 #: model:ir.model.fields,field_description:property_management.field_property_property__sales_person_id_d
 msgid "Sales Person"
-msgstr "Verkäufer"
+msgstr "Verantwortlicher"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_res_config_settings__dr_property_sales_team
@@ -2123,10 +2202,12 @@ msgstr "Sicherheitscode"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
-msgid "Select fields which you want to show on contact us form in property detail page."
+msgid ""
+"Select fields which you want to show on contact us form in property detail "
+"page."
 msgstr ""
-"Wählen Sie die Felder aus, die Sie im Kontaktformular auf der Detailseite der "
-"Unterkunft anzeigen möchten."
+"Wählen Sie die Felder aus, die Sie im Kontaktformular auf der Detailseite "
+"der Unterkunft anzeigen möchten."
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__seo_name
@@ -2142,6 +2223,11 @@ msgstr "Reihenfolge"
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
 msgid "Short Description"
 msgstr "Kurzbeschreibung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__show_street_on_website
+msgid "Show Street on Website"
+msgstr "Straße auf Website anzeigen"
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__show_on_cover
@@ -2170,6 +2256,11 @@ msgstr "Ursprung"
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "Space"
 msgstr "Fläche"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__standard_land_value
+msgid "Standard Land Value"
+msgstr "Bodenrichtwert"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_form_view
@@ -2202,6 +2293,11 @@ msgid "Sub Location"
 msgstr "Detail-Region"
 
 #. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__sub_location_ids
+msgid "Sub Locations"
+msgstr "Detailregion"
+
+#. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_contract_type__terms_ids
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 msgid "Terms"
@@ -2220,16 +2316,16 @@ msgstr "Terrasse?"
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
 msgid "The customer Commission is"
-msgstr "Die Kunden-Provision ist"
+msgstr "Die Kunden-Provision beträgt"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 msgid ""
-"The energy certificate is not available yet. We will update this expose and inform you "
-"once it is available."
+"The energy certificate is not available yet. We will update this expose and "
+"inform you once it is available."
 msgstr ""
-"Es ist noch kein Energieausweis vorhanden. Wir werden das Exposé aktualisieren und Sie "
-"informieren, sobald der Energieausweis verfügbar ist."
+"Es ist noch kein Energieausweis vorhanden. Wir werden das Exposé "
+"aktualisieren und Sie informieren, sobald der Energieausweis verfügbar ist."
 
 #. module: property_management
 #: model:ir.model.fields,help:property_management.field_property_property__website_url
@@ -2240,7 +2336,7 @@ msgstr "Die vollständige URL, um das Dokument über die Website aufzurufen."
 #: code:addons/property_management/models/ir_qweb_fields.py:0
 #, python-format
 msgid "The value send to monetary field is not a number."
-msgstr "Der an das monetäre Feld gesendete Wert ist keine Zahl."
+msgstr "Der an das Geldfeld gesendete Wert ist keine Zahl."
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
@@ -2255,10 +2351,11 @@ msgstr "Aktuell haben Sie keine Suchprofile."
 #. module: property_management
 #: model:ir.model.fields,help:property_management.field_property_property__campaign_id
 msgid ""
-"This is a name that helps you keep track of your different campaign efforts, e.g. "
-"Fall_Drive, Christmas_Special"
+"This is a name that helps you keep track of your different campaign "
+"efforts, e.g. Fall_Drive, Christmas_Special"
 msgstr ""
-"Dies ist ein Name der Ihnen dabei hilft, verschiedene Kampagnen zu unterscheiden."
+"Dies ist ein Name der Ihnen dabei hilft, verschiedene Kampagnen zu "
+"unterscheiden."
 
 #. module: property_management
 #: model:ir.model.fields,help:property_management.field_property_property__medium_id
@@ -2268,8 +2365,8 @@ msgstr "Dies ist die Auslieferungsmethode, z.B. E-Mail oder Postkarte"
 #. module: property_management
 #: model:ir.model.fields,help:property_management.field_property_property__source_id
 msgid ""
-"This is the source of the link, e.g. Search Engine, another domain, or name of email "
-"list"
+"This is the source of the link, e.g. Search Engine, another domain, or name "
+"of email list"
 msgstr "Dies ist der Ursprung des Links, z.B. Websuchen"
 
 #. module: property_management
@@ -2284,7 +2381,6 @@ msgstr "Art der aufgezeichneten Ausnahmeaktivität."
 
 #. module: property_management
 #: model:ir.model.fields,field_description:property_management.field_property_property__message_unread
-#: model_terms:ir.ui.view,arch_db:property_management.crm_case_kanban_view_leads_inherit_crm
 msgid "Unread Messages"
 msgstr "Ungelesene Nachrichten"
 
@@ -2312,7 +2408,7 @@ msgstr "Werte"
 #. module: property_management
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate_type__v
 msgid "Vebrauchsausweis"
-msgstr "Vebrauchsausweis"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__furnish_quality__3
@@ -2328,7 +2424,7 @@ msgstr "Sichtbar auf aktueller Webseite"
 #. module: property_management
 #: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate__vo
 msgid "Vorhanden"
-msgstr "Vorhanden"
+msgstr ""
 
 #. module: property_management
 #: model:ir.model,name:property_management.model_website
@@ -2407,20 +2503,19 @@ msgid ""
 "m\n"
 "                            <sup>2</sup>"
 msgstr ""
-"m\n"
-"                            <sup>2</sup>"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
 msgid "m<sup>2</sup>"
-msgstr "m<sup>2</sup>"
+msgstr ""
 
 #. module: property_management
 #: code:addons/property_management/models/realestate.py:0
 #, python-format
 msgid "opportunity already created for this Customer and Property !"
 msgstr ""
-"Es existiert bereits eine Verkaufschance für diese Kombination aus Kunde und Immobilie!"
+"Es existiert bereits eine Verkaufschance für diese Kombination aus Kunde "
+"und Immobilie!"
 
 #. module: property_management
 #: model_terms:ir.ui.view,arch_db:property_management.property_tree_view

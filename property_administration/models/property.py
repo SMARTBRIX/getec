@@ -2,6 +2,7 @@
 
 from odoo import fields, models
 from datetime import date
+from dateutil.relativedelta import relativedelta
 
 
 class PropertyStage(models.Model):
@@ -28,8 +29,8 @@ class PropertyProperty(models.Model):
     electrician_id = fields.Many2one('res.partner', string="Electrician")
     plumber_id = fields.Many2one('res.partner', string="Plumber")
     external_admin_id = fields.Many2one('res.partner', string='External administrator')
-
     key_safe = fields.Char("Key Safe")
+    gross_floor_area = fields.Float("Gross Floor Area")
 
     def _compute_journal_entries(self):
         property_ids = [self.id] + self.child_property_ids.ids
@@ -95,7 +96,7 @@ class PropertyProperty(models.Model):
 
     def action_view_tenancies(self):
         property_ids = [self.id] + self.child_property_ids.ids
-        tenancy_ids = self.env['property.tenancy'].search([('property_id', 'in', property_ids)])
+        tenancy_ids = self.env['property.tenancy'].search([('property_id', 'child_of', property_ids)])
         return {
             'name': ('Tenancy'),
             'type': 'ir.actions.act_window',
@@ -131,3 +132,31 @@ class PropertyProperty(models.Model):
             'domain': [('id', '=', expenditure_id.id)],
             'res_model': 'property.expenditure',
         }
+
+    def _cron_create_activity_for_certificate(self):
+        three_month_date = date.today() + relativedelta(months=3)
+        current_date = date.today()
+        model_id = self.env["ir.model"].search([("model", "=", "property.property")])
+        activity_type_id = self.env["mail.activity.type"].search([("name", "=", "To Do")])
+        property_ids = self.env["property.property"].search([('valid_till', '!=', False)]).filtered(lambda x: current_date <= x.valid_till <= three_month_date)
+        for rec in property_ids:
+            activity_id = self.env["mail.activity"].search(
+                [
+                    ("res_model", "=", "property.property"),
+                    ("res_id", "=", rec.id),
+                    ("date_deadline", "=", rec.valid_till),
+                ]
+            )
+            summary = "New Energy Certificate for " + rec.internal_label
+            user_id = rec.sales_person_id.id or rec.parent_id.sales_person_id.id or False
+            if user_id and not activity_id:
+                self.env["mail.activity"].create(
+                    {
+                        "summary": summary,
+                        "date_deadline": rec.valid_till,
+                        "user_id": user_id,
+                        "res_model_id": model_id.id,
+                        "res_id": rec.id,
+                        "activity_type_id": activity_type_id.id,
+                    }
+                )

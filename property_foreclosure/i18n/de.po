@@ -1,0 +1,123 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* property_foreclosure
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-30 12:36+0000\n"
+"PO-Revision-Date: 2022-06-30 16:46+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1\n"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__chief_clerk
+msgid "Chief Clerk"
+msgstr "Haupt-Sachbearbeiter"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__date
+msgid "Date"
+msgstr "Termin"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__district_court
+msgid "District Court"
+msgstr "Amtsgericht"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__file_district_court
+msgid "File number District Court"
+msgstr "Aktenzeichen (Amtsgericht)"
+
+#. module: property_foreclosure
+#: model_terms:ir.ui.view,arch_db:property_foreclosure.property_foreclosure_view_form
+msgid "Foreclosure"
+msgstr "Zwangsversteigerung"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__loan_number
+msgid "Loan Number"
+msgstr "Darlehens-Nr."
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__main_appointment_represent
+msgid "Main Appointment Representative"
+msgstr "Haupt-Terminvertreter"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__forclosure_market_value
+msgid "Market Value"
+msgstr "Verkehrswert"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__market_value_30
+msgid "Market Value 30"
+msgstr "Verkehrswert 30%"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__market_value_5
+msgid "Market Value 5"
+msgstr "Verkehrswert 5%"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__market_value_50
+msgid "Market Value 50"
+msgstr "Verkehrswert 50%"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__market_value_70
+msgid "Market Value 70"
+msgstr "Verkehrswert 70%"
+
+#. module: property_foreclosure
+#: model:ir.model.fields.selection,name:property_foreclosure.selection__property_property__status_foreclosure__in_foreclosure
+msgid "Object is in foreclosure"
+msgstr "Objekt befindet sich in der Zwangsversteigerung"
+
+#. module: property_foreclosure
+#: model:ir.model.fields.selection,name:property_foreclosure.selection__property_property__status_foreclosure__wait_foreclosure
+msgid "Object is in foreclosure, waiting for a new date"
+msgstr "Objekt befindet sich in der Zwangsversteigerung, warten auf neuen Termin"
+
+#. module: property_foreclosure
+#: model:ir.model.fields.selection,name:property_foreclosure.selection__property_property__status_foreclosure__not_foreclosure
+msgid "Object is not in foreclosure"
+msgstr "Objekt befindet sich nicht in der Zwangsversteigerung"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__principal_borrower
+msgid "Principal Borrower"
+msgstr "Haupt-Darlehensnehmer"
+
+#. module: property_foreclosure
+#: model:ir.model,name:property_foreclosure.model_property_property
+msgid "Property"
+msgstr "Objekt"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__remarks
+msgid "Remarks"
+msgstr "Bemerkung (letzter ZV-Termin)"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__room
+msgid "Room"
+msgstr "Saal/ Raum"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__status
+msgid "Status"
+msgstr "Status"
+
+#. module: property_foreclosure
+#: model:ir.model.fields,field_description:property_foreclosure.field_property_property__status_foreclosure
+msgid "Status Foreclosure"
+msgstr "Status Zwangsversteigerung"

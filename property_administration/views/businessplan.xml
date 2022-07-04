@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="businessplan_businessplan_form">
+        <field name="name">businessplan.businessplan.form</field>
+        <field name="model">businessplan.businessplan</field>
+        <field name="arch" type="xml">
+            <form string="Business Plan">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="expenditure_id"/>
+                            <field name="tenancy_id"/>
+                            <field name="cost_type_id"/>
+                            <field name="amount" />
+                            <field name="tax_id"/>
+                        </group>
+                        <group>
+                            <field name="reference"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="cleared"/>
+                            <field name="documents" widget="dr_field_multi_attachments"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="businessplan_businessplan_list">
+        <field name="name">businessplan.businessplan.list</field>
+        <field name="model">businessplan.businessplan</field>
+        <field name="arch" type="xml">
+            <tree string="Business Plan">
+        		  <field name="expenditure_id"/>
+                  <field name="tenancy_id"/>
+                  <field name="cost_type_id"/>
+                  <field name="amount"/>
+                  <field name="date_start"/>
+                  <field name="date_end"/>
+    		</tree>
+        </field>
+    </record>
+    <record id="businessplan_businessplan_search_view" model="ir.ui.view">
+        <field name="name">businessplan.businessplan.search.view</field>
+        <field name="model">businessplan.businessplan</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Not invoiced" name="journal_not_invoiced" domain="[('cleared', '=', False)]">
+                </filter>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_businessplan_businessplan">
+        <field name="name">Business Plan</field>
+        <field name="res_model">businessplan.businessplan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_journal_not_invoiced':1}</field>
+    </record>
+
+    <menuitem id="menu_businessplan_businessplan" parent="property_administration.menu_businessplan_administration"
+          action="action_businessplan_businessplan" sequence="0"/>
+</odoo>

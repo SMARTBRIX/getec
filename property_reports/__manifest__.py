@@ -12,8 +12,10 @@
         'security/ir.model.access.csv',
         'views/portfolio_report_view.xml',
         'views/portfolio_report_graph_view.xml',
+        'views/liquidity_report_graph_view.xml',
         'wizard/portfolio_report_wizard.xml',
-        'wizard/portfolio_report_graph_wizard.xml'
+        'wizard/portfolio_report_graph_wizard.xml',
+        'wizard/liquidity_graph_wizard.xml'
     ],
     'demo': [],
     'installable': True,

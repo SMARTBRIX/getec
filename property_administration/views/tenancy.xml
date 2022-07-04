@@ -19,10 +19,14 @@
                         <field name="resident_ids" widget="many2many_tags"/>
                         <field name="rent_product_id" required="1"/>
                         <field name="company_id"/>
+                        <field name="is_graduated_rent"/>
+                        <field name="last_rent_increase"/>
+                        <field name="current_rent_id"/>
+                        <field name="next_rent_id"/>
                     </group>
                     <group>
-                        <field name="date_start"/>
-                        <field name="date_end"/>
+                        <field name="date_start" required="1"/>
+                        <field name="date_end" required="1"/>
                         <field name="billing_type"/>
                         <field name="property_cost_type_ids" invisible="1"/>
                         <field name="cost_type_ids" domain="[('id', 'in', property_cost_type_ids)]" widget="many2many_tags"/>
@@ -85,9 +89,12 @@
     		<field name="property_id"/>
     		<field name="type"/>
             <field name="partner_id"/>
+            <field name="rent" optional="hide"/>
+            <field name="space" optional="hide"/>
+            <field name="persons" optional="hide"/>
             <field name="date_start"/>
             <field name="date_end"/>
-            <field name="billing_type"/>
+            <!-- <field name="billing_type"/> -->
 		</tree>
     </field>
 </record>
@@ -187,6 +194,21 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<menuitem id="menu_tenancy_stage" parent="main_menu_property_admin"
+<menuitem id="menu_tenancy_stage" parent="property_administration.menu_configuration"
           action="action_list_tenancy_stage" sequence="80"/>
+
+<record id="action_tenancy_mass_mail" model="ir.actions.act_window">
+        <field name="name">Send email</field>
+        <field name="res_model">mail.compose.message</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context" eval="{
+            'default_composition_mode': 'mass_mail',
+            'default_partner_to': '{{ object.partner_id.id or \'\' }}',
+            'default_use_template': False,
+            'default_reply_to_force_new': True,
+        }"/>
+        <field name="binding_model_id" ref="property_administration.model_property_tenancy"/>
+        <field name="binding_view_types">list</field>
+    </record>
 </odoo>

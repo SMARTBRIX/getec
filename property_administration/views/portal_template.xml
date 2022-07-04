@@ -6,7 +6,7 @@
         	<t t-call="portal.portal_docs_entry">
                 <t t-set="title">My Tenancies</t>
                 <t t-set="url" t-value="'/my/tenancies'"/>
-                <t t-set="count" t-value="tenancies_count"/>
+                <t t-set="placeholder_count" t-value="'tenancies_count'"/>
             </t>
            </xpath>
     </template>
@@ -39,20 +39,37 @@
                     <tr class="active">
                         <th>Name</th>
                         <th>Type</th>
-                        <th>Billing Type</th>
-                        <th class="text-right">Created Date</th>
+                        <th>Rent</th>
+                        <th>Heating costs</th>
+                        <th>Ancillary costs</th>
+                        <th>Start date</th>
+                        <!-- <th>Billing Type</th> -->
+                        <!-- <th class="text-right">Created Date</th> -->
                     </tr>
                 </thead>
                 <t t-foreach="objects" t-as="object">
                     <tr>
+                        <t t-set="current_rent_line" t-value="object.rent_ids.search([('tenancy_id', '=', object.id), ('date_start', '&lt;=', datetime.date.today())], order='date_start desc', limit=1)"/>
                         <td><a t-attf-href="/my/tenancy/#{object.id}"><t t-esc="object.name"/></a></td>
                         <td>
                             <a t-if="object.type"><i class="fa fa-external-link"/> <span t-field="object.type"/></a>
                         </td>
                         <td>
+                            <t t-if="current_rent_line" t-esc="current_rent_line.rent"/>
+                        </td>
+                        <td>
+                            <t t-if="current_rent_line" t-esc="current_rent_line.heating_costs"/>
+                        </td>
+                        <td>
+                            <t t-if="current_rent_line" t-esc="current_rent_line.ancillary_costs"/>
+                        </td>
+                        <td>
+                            <t t-if="current_rent_line" t-esc="current_rent_line.date_start"/>
+                        </td>
+                        <!-- <td>
                             <a t-if="object.billing_type"><i class="fa fa-external-link"/> <span t-field="object.billing_type"/></a>
                         </td>
-                        <td class="text-right"><span t-field="object.create_date" t-options="{'widget': 'date'}"/></td>
+                        <td class="text-right"><span t-field="object.create_date" t-options="{'widget': 'date'}"/></td> -->
                     </tr>
                 </t>
             </t>
@@ -67,10 +84,10 @@
         <t t-call="portal.portal_layout">
 
             <t>
-                <div class="card mt-0 border-top-0 rounded-0 rounded-bottom">
+                <div class="card container m-auto mt-0 border-top-0 rounded-0 rounded-bottom">
                     <div class="card-body row">
                         <div class="col-12 text-center">
-                            <h4 class="my-3">Welcome to the Tenancy by <span t-field="request.website.company_id.partner_id"/></h4>
+                            <h4 class="my-3">Your Tenancy by <span t-field="request.website.company_id.partner_id"/></h4>
                             <hr/>
                         </div>
                         <div class="col-12">
@@ -94,23 +111,64 @@
                                     <span t-esc="contractual_partner"/>
                                 </div>
                             </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <!-- <strong>Documents:</strong>
+                                    <t t-foreach="tenancy.documents" t-as="attechment_id">
+                                        <t t-set="ext" t-value="attechment_id.name.split('.').pop()"/>
+                                        <div class="o_attachments" t-att-title="attechment_id.name">
+                                            <div class="o_attachment_wrap">
+                                                <div class="o_image_box float-left" t-att-data-id="attechment_id.id">
+                                                    <a t-attf-href="/web/content/#{attechment_id.id}?download=true" t-att-title="attechment_id.name" aria-label="Download">
+                                                        <span class="o_image o_hover" t-att-data-mimetype="attechment_id.mimetype" role="img"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="caption">
+                                                    <a class="ml4" t-attf-href="/web/content/#{attechment_id.id}?download=true" t-att-title="attechment_id.name"><t t-esc="attechment_id.name"/></a>
+                                                </div>
+                                                <div class="caption small">
+                                                    <a class="ml4 small text-uppercase" t-attf-href="/web/content/#{attechment_id.id}?download=true" t-attf-title="attechment_id.id"><b><t t-esc="ext"/></b></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t> -->
+                                </div>
+                                <div class="col-6">
+                                    <strong>residents:</strong>
+                                    <span t-esc="resident_ids_name"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body row mb-2">
-                        <div class="col-12 col-md-6" t-if="tenancy.property_id">
-                            <strong>Property Address</strong>
-                            <div class="col pl-md-0">
-                                <span t-field="tenancy.property_id.name"/><br />
-                                <span t-field="tenancy.property_id.street_d"/><br />
-                                <span t-field="tenancy.property_id.zip_d"/><br />
-                                <span t-field="tenancy.property_id.city_d"/><br />
-                                <span t-field="tenancy.property_id.country_id_d.name"/>
+                        <div class="col-12">
+                            <div class="row mb-2">
+                                <div class="col-12 col-md-6">
+                                    <strong t-if="tenancy.property_id">Property Address</strong>
+                                    <div class="col pl-md-0" t-if="tenancy.property_id">
+                                        <span t-field="tenancy.property_id.name"/><br />
+                                        <span t-field="tenancy.property_id.street_d"/><br />
+                                        <span t-field="tenancy.property_id.zip_d"/><br />
+                                        <span t-field="tenancy.property_id.city_d"/><br />
+                                        <span t-field="tenancy.property_id.country_id_d.name"/>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <strong t-if="tenancy.partner_id">Invoice Address</strong>
+                                    <div class="col pl-md-0" t-if="tenancy.partner_id">
+                                        <span t-field="tenancy.partner_id.name"/><br />
+                                        <span t-field="tenancy.partner_id.street"/><br />
+                                        <span t-field="tenancy.partner_id.zip"/><br />
+                                        <span t-field="tenancy.partner_id.city"/><br />
+                                        <span t-field="tenancy.partner_id.country_id.name"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-body row">
-                        <div class="col-lg-6 offset-lg-3 my-3">
-                            <table class="table table-sm table-bordered">
+                        <div class="col-12 my-3">
+                            <table class="table table-sm">
                                 <thead>
                                     <th>Rent</th>
                                     <th>Heating Costs</th>
@@ -122,9 +180,9 @@
                                 <t t-foreach="tenancy.rent_ids" t-as="rent">
                                     <tbody>
                                         <tr>
-                                            <td><span t-field="rent.rent"/></td>
-                                            <td><span t-field="rent.heating_costs"/></td>
-                                            <td><span t-field="rent.ancillary_costs"/></td>
+                                            <td><span t-field="rent.rent" t-options="{'widget': 'monetary', 'display_currency': website.company_id.currency_id}"/></td>
+                                            <td><span t-field="rent.heating_costs" t-options="{'widget': 'monetary', 'display_currency': website.company_id.currency_id}"/></td>
+                                            <td><span t-field="rent.ancillary_costs" t-options="{'widget': 'monetary', 'display_currency': website.company_id.currency_id}"/></td>
                                             <td><span t-field="rent.billing_period"/></td>
                                             <td><span t-field="rent.day_of_invoice"/></td>
                                             <td><span t-field="rent.date_start"/></td>
@@ -134,9 +192,32 @@
                             </table>
                         </div>
                     </div>
+                    <div class="__documents mt-2 mb-2">
+                        <strong class="mb-2">Documents:</strong>
+                        <t t-foreach="tenancy.documents" t-as="attechment_id">
+                            <t t-set="ext" t-value="attechment_id.name.split('.').pop()"/>
+                            <div class="o_attachments" t-att-title="attechment_id.name">
+                                <div class="o_attachment_wrap">
+                                    <div class="o_image_box float-left" t-att-data-id="attechment_id.id">
+                                        <a t-attf-href="/web/content/#{attechment_id.id}?download=true" t-att-title="attechment_id.name" aria-label="Download">
+                                            <span class="o_image o_hover" t-att-data-mimetype="attechment_id.mimetype" role="img"></span>
+                                        </a>
+                                    </div>
+                                    <div class="right_panel">
+                                        <div class="caption">
+                                            <a class="ml4" t-attf-href="/web/content/#{attechment_id.id}?download=true" t-att-title="attechment_id.name"><t t-esc="attechment_id.name"/></a>
+                                        </div>
+                                        <div class="caption small">
+                                            <a class="ml4 small text-uppercase" t-attf-href="/web/content/#{attechment_id.id}?download=true" t-attf-title="attechment_id.id"><b><t t-esc="ext"/></b></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
                 </div>
             </t>
-            <div class="mt32">
+            <div class="mt32 container">
                 <h4><strong>Message and communication history</strong></h4>
                 <div class="mt16">
                     <t t-call="portal.message_thread">

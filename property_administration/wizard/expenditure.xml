@@ -17,7 +17,7 @@
                             <field name="period_begin"/>
                             <field name="period_end"/>
                             <field name="amount"/>
-                            <field name="tax_id"/>
+                            <field name="tax_id" required="1"/>
                         </group>
                     </group>
                     <footer>

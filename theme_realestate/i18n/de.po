@@ -1,19 +1,21 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* theme_realestate
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-03 15:26+0000\n"
-"PO-Revision-Date: 2021-09-03 15:28+0000\n"
+"POT-Creation-Date: 2022-04-05 09:58+0000\n"
+"PO-Revision-Date: 2022-04-08 15:18+0200\n"
 "Last-Translator: \n"
-"Language-Team: Unknown\n"
-"Language: zxx\n"
-"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"X-Loco-Source-Locale: de_DE\n"
-"X-Loco-Parser: loco_parse_po\n"
-"X-Generator: Loco https://localise.biz/"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
@@ -22,23 +24,39 @@ msgstr "Filter zurücksetzen"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
-msgid "+ Bathrooms"
-msgstr "+ Badezimmer"
+msgid ""
+"+\n"
+"                                                        Garages"
+msgstr ""
+"+\n"
+"                                                        Garagen"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
-msgid "+ Bedrooms"
-msgstr "+ Schlafzimmer"
+msgid ""
+"+\n"
+"                                                        Parkings"
+msgstr ""
+"+\n"
+"                                                        Parkplätze"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
-msgid "+ Garages"
-msgstr "+ Garagen"
+msgid ""
+"+\n"
+"                                                Bathrooms"
+msgstr ""
+"+\n"
+"                                                Badezimmer"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
-msgid "+ Parkings"
-msgstr "+ Parkplätze"
+msgid ""
+"+\n"
+"                                                Bedrooms"
+msgstr ""
+"+\n"
+"                                                Schlafzimmer"
 
 #. module: theme_realestate
 #. openerp-web
@@ -64,11 +82,11 @@ msgstr "- Angebotstyp -"
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
 msgid ""
-"<font style=\"color: rgb(255, 255, 255); font-size: 36px;\"><b>Amazing "
-"Properties</b></font>"
+"<font style=\"color: rgb(255, 255, 255); font-size: 36px;\"><b>Amazing\n"
+"                                        Properties</b></font>"
 msgstr ""
-"<font style=\"color: rgb(255, 255, 255); font-size: 36px;\"><b>Unsere "
-"Immobilien</b></font>"
+"<font style=\"color: rgb(255, 255, 255); font-size: 36px;\"><b>Aufregende\n"
+"                                        Immobilien</b></font>"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.snippets
@@ -141,8 +159,10 @@ msgstr "<span>Auswählen</span>"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
-msgid "Accepted terms &amp; conditions."
-msgstr "Datenschutzbedingungen akzeptieren."
+msgid ""
+"Accepted terms\n"
+"                                                            &amp; conditions."
+msgstr "Ich akzeptiere die Geschäftsbedingungen"
 
 #. module: theme_realestate
 #. openerp-web
@@ -157,37 +177,27 @@ msgid "All Properties"
 msgstr "Alle Immobilien"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 msgid "Bathrooms"
 msgstr "Badezimmer"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 msgid "Bedrooms"
 msgstr "Schlafzimmer"
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/controllers/main.py:0 
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/controllers/main.py:0
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 #, python-format
 msgid "Buy"
 msgstr "Kaufen"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Choose your header style"
-msgstr "Wählen Sie das Header-Design"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Choose your property detail style"
-msgstr ""
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
@@ -218,11 +228,6 @@ msgstr "Land"
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 msgid "Country..."
 msgstr "Land..."
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Default"
-msgstr "Standard"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
@@ -270,7 +275,7 @@ msgstr "Merkmale"
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.range_filter
 #, python-format
 msgid "From"
@@ -292,7 +297,7 @@ msgid "GDPR Information"
 msgstr "DSGVO-Informationen"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 msgid "Garages"
 msgstr "Garagen"
@@ -303,33 +308,8 @@ msgid "Github"
 msgstr "GitHub"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Header 1"
-msgstr ""
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Header Options"
-msgstr "Header-Optionen"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Header Style"
-msgstr "Header-Design"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Headers"
-msgstr ""
-
-#. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 msgid "Home"
-msgstr ""
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Icons Style"
 msgstr ""
 
 #. module: theme_realestate
@@ -345,28 +325,35 @@ msgid "Invalid Range"
 msgstr "Ungültiger Bereich"
 
 #. module: theme_realestate
-#: code:addons/theme_realestate/controllers/main.py:0 
+#: code:addons/theme_realestate/controllers/main.py:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 #, python-format
 msgid "Lease"
 msgstr "Pacht"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
-msgid "Lease Amount Including VAT"
-msgstr "Pacht (inkl. USt.)"
+msgid ""
+"Lease\n"
+"                            Amount Including VAT"
+msgstr ""
+"Miete\n"
+"                            inkl. UmSt."
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid ""
+"Lease Amount Including\n"
+"                                                VAT"
+msgstr ""
+"Miete inkl.\n"
+"                                                UmSt."
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Lease Price"
 msgstr "Pacht (zzgl. USt.)"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Left Side"
-msgstr ""
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
@@ -379,14 +366,14 @@ msgid "Living Space"
 msgstr "Wohnfläche"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Living space"
 msgstr "Wohnfläche"
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #, python-format
 msgid "Location"
@@ -445,15 +432,10 @@ msgid "Plot Area"
 msgstr "Grundtücksfläche"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Plot area"
 msgstr "Grundtücksfläche"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Pre-Header Color"
-msgstr "Header-Farbe"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
@@ -478,7 +460,15 @@ msgid "Price Range :"
 msgstr "Preisbereich:"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid ""
+"Price on\n"
+"                                                demand"
+msgstr ""
+"Preis auf\n"
+"                                                Anfrage"
+
+#. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Price on demand"
 msgstr "Preis auf Anfrage"
@@ -507,16 +497,11 @@ msgstr "Immobilien gefunden."
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #, python-format
 msgid "Property"
 msgstr "Immobilie"
-
-#. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
-msgid "Property Detail"
-msgstr "Immobilien-Details"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
@@ -556,14 +541,13 @@ msgid "Read More"
 msgstr "Mehr erfahren"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Ref."
 msgstr ""
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
 #: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #, python-format
 msgid "Reference ID"
@@ -571,34 +555,46 @@ msgstr "Referenz"
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/controllers/main.py:0 
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/controllers/main.py:0
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 #, python-format
 msgid "Rent"
 msgstr "Miete"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Rent Price"
 msgstr "Mietpreis"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
-msgid "Rent Price Including Heating"
-msgstr "Warmmiete"
+msgid ""
+"Rent Price\n"
+"                            Including Heating"
+msgstr ""
+"Mietpreis\n"
+"                            inkl. Heizkosten"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid ""
+"Rent Price Including\n"
+"                                                Heating"
+msgstr ""
+"Miete inkl.\n"
+"                                                Heizung"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Sale Price"
 msgstr "Verkaufspreis"
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 #, python-format
 msgid "Search"
@@ -607,7 +603,7 @@ msgstr "Suchen"
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 msgid "Search :"
-msgstr ""
+msgstr "Suche:"
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
@@ -616,10 +612,7 @@ msgstr "Suchen..."
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
-#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
-#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
-#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 #, python-format
 msgid "Select"
@@ -627,7 +620,7 @@ msgstr "Auswählen"
 
 #. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
 #, python-format
 msgid "Sell Type"
@@ -649,7 +642,7 @@ msgid "Share"
 msgstr "Teilen"
 
 #. module: theme_realestate
-#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
 msgid "Space"
 msgstr "Fläche"
@@ -682,13 +675,8 @@ msgid "Success"
 msgstr "Erfolgreich"
 
 #. module: theme_realestate
-#: model:ir.model,name:theme_realestate.model_theme_utils
-msgid "Theme Utils"
-msgstr "Werkzeuge"
-
-#. module: theme_realestate
 #. openerp-web
-#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.range_filter
 #, python-format
 msgid "To"
@@ -716,7 +704,6 @@ msgstr "Wir konnten keine Übereinstimmungen finden."
 
 #. module: theme_realestate
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.s_real_estate_categories_template
-#:  
 #: model_terms:theme.ir.ui.view,arch:theme_realestate.s_real_estate_cover_template
 msgid "We couldn't find any properties!"
 msgstr "Wir konnten keine Objekte finden."
@@ -752,3 +739,9 @@ msgstr "Ein- / auszoomen"
 #, python-format
 msgid "buy"
 msgstr "kaufen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "m<sup>2</sup>"
+msgstr ""

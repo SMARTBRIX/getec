@@ -33,7 +33,7 @@ class PortfolioReport(models.Model):
                     from property_property pp
                     left join property_tenancy pt on (pt.property_id = pp.id)
                     left join project_project p on (p.property_id = pp.id)
-                    left join project_property_rel ppr on (ppr.property_id = pp.id)"""
+                    left join project_property_rel ppr on (ppr.property_id = pp.id and ppr.project_id=p.id)"""
         return query
 
     def init(self):

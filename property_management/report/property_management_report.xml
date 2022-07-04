@@ -40,8 +40,8 @@
             <div class="container">
                 <div class="col-12 mb-3">
                     <div class="text-center">
-                        <img class="img img-fluid m-auto" style="width: 460px;"
-                             src="/property_management/static/src/imgs/Mallorca Dream Living.png"/>
+                        <img t-if="property.company_id and property.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(property.company_id.logo)"  style="width: 460px;"/>
+                        <img t-else="" class="img img-fluid" style="width: 460px;" src="/property_management/static/src/imgs/no_image.png"/>
                     </div>
                 </div>
                 <div class="col-12 mb-2 pb-2 p-0">
@@ -270,7 +270,8 @@
                     <style>
                         #leaflet_map {
                         height: 250px;
-                        width:800px;
+                        min-width:800px;
+                        width:100%;
                         }
                     </style>
                 </t>
@@ -278,7 +279,8 @@
                     <style>
                         #leaflet_map {
                         height: 395px;
-                        width:800px;
+                        min-width:800px;
+                        width:100%;
                         }
                     </style>
                 </t>

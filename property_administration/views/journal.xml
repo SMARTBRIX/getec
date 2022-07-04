@@ -12,7 +12,7 @@
                             <field name="tenancy_id"/>
                             <field name="cost_type_id"/>
                             <field name="amount" />
-                            <field name="tax_id"/>
+                            <field name="tax_id" required="1"/>
                         </group>
                         <group>
                             <field name="reference"/>
@@ -58,6 +58,6 @@
         <field name="context">{'search_default_journal_not_invoiced':1}</field>
     </record>
 
-    <menuitem id="menu_journal" parent="main_menu_property_admin"
-          action="action_list_journal" sequence="40"/>
+    <menuitem id="menu_journal" parent="property_administration.menu_invoicing_administration"
+          action="action_list_journal" sequence="2"/>
 </odoo>

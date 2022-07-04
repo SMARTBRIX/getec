@@ -18,6 +18,7 @@ class PropertyCostType(models.Model):
 
     name = fields.Text()
     allocation_formula = fields.Selection([('ls', 'Living Space (sqm)'), ('p', 'Persons'), (
-        'ru', 'Number of Residential Units'), ('da', 'Direct Assignment')], string="Allocation Formula")
+        'ru', 'Number of Residential Units'), ('da', 'Direct Assignment'), ('co', 'Co-Ownership')], string="Allocation Formula")
     product_id = fields.Many2one('product.product', string='Product', help='Invoice product for this cost type')
     property_cost_category_id = fields.Many2one('property.cost.category', string='Cost Category')
+    company_id = fields.Many2one('res.company', default=lambda self: self.env.company)

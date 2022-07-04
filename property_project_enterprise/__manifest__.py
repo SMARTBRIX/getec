@@ -14,7 +14,8 @@
         'views/account_budget_post_view.xml',
         'views/account_move_view.xml',
         'views/account_crossovered_budget.xml',
-        'views/project_view.xml'
+        'views/project_view.xml',
+        'views/property_view.xml'
     ],
     'demo': [],
     'installable': True,

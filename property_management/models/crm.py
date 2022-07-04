@@ -105,6 +105,7 @@ class CrmLead(models.Model):
                     'dbname': self._cr.dbname,
                     'lang': lang,
                     'portal_url': '',
+                    'password': '',
                     'user': user,
                     'object_url': self._get_object_url(),
                     'is_new': is_new_user,

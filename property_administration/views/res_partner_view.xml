@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_partner_form_administration" model="ir.ui.view">
+        <field name="name">res.partner.form.administration</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="action_view_tenancies" icon="fa-home">
+                    <field string="Tenancies" name="tenancy_count" widget="statinfo"/>
+                </button>
+        	</xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="action_view_responsibilities" icon="fa-tasks">
+                    <field string="Responsibilities" name="responsibility_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

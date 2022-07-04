@@ -20,14 +20,16 @@
         </t>
     </template>
 
-    <report
-            id="report_tenancy_contract"
-            string="Tenancy Contract Report"
-            model="property.tenancy"
-            report_type="qweb-pdf"
-            name="property_administration.tenancy_contract_report_template"
-            file="property_administration.tenancy_contract_report_template"
-            print_report_name="'Email - %s' % (object.name)"
-    />
+    <record id="report_tenancy_contract" model="ir.actions.report">
+        <field name="name">Tenancy Contract Report</field>
+        <field name="model">property.tenancy</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">property_administration.tenancy_contract_report_template</field>
+        <field name="report_file">property_administration.tenancy_contract_report_template</field>
+        <field name="print_report_name">'Email - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_property_tenancy"/>
+        <field name="binding_type">report</field>
+    </record>
+
     </data>
 </odoo>

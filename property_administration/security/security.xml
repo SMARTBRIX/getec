@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="multi_company_cost_types" model="ir.rule">
+        <field name="name">Multi Company Cost Types</field>
+        <field name="model_id" ref="property_administration.model_property_cost_type"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="multi_company_tenancy_rule" model="ir.rule">
+        <field name="name">Multi Company Tenancy Rule</field>
+        <field name="model_id" ref="property_administration.model_property_tenancy"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="tenancy_rule_portal" model="ir.rule">
+        <field name="name">Tenancy Rule Portal</field>
+        <field name="model_id" ref="property_administration.model_property_tenancy"/>
+        <field name="domain_force">[('contractual_partner_ids', 'in', [user.partner_id.id])]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

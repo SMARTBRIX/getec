@@ -28,7 +28,7 @@ class AccountExpenditure(models.TransientModel):
         expenditure_amount = sum(invoice.expenditure_ids.mapped('amount'))
         tax_id = invoice.invoice_line_ids[0].tax_ids and invoice.invoice_line_ids[0].tax_ids[0]
 
-        if not invoice.type == 'in_invoice':
+        if not invoice.move_type == 'in_invoice':
             raise ValidationError("Only create Expenditure from Vendor Bill")
 
         res.update({

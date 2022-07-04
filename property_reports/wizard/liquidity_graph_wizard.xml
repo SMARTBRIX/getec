@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_liquidity_report_graph_wizard_form" model="ir.ui.view">
+            <field name="name">Liquidity Graph</field>
+            <field name="model">liquidity.graph</field>
+            <field name="arch" type="xml">
+                <form string="Liquidity Graph Wizard">
+                    <group>
+                        <group>
+                            <field name="number_of_months" required="1"/>
+                            <field name="property_ids" widget="many2many_tags" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_show_graph" type="object" string="Display Graph" class="oe_highlight" context="{'number_of_months': number_of_months, 'property_ids': property_ids}" />
+                        <button special="cancel"  string="Discard" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_liquidity_report_graph_wizard" model="ir.actions.act_window">
+            <field name="name">Liquidity Graph</field>
+            <field name="res_model">liquidity.graph</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+        <menuitem
+        id="menu_liquidity_report_graph_wizard"
+        name="Liquidity Graph"
+        parent="menu_property_reporting"
+        action="action_liquidity_report_graph_wizard"/>
+    </data>
+</odoo>

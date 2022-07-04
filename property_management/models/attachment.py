@@ -14,11 +14,12 @@ class IrAttachment(models.Model):
 
     @api.model
     def create(self, vals):
+        res = super(IrAttachment, self).create(vals)
         if vals.get('res_model', False) == 'property.property':
             image_data = vals.get('datas')
-            image_name = vals.get('name')
-            vals['datas'] = self.compress_image(image_data, image_name)
-        return super(IrAttachment, self).create(vals)
+            image_name = self.env['property.property'].browse(res.res_id).file_name
+            res.datas = self.compress_image(image_data, image_name)
+        return res
 
     def compress_image(self, image_data, image_name):
         image_extension = ['jpeg', 'jpg', 'png']

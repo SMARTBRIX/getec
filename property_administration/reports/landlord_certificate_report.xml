@@ -117,15 +117,16 @@
             </div>
         </div>
     </template>
+    
+    <record id="action_landlord_certificate_report" model="ir.actions.report">
+        <field name="name">Landlord Certificate</field>
+        <field name="model">property.tenancy</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">property_administration.landlord_certificate</field>
+        <field name="report_file">property_administration.landlord_certificate</field>
+        <field name="print_report_name">'Property - %s' % (object.name)</field>
+        <!-- <field name="binding_model_id" ref="model_property_tenancy"/> -->
+        <field name="binding_type">report</field>
+    </record>
 
-    <report
-            id="action_landlord_certificate_report"
-            string="Landlord Certificate"
-            model="property.tenancy"
-            report_type="qweb-pdf"
-            name="property_administration.landlord_certificate"
-            file="property_administration.landlord_certificate"
-            print_report_name="'Property - %s' % (object.name)"
-            paperformat="property_administration.paper_format_a4_portrait"
-    />
 </odoo>
