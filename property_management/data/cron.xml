@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- <record id="match_profile_property" model="ir.cron">
+            <field name="name">Match Property</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">model._match_properties()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record> -->
+
+        <record id="create_property_distance" model="ir.cron">
+            <field name="name">Create Property Distance</field>
+            <field name="model_id" ref="model_property_distance"/>
+            <field name="state">code</field>
+            <field name="code">model.create_property_distance()</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+
+        <record id="map_customer_property_distance" model="ir.cron">
+            <field name="name">Map Customer Property Distance</field>
+            <field name="model_id" ref="model_property_distance"/>
+            <field name="state">code</field>
+            <field name="code">model.map_distance()</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+
+        <record id="match_profile_property" model="ir.cron">
+            <field name="name">Match Property</field>
+            <field name="model_id" ref="model_property_search_profile"/>
+            <field name="state">code</field>
+            <field name="code">model._match_properties()</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+
+        <record id="create_opportunity_property" model="ir.cron">
+            <field name="name">Create Opportunity Property</field>
+            <field name="model_id" ref="model_property_search_profile"/>
+            <field name="state">code</field>
+            <field name="code">model.create_opportuniy()</field>
+            <field name="interval_number">4</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+      <record id="property_form_administration" model="ir.ui.view">
+            <field name="name">property.form.administration</field>
+            <field name="model">property.property</field>
+            <field name="arch" type="xml">
+                <form string="Managed Objects">
+                    <header>
+                        <button name="action_create_tenancy" type="object" string="Create Tenancy"/>
+                        <button name="action_create_expenditure" type="object" string="Create Expenditure"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button class="oe_stat_button" type="object" name="action_view_journal_entry" icon="fa-euro">
+                                <field string="Journal Entries" name="journal_entry_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="action_view_expenditure" icon="fa-euro">
+                                <field string="Expenditure" name="expenditure_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="action_view_data_acquisition" string="Switch to data acquisition" icon="fa-database">
+                            </button>
+                            <button class="oe_stat_button" type="object" name="action_view_tenancies" icon="fa-home">
+                                <field string="Tenancies" name="tenancy_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <field name="cover_photo" widget="image" class="oe_avatar"/>
+                            <group>
+                                <group>
+                                    <field name="street_d"/>
+                                    <field name="zip_d"/>
+                                    <field name="city_d"/>
+                                    <field name="country_id_d"/>
+                                    <field name="owner_id_d"/>
+                                    <field name="construction_year" />
+                                    <field name="company_id"/>
+                                </group>
+                                <group>
+                                    <field name="property_stage_ids" options="{'no_create': True}" widget="many2many_tags"/>
+                                    <field name="contract_document"/>
+                                    <field name="cost_type_ids" widget="many2many_tags"/>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page string="Associated Residential Units" name="associated_residential_units">
+                                    <field name="child_property_ids" string="Residential Untis"
+                                    context="{'kanban_view_ref': 'property_management.property_kanban_view', 'form_view_ref': 'property_administration.property_form_administration'}"
+                                    mode="kanban"/>
+                                </page>
+                            </notebook>
+                        
+                    </sheet>
+                </form>
+            </field>
+     </record>
+
+	 <record id="managed_objects_view_search_property_administration" model="ir.ui.view">
+            <field name="name">managed.objects.search.property.administration</field>
+            <field name="model">property.property</field>
+            <field name="arch" type="xml">
+            	<search string="Managed Objects Search">
+                    <filter string="Not Parent Property" name="parent_property" domain="[('parent_property_id', '=', False)]"/>
+                    <separator/>
+                    <filter string="Administration Stage" name="administration_stage" domain="[('property_stage_ids.administration_stage','=', True)]"/>
+                </search>
+            </field>
+     </record>
+
+	<record model="ir.actions.act_window" id="action_list_managed_objects">
+	    <field name="name">Managed Objects</field>
+	    <field name="res_model">property.property</field>
+        <!-- <field name="view_id">managed_objects_view_form_property_administration</field> -->
+	    <field name="view_mode">kanban,form,tree</field>
+	    <field name="context">{'search_default_parent_property': 1, 'search_default_administration_stage': 1}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('property_management.property_kanban_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('property_form_administration')}),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('property_management.property_tree_view')})]"
+                />
+	</record>
+
+<menuitem id="menu_managed_objects" parent="main_menu_property_admin" action="action_list_managed_objects" sequence="10"/>
+
+</odoo>

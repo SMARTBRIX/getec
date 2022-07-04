@@ -1,0 +1,22 @@
+@include media-breakpoint-up(md) {
+    #wrapwrap {
+        > header {
+            box-shadow: $box-shadow-sm;
+            > .navbar {
+                padding: 1rem 0.6rem;
+                #top_menu {
+                    > .nav-item {
+                        padding-left: 0.6rem;
+                        padding-right: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+header .navbar-brand.logo img {
+    object-fit: contain;
+    display: block;
+    width: auto;
+    height: 4.375rem;
+}

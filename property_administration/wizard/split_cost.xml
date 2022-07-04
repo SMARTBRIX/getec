@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="expenditure_split_cost_view_form" model="ir.ui.view">
+            <field name="name">expenditure.split.cost.form</field>
+            <field name="model">expenditure.split.cost</field>
+            <field name="arch" type="xml">
+                <form string="Split Cost">
+                    <footer>
+                        <button name="split_cost" string="Split Cost" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+      <record id="action_split_cost" model="ir.actions.act_window">
+            <field name="name">Split Cost</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">expenditure.split.cost</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!-- TODO: check if we need this -->
+            <field name="binding_model_id" ref="property_administration.model_property_expenditure" />
+            <field name="binding_view_types">list</field>
+        </record>
+</odoo>

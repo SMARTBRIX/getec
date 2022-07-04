@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_budgetary_category_list" model="ir.ui.view">
+            <field name="name">budgetary.category.list</field>
+            <field name="model">budgetary.category</field>
+            <field name="arch" type="xml">
+                <tree string="Property Budgetary Category" editable="bottom">
+                    <field name="name"/>
+                    <field name="parent_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="action_budgetary_category" model="ir.actions.act_window">
+            <field name="name">Budgetary Category</field>
+            <field name="res_model">budgetary.category</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_property_budgetary_category" name="Budgetary Category" parent="account.menu_finance_configuration" action="action_budgetary_category"/>
+    </data>
+</odoo>

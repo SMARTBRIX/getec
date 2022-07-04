@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="tenancy_utility_bill_view_form" model="ir.ui.view">
+            <field name="name">tenancy.utility.bill.form</field>
+            <field name="model">tenancy.utility.bill</field>
+            <field name="arch" type="xml">
+                <form string="Create Utility Bill">
+                    <group>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </group>
+                    <footer>
+                        <button name="create_utility_bill" string="Create Utility Bill" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+      <record id="action_utility_bill" model="ir.actions.act_window">
+            <field name="name">Create Utility Bill</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tenancy.utility.bill</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!-- TODO: check if we need this -->
+            <field name="binding_model_id" ref="property_administration.model_property_tenancy" />
+            <field name="binding_view_types">list</field>
+        </record>
+</odoo>

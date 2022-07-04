@@ -1,0 +1,754 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-03 15:26+0000\n"
+"PO-Revision-Date: 2021-09-03 15:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: Unknown\n"
+"Language: zxx\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"X-Loco-Source-Locale: de_DE\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Loco https://localise.biz/"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
+msgid "(Clear Filters)"
+msgstr "Filter zurücksetzen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "+ Bathrooms"
+msgstr "+ Badezimmer"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "+ Bedrooms"
+msgstr "+ Schlafzimmer"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "+ Garages"
+msgstr "+ Garagen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "+ Parkings"
+msgstr "+ Parkplätze"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
+#, python-format
+msgid "- Location -"
+msgstr "- Region -"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
+#, python-format
+msgid "- Property Type -"
+msgstr "- Immobilien-Typ -"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
+#, python-format
+msgid "- Sell Type -"
+msgstr "- Angebotstyp -"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
+msgid ""
+"<font style=\"color: rgb(255, 255, 255); font-size: 36px;\"><b>Amazing "
+"Properties</b></font>"
+msgstr ""
+"<font style=\"color: rgb(255, 255, 255); font-size: 36px;\"><b>Unsere "
+"Immobilien</b></font>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.snippets
+msgid "<i class=\"fa fa-cubes\"/> Real Estate"
+msgstr "<i class=\"fa fa-cubes\"/> Immobilienverwaltung"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
+msgid "<i class=\"fa fa-filter mr-1\"/> Sort By :"
+msgstr "<i class=\"fa fa-filter mr-1\"/> Sortieren nach:"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<i class=\"fa fa-star\"/> Add to Favorite"
+msgstr "<i class=\"fa fa-star\"/> Exposé speichern"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_language
+msgid ""
+"<i class=\"lnr lnr-plus-circle\"/>\n"
+"                            Add a language..."
+msgstr ""
+"<i class=\"lnr lnr-plus-circle\"/>\n"
+"                            Sprache hinzufügen..."
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Bathrooms</small>"
+msgstr "<small>Badezimmer</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Bedrooms</small>"
+msgstr "<small>Schlafzimmer</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Garages</small>"
+msgstr "<small>Garagen / Carports</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Living space</small>"
+msgstr "<small>Wohnfläche</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Parking</small>"
+msgstr "<small>Parkplätze</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Plot area</small>"
+msgstr "<small>Grundstücksfläche</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "<small>Space</small>"
+msgstr "<small>Fläche</small>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
+msgid "<span>Please try searching something else</span>"
+msgstr "<span>Bitte versuchen Sie andere Suchkriterien</span>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "<span>Select</span>"
+msgstr "<span>Auswählen</span>"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Accepted terms &amp; conditions."
+msgstr "Datenschutzbedingungen akzeptieren."
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
+#, python-format
+msgid "Added to Favorite"
+msgstr "Exposé gespeichert"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "All Properties"
+msgstr "Alle Immobilien"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Bathrooms"
+msgstr "Badezimmer"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Bedrooms"
+msgstr "Schlafzimmer"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/controllers/main.py:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+#, python-format
+msgid "Buy"
+msgstr "Kaufen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Choose your header style"
+msgstr "Wählen Sie das Header-Design"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Choose your property detail style"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "City"
+msgstr "Ort"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Close"
+msgstr "Schließen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
+msgid "Close (Esc)"
+msgstr "Schließen (ESC)"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Contact Us"
+msgstr "Kontaktieren Sie uns"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Country"
+msgstr "Land"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Country..."
+msgstr "Land..."
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Default"
+msgstr "Standard"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
+#, python-format
+msgid "Download image"
+msgstr "Bild herunterladen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Email"
+msgstr "E-Mail"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Emission kWh / m per year"
+msgstr "Emission kWh pro Jahr"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Energy Certificate"
+msgstr "Energieausweis"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
+#, python-format
+msgid "Enter valid value"
+msgstr "Gültigen Wert eingeben"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
+msgid "Facebook"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Features"
+msgstr "Merkmale"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.range_filter
+#, python-format
+msgid "From"
+msgstr "Von"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Full name"
+msgstr "Name"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Furnishing"
+msgstr "Möblierung"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "GDPR Information"
+msgstr "DSGVO-Informationen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Garages"
+msgstr "Garagen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
+msgid "Github"
+msgstr "GitHub"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Header 1"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Header Options"
+msgstr "Header-Optionen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Header Style"
+msgstr "Header-Design"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Headers"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Home"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Icons Style"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
+msgid "Instagram"
+msgstr ""
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
+#, python-format
+msgid "Invalid Range"
+msgstr "Ungültiger Bereich"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+#, python-format
+msgid "Lease"
+msgstr "Pacht"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Lease Amount Including VAT"
+msgstr "Pacht (inkl. USt.)"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Lease Price"
+msgstr "Pacht (zzgl. USt.)"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Left Side"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
+msgid "Linkedin"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Living Space"
+msgstr "Wohnfläche"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Living space"
+msgstr "Wohnfläche"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+#, python-format
+msgid "Location"
+msgstr "Region"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Map"
+msgstr "Karte"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "More Filters :"
+msgstr "Weitere Filter:"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0
+#, python-format
+msgid "Name: A to Z"
+msgstr "Name (A-Z)"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0
+#, python-format
+msgid "Name: Z to A"
+msgstr "Name (Z-A)"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
+msgid "Next (arrow right)"
+msgstr "Weiter (Pfeil rechts)"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Ok"
+msgstr "OK"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Parking"
+msgstr "Parkplatz"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Parkings"
+msgstr "Parkplätze"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Plot Area"
+msgstr "Grundtücksfläche"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Plot area"
+msgstr "Grundtücksfläche"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Pre-Header Color"
+msgstr "Header-Farbe"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
+msgid "Previous (arrow left)"
+msgstr "Zurück (Pfeil links)"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
+#, python-format
+msgid "Price"
+msgstr "Preis"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Price Range"
+msgstr "Preisbereich"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Price Range :"
+msgstr "Preisbereich:"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Price on demand"
+msgstr "Preis auf Anfrage"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0
+#, python-format
+msgid "Price: High to Low"
+msgstr "Preis (niedrigster zuerst)"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0
+#, python-format
+msgid "Price: Low to High"
+msgstr "Preis (höchster zuerst)"
+
+#. module: theme_realestate
+#: model:website.menu,name:theme_realestate.menu_properties
+msgid "Properties"
+msgstr "Immobilien"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
+msgid "Properties found."
+msgstr "Immobilien gefunden."
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+#, python-format
+msgid "Property"
+msgstr "Immobilie"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.theme_customize
+msgid "Property Detail"
+msgstr "Immobilien-Details"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Property Location"
+msgstr "Immobilien-Region"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Property Location :"
+msgstr "Immobilien-Region:"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Property Type"
+msgstr "Immobilientyp"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Property Type :"
+msgstr "Immobilientyp:"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0
+#, python-format
+msgid "Published: Old to Recent"
+msgstr "Veröffentlichungsdatum (älteste zuerst)"
+
+#. module: theme_realestate
+#: code:addons/theme_realestate/controllers/main.py:0
+#, python-format
+msgid "Published: Recent to Old"
+msgstr "Veröffentlichungsdatum (neueste zuerst)"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Read More"
+msgstr "Mehr erfahren"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Ref."
+msgstr ""
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0
+#, python-format
+msgid "Reference ID"
+msgstr "Referenz"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/controllers/main.py:0 
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+#, python-format
+msgid "Rent"
+msgstr "Miete"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Rent Price"
+msgstr "Mietpreis"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Rent Price Including Heating"
+msgstr "Warmmiete"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Sale Price"
+msgstr "Verkaufspreis"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+#, python-format
+msgid "Search"
+msgstr "Suchen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Search :"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Search..."
+msgstr "Suchen..."
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+#, python-format
+msgid "Select"
+msgstr "Auswählen"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+#, python-format
+msgid "Sell Type"
+msgstr "Angebotstyp"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_searchbar
+msgid "Sell Type :"
+msgstr "Angebotstyp:"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Send"
+msgstr "Absenden"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
+msgid "Share"
+msgstr "Teilen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property_item
+msgid "Space"
+msgstr "Fläche"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "State"
+msgstr "Teilen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Street"
+msgstr "Straße"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Street2"
+msgstr "Weitere Adresszeile"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Subject"
+msgstr "Betreff"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
+#, python-format
+msgid "Success"
+msgstr "Erfolgreich"
+
+#. module: theme_realestate
+#: model:ir.model,name:theme_realestate.model_theme_utils
+msgid "Theme Utils"
+msgstr "Werkzeuge"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/xml/theme_realestate.xml:0 
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.range_filter
+#, python-format
+msgid "To"
+msgstr "Zu"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
+msgid "Toggle fullscreen"
+msgstr "Vollbild umschalten"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
+msgid "Twitter"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.s_real_estate_categories_template
+msgid "View All"
+msgstr "Alle anzeigen"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.properties
+msgid "We couldn't find any matches!"
+msgstr "Wir konnten keine Übereinstimmungen finden."
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.s_real_estate_categories_template
+#:  
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.s_real_estate_cover_template
+msgid "We couldn't find any properties!"
+msgstr "Wir konnten keine Objekte finden."
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "What can we help you with?"
+msgstr "Wie können wir Ihnen helfen?"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Your company"
+msgstr "Firma"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.component_social_share
+msgid "Youtube"
+msgstr ""
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.property
+msgid "Zip"
+msgstr "PLZ"
+
+#. module: theme_realestate
+#: model_terms:theme.ir.ui.view,arch:theme_realestate.photoswipe
+msgid "Zoom in/out"
+msgstr "Ein- / auszoomen"
+
+#. module: theme_realestate
+#. openerp-web
+#: code:addons/theme_realestate/static/src/js/theme_realestate_frontend.js:0
+#, python-format
+msgid "buy"
+msgstr "kaufen"

@@ -1,0 +1,54 @@
+@mixin dr-icon-center($size) {
+    padding: 0;
+    height: $size;
+    width: $size;
+    line-height: $size;
+    text-align: center;
+}
+
+@mixin dr-font-icons {
+    .fa {
+        @content;
+    }
+}
+
+@mixin dr-bg-blur($value, $bg-value: 0.65) {
+    backdrop-filter: blur($value);
+    background-color: rgba(255, 255, 255, $bg-value);
+    @supports not ((-webkit-backdrop-filter: blur($value)) or (backdrop-filter: blur($value))) {
+        background-color: #FFFFFF;
+    }
+}
+
+@mixin dr-link-color-system($bg-color) {
+    $color: color-yiq($bg-color);
+    @if $color == $yiq-text-dark {
+        color: $color;
+    } @else {
+        color: rgba($color, 0.8);
+    }
+    a:not(.dropdown-item) {
+        @if $color == $yiq-text-dark {
+            color: $color;
+        } @else {
+            color: rgba($color, 0.8);
+        }
+        &:hover {
+            @if $bg-color == theme-color('primary') {
+                color: gray('dark');
+                @if theme-color('primary') == #000000 {
+                    color: gray('white');
+                }
+            } @else {
+                color: theme-color('primary');
+            }
+        }
+    }
+}
+
+@mixin dr-preheader-color($bg-color) {
+    @include o-bg-color($bg-color);
+    $color: color-yiq($bg-color);
+    border-bottom: 1px solid rgba($color, 0.12);
+    @include dr-link-color-system($bg-color);
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_project_property_project_enterprise" model="ir.ui.view">
+            <field name="name">project.property.project.enterprise</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_view_all_rating']" position="before">
+                    <button name="open_budget_view" class="oe_stat_button" icon="fa-dollar" type="object" >
+                        <field string="Budgets" name="budget_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//page[@name='settings']" position="inside">
+                    <group string="Property Management">
+                        <group>
+                            <field name="property_id"/>
+                            <field name="child_property_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+       
+    </data>
+</odoo>

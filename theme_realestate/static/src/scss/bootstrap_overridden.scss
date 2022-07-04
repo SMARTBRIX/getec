@@ -1,0 +1,54 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1400px
+);
+
+$font-size-base: $o-theme-font-size-base !default;
+
+$border-radius: 0.25rem;
+$border-radius-lg: 0.25rem;
+$border-radius-sm: 0.25rem;
+
+$box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+$box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .15);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0,.1);
+
+$link-hover-decoration: none;
+
+$line-height-base: 1.6;
+
+$tooltip-bg: palette-theme-color('alpha');
+$tooltip-margin: 0.5rem;
+
+// $navbar-light-color: palette-gray('800');
+$navbar-light-hover-color: palette-theme-color('alpha');
+$navbar-light-active-color: $navbar-light-hover-color;
+$navbar-dark-toggler-border-color: transparent;
+$navbar-light-toggler-border-color: transparent;
+
+$pagination-focus-box-shadow: none;
+$pagination-border-width: 0;
+
+// $card-border-color: zpalette-gray('300');
+
+$badge-padding-y: 0.6em;
+$badge-padding-x: 0.8em;
+$badge-pill-padding-x: 1em;
+
+$dropdown-border-width: 0;
+$dropdown-box-shadow: 0 1.5rem 4rem rgba(73, 80, 87, .15);
+$dropdown-header-color: palette-theme-color('primary');
+
+$dropdown-link-hover-color: palette-theme-color('primary');
+$dropdown-link-hover-bg: transparent;
+
+$lead-font-weight: 400;
+$lead-font-size: $font-size-base * 1.16;
+
+// $input-border-color: palette-gray('300');
+// $input-placeholder-color: palette-gray('500');
+$input-focus-box-shadow: none;
+$input-focus-border-color: palette-theme-color('primary');
+// $input-color: palette-gray('600');

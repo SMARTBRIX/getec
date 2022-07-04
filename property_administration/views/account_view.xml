@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<record id="account_property_administration_form_view" model="ir.ui.view">
+    <field name="name">account.view.property.administration.form</field>
+    <field name="model">account.move</field>
+    <field name="inherit_id" ref="account.view_move_form"/>
+    <field name="arch" type="xml">
+    	<xpath expr="//notebook" position="inside">
+    		<page string="Properties" name="properties">
+    			<field name="property_ids" readonly="1" />
+    		</page>
+    		<page string="Expenditures" name="expenditures">
+    			<field name="expenditure_ids" readonly="1" />
+    		</page>
+    	</xpath>
+    </field>
+</record>
+</odoo>

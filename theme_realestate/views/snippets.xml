@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="s_real_estate_search" name="Real Estate Search">
+        <section class="s_banner parallax s_parallax_is_fixed pt168 pb168 s_parallax_no_overflow_hidden" data-scroll-background-ratio="0">
+            <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/web/image/theme_realestate.s_real_estate_search'); background-position: 50% 0;"/>
+            <div class="container">
+                <div class="row s_nb_column_fixed">
+                    <div class="col-lg-6 jumbotron rounded pt32 pb32 s_real_estate_search bg-black-75" data-name="Box"/>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="s_real_estate_search_2" name="Real Estate Search - 2">
+        <section class="s_real_estate_search_2"/>
+    </template>
+
+    <template id="s_real_estate_cover" name="Real Estate Cover">
+        <section class="s_real_estate_cover"/>
+    </template>
+
+    <template id="s_real_estate_categories" name="Real Estate Categories">
+        <section class="s_real_estate_categories"/>
+    </template>
+
+    <template id="snippets" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="snippet_real_estate" class="o_panel">
+                <div class="o_panel_header">
+                    <i class="fa fa-cubes"/> Real Estate
+                </div>
+                <div class="o_panel_body">
+                    <t t-snippet="theme_realestate.s_real_estate_search" t-thumbnail="/website/static/src/img/snippets_thumbs/s_products_searchbar.png"/>
+                    <t t-snippet="theme_realestate.s_real_estate_search_2" t-thumbnail="/website/static/src/img/snippets_thumbs/s_products_searchbar.png"/>
+                    <t t-snippet="theme_realestate.s_real_estate_cover" t-thumbnail="/website/static/src/img/snippets_thumbs/s_carousel.png"/>
+                    <t t-snippet="theme_realestate.s_real_estate_categories" t-thumbnail="/website/static/src/img/snippets_thumbs/s_three_columns.png"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

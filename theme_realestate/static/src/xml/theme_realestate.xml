@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="theme_realestate.s_real_estate_search_template">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="title">Reference ID</label>
+                                <input type="text" name="reference" class="form-control" placeholder="Reference ID"/>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="title">Sell Type</label>
+                                <select class="form-control" name="sell_type">
+                                    <option value="" selected="selected">- Sell Type -</option>
+                                    <option value="buy" selected="selected">Buy</option>
+                                    <option value="rent">Rent</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="title">Property</label>
+                                <select class="form-control" name="property_type">
+                                    <option value="" selected="selected">- Property Type -</option>
+                                    <t t-foreach="property_types" t-as="property_type">
+                                        <option t-att-value="property_type.id"><t t-esc="property_type.name"/></option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="title">Location</label>
+                                <select class="form-control" name="property_location">
+                                    <option value="" selected="selected">- Location -</option>
+                                    <t t-foreach="property_locations" t-as="location">
+                                        <option t-att-value="location.id"><t t-esc="location.name"/></option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="title">Price</label>
+                                <div class="dr-range-slider-container">
+                                    <div class="dr-range-slider" t-att-data-min="property_min_price" t-att-data-max="property_max_price" t-att-data-from="property_min_price" t-att-data-to="property_max_price" t-att-data-prefix="currency_symbol" />
+                                    <div class="form-row align-items-center justify-content-between mt-2">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text bg-white" t-esc="currency_symbol"/>
+                                                </div>
+                                                <input type="text" class="form-control" name="min_value" t-att-value="property_min_price" placeholder="From"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            -
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text bg-white" t-esc="currency_symbol"/>
+                                                </div>
+                                                <input type="text" class="form-control" name="max_value" t-att-value="property_max_price" placeholder="To"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-white text-center dr-range-validate mb-0"/>
+                                </div>
+                            </div>
+                            <div class="form-group col-12 mb-0 mt-2">
+                                <button type="submit" class="btn btn-primary btn-block dr-search">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

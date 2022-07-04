@@ -1,0 +1,1256 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* property_administration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-08 12:48+0000\n"
+"PO-Revision-Date: 2022-03-09 09:02+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: property_administration
+#: model:ir.actions.report,print_report_name:property_administration.report_tenancy_contract
+msgid "'Email - %s' % (object.name)"
+msgstr "'Email - %s' % (object.name)"
+
+#. module: property_administration
+#: model:ir.actions.report,print_report_name:property_administration.action_landlord_certificate_report
+msgid "'Property - %s' % (object.name)"
+msgstr "'Objekt - %s' % (object.name)"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid ""
+"* Findet der Umzug innerhalb Deutschlands statt, muss der neuen Meldebehörde die neue Adresse vorgelegt\n"
+"                        werden. Geht der Umzug ins Ausland, muss sich der Mieter bei der bisherigen Meldebehörde abmelden,\n"
+"                        dabei ist die Anschrift der alten Wohnung anzugeben."
+msgstr ""
+"* Findet der Umzug innerhalb Deutschlands statt, muss der neuen Meldebehörde die neue Adresse vorgelegt\n"
+"                        werden. Geht der Umzug ins Ausland, muss sich der Mieter bei der bisherigen Meldebehörde abmelden,\n"
+"                        dabei ist die Anschrift der alten Wohnung anzugeben."
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span class=\"col-1\">1.</span>"
+msgstr "<span class=\"col-1\">1.</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span class=\"col-2\">( ) Auszug zum</span>"
+msgstr "<span class=\"col-2\">( ) Auszug zum</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span class=\"col-2\">( ) Einzug zum</span>"
+msgstr "<span class=\"col-2\">( ) Einzug zum</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Auszugsdatum (nur auszufüllen bei Umzug ins Ausland*)</span>"
+msgstr "<span>Auszugsdatum (nur auszufüllen bei Umzug ins Ausland*)</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Einzugsdatum</span>"
+msgstr "<span>Einzugsdatum</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Ort, Datum</span>"
+msgstr "<span>Ort, Datum</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid ""
+"<span>Straße Hausnummer / PLZ Ort (neue Anschrift / ggfs. alte Anschrift* – Unzutreffendes bitte streichen)\n"
+"                        </span>"
+msgstr ""
+"<span>Straße Hausnummer / PLZ Ort (neue Anschrift / ggfs. alte Anschrift* – Unzutreffendes bitte streichen)\n"
+"                        </span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Straße Hausnummer / PLZ Ort</span>"
+msgstr "<span>Straße Hausnummer / PLZ Ort</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Unterschrift des Eigentümers/Vermieters<br/>oder des Beauftragten</span>"
+msgstr "<span>Unterschrift des Eigentümers/Vermieters<br/>oder des Beauftragten</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Vorname Name ggfs. Stempel</span>"
+msgstr "<span>Vorname Name ggfs. Stempel</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<span>Vorname Name</span>"
+msgstr "<span>Vorname Name</span>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<strong>( ) Eigentümer</strong>"
+msgstr "<strong>( ) Eigentümer</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "<strong>( ) vom Eigentümer Beauftragter/Verwalter</strong>"
+msgstr "<strong>( ) vom Eigentümer Beauftragter/Verwalter</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "<strong>Billing Type:</strong>"
+msgstr "<strong>Abrechungsart:</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "<strong>Contractual Partners:</strong>"
+msgstr "<strong>Vertragspartner:</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "<strong>Message and communication history</strong>"
+msgstr "<strong>Nachrichten- und Kommunikationsverlauf</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "<strong>Name:</strong>"
+msgstr "<strong>Name:</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "<strong>Property Address</strong>"
+msgstr "<strong>Objektaddresse</strong>"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "<strong>Type:</strong>"
+msgstr "<strong>Typ:</strong>"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__access_warning
+msgid "Access warning"
+msgstr "Zugriffswarnung"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_account_expenditure
+msgid "Account Expenditure"
+msgstr "Buchung Aufwand"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_needaction
+msgid "Action Needed"
+msgstr "Aktion erforderlich"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_ids
+msgid "Activities"
+msgstr "Aktivitäten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Gestaltung Ausnahmeaktivität"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_state
+msgid "Activity State"
+msgstr "Aktivitätsstatus"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Symbol Aktivitätentyp"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.managed_objects_view_search_property_administration
+msgid "Administration Stage"
+msgstr "Verwaltungs-Stufe"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_stage__administration_stage
+msgid "Administration Stage?"
+msgstr "Verwaltungs-Stufe?"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_category__is_advance_payment
+msgid "Advance Payment?"
+msgstr "Vorauszahlung?"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__allocation_formula model:ir.model.fields,field_description:property_administration.field_property_expenditure__allocation_formula
+msgid "Allocation Formula"
+msgstr "Kostenschlüssel"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__amount model:ir.model.fields,field_description:property_administration.field_property_expenditure__amount model:ir.model.fields,field_description:property_administration.field_property_journal__amount
+msgid "Amount"
+msgstr "Betrag"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__analytic_account_id
+msgid "Analytic Account"
+msgstr "Kostenstelle"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__ancillary_cost_type_id
+msgid "Ancillary Cost Type"
+msgstr "Betriebskostenart"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__ancillary_costs model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Ancillary Costs"
+msgstr "Betriebskosten"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Associated Residential Units"
+msgstr "Zugeordnete Einheiten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_attachment_count
+msgid "Attachment Count"
+msgstr "Anzahl Anlagen"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__bill_id
+msgid "Bill"
+msgstr "Zahlung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__billing_period model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Billing Period"
+msgstr "Zahlungsintervall"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__billing_type model:ir.model.fields,field_description:property_administration.field_property_tenancy__billing_type model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancies
+msgid "Billing Type"
+msgstr "Abrechnungsart"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__campaign_id
+msgid "Campaign"
+msgstr "Kampagne"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__can_publish
+msgid "Can Publish"
+msgstr "Kann veröffentlicht werden"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.account_expenditure_view_form model_terms:ir.ui.view,arch_db:property_administration.expenditure_split_cost_view_form model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_view_form
+#: model_terms:ir.ui.view,arch_db:property_administration.tenancy_utility_bill_view_form
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__child_property_ids
+msgid "Child Property"
+msgstr "Untergeordnete Immobilie"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__cleaning_id
+msgid "Cleaning"
+msgstr "Reinigung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure__cleared model:ir.model.fields,field_description:property_administration.field_property_journal__cleared
+msgid "Cleared"
+msgstr "Abgerechnet"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__co_owenership model:ir.model.fields,field_description:property_administration.field_property_rent__co_owenership
+msgid "Co-Ownership"
+msgstr "Gemeinschaftseigentum"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__billing_type__combined
+msgid "Combined advance payment for all ancillary costs"
+msgstr "Kombinierte Vorauszahlung für alle Nebenkosten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__company_id
+msgid "Company"
+msgstr "Firma"
+
+#. module: property_administration
+#: model:ir.ui.menu,name:property_administration.menu_configuration
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__documents
+msgid "Contract Documents"
+msgstr "Vertragsdokumente"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__contractual_partner_ids
+msgid "Contractual Partner"
+msgstr "Vertragspartner"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_cost_category model:ir.model,name:property_administration.model_property_cost_category model:ir.model.fields,field_description:property_administration.field_property_cost_type__property_cost_category_id
+#: model:ir.ui.menu,name:property_administration.menu_cost_category model_terms:ir.ui.view,arch_db:property_administration.cost_type_categ_list
+msgid "Cost Category"
+msgstr "Kosten-Kategorie"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_cost_type model:ir.model.fields,field_description:property_administration.field_account_expenditure__cost_type_id model:ir.model.fields,field_description:property_administration.field_property_expenditure__cost_type_id
+#: model:ir.model.fields,field_description:property_administration.field_property_journal__cost_type_id
+msgid "Cost Type"
+msgstr "Kostenart"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.cost_type_list
+msgid "Cost Type list"
+msgstr "Liste der Kostenarten"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_cost_type model:ir.model.fields,field_description:property_administration.field_account_expenditure__cost_type_ids model:ir.model.fields,field_description:property_administration.field_property_property__cost_type_ids
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__cost_type_ids model:ir.model.fields,field_description:property_administration.field_property_tenancy__property_cost_type_ids model:ir.ui.menu,name:property_administration.menu_cost_type
+msgid "Cost Types"
+msgstr "Kostenarten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__cover_photo
+msgid "Cover Photo"
+msgstr "Cover-Foto"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_expenditute model_terms:ir.ui.view,arch_db:property_administration.account_expenditure_view_form model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Create Expenditure"
+msgstr "Aufwendung erfassen"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_landlord_certificate model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_view_form
+msgid "Create Landlord Certificate"
+msgstr "Mietbescheinigung erstellen"
+
+#. module: property_administration
+#: model:ir.actions.server,name:property_administration.ir_cron_property_administration_create_rent_invoice_ir_actions_server model:ir.cron,cron_name:property_administration.ir_cron_property_administration_create_rent_invoice
+#: model:ir.cron,name:property_administration.ir_cron_property_administration_create_rent_invoice
+msgid "Create Rent Invoice"
+msgstr "Mietabrechnung erstellen"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Create Tenancy"
+msgstr "Nutzungsverhältnis erstellen"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_utility_bill model_terms:ir.ui.view,arch_db:property_administration.tenancy_utility_bill_view_form
+msgid "Create Utility Bill"
+msgstr "Nebenkostenabrechnung erstellen"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancies
+msgid "Created Date"
+msgstr "Erstellt am"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__create_uid model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost__create_uid
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate__create_uid model:ir.model.fields,field_description:property_administration.field_property_cost_category__create_uid
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__create_uid model:ir.model.fields,field_description:property_administration.field_property_expenditure__create_uid
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__create_uid model:ir.model.fields,field_description:property_administration.field_property_journal__create_uid
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__create_uid model:ir.model.fields,field_description:property_administration.field_property_tenancy__create_uid model:ir.model.fields,field_description:property_administration.field_tenancy_stage__create_uid
+#: model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__create_date model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost__create_date
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate__create_date model:ir.model.fields,field_description:property_administration.field_property_cost_category__create_date
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__create_date model:ir.model.fields,field_description:property_administration.field_property_expenditure__create_date
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__create_date model:ir.model.fields,field_description:property_administration.field_property_journal__create_date
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__create_date model:ir.model.fields,field_description:property_administration.field_property_tenancy__create_date model:ir.model.fields,field_description:property_administration.field_tenancy_stage__create_date
+#: model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__create_date
+msgid "Created on"
+msgstr "Erstellt an"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.tenancy_search_view
+msgid "Current Tenancies"
+msgstr "Aktuelle Nutzungsverhältnisse"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__access_url
+msgid "Customer Portal URL"
+msgstr "Kundenportal URL"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__day_of_invoice
+msgid "Day Of Invoice"
+msgstr "Datum der Abrechnung (Tag)"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Day of Invoice"
+msgstr "Datum der Abrechnung (Tag)"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_cost_type__allocation_formula__da
+msgid "Direct Assignment"
+msgstr "Direktzuweisung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__display_name model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost__display_name
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate__display_name model:ir.model.fields,field_description:property_administration.field_property_cost_category__display_name
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__display_name model:ir.model.fields,field_description:property_administration.field_property_expenditure__display_name
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__display_name model:ir.model.fields,field_description:property_administration.field_property_journal__display_name
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__display_name model:ir.model.fields,field_description:property_administration.field_property_tenancy__display_name model:ir.model.fields,field_description:property_administration.field_tenancy_stage__display_name
+#: model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure__documents model:ir.model.fields,field_description:property_administration.field_property_journal__documents
+msgid "Documents"
+msgstr "Dokumente"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__electrician_id
+msgid "Electrician"
+msgstr "Elektriker"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__date_end model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__date_end
+msgid "End Date"
+msgstr "Enddatum"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid ""
+"Erklärung gem. § 19 Abs. 6 BMG: Die oben genannten Angaben entsprechen den Tatsachen. Mir ist bekannt,\n"
+"                        dass es gem. § 19 Abs. 6 BMG verboten ist, eine Wohnungsanschrift für eine Anmeldung nach § 17 Abs. 1 BMG\n"
+"                        einem Dritten anzubieten oder zur Verfügung zu stellen, wenn ein tatsächlicher Bezug der Wohnung durch einen\n"
+"                        Dritten weder stattfindet noch beabsichtigt ist. Des Weiteren ist mir bekannt, dass ein Verstoß gegen diese Rege-lung sowie das Ausfüllen einer Vermieterbescheinigung als Nichtberechtigter zu einer Ordnungswidrigkeit führt,was gem. § 54 BMG mit einer Geldbuße geahndet wird."
+msgstr ""
+"Erklärung gem. § 19 Abs. 6 BMG: Die oben genannten Angaben entsprechen den Tatsachen. Mir ist bekannt,\n"
+"                        dass es gem. § 19 Abs. 6 BMG verboten ist, eine Wohnungsanschrift für eine Anmeldung nach § 17 Abs. 1 BMG\n"
+"                        einem Dritten anzubieten oder zur Verfügung zu stellen, wenn ein tatsächlicher Bezug der Wohnung durch einen\n"
+"                        Dritten weder stattfindet noch beabsichtigt ist. Des Weiteren ist mir bekannt, dass ein Verstoß gegen diese Rege-lung sowie das Ausfüllen einer Vermieterbescheinigung als Nichtberechtigter zu einer Ordnungswidrigkeit führt,was gem. § 54 BMG mit einer Geldbuße geahndet wird."
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_expenditure model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__expenditure_id model:ir.model.fields,field_description:property_administration.field_property_journal__expenditure_id
+#: model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Expenditure"
+msgstr "Aufwendung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__expenditure_count
+msgid "Expenditure Count"
+msgstr "Aufwendungs-Zähler"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_expenditure_factor
+msgid "Expenditure Factor"
+msgstr "Aufwendungs-Faktor"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.expenditure_form
+msgid "Expenditure Form"
+msgstr "Aufwendungs-Formular"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_expenditure_split_cost
+msgid "Expenditure Split Cost"
+msgstr "Aufwendung umlegen"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.expenditure_list
+msgid "Expenditure list"
+msgstr "Liste der Aufwendungen"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_expenditure model:ir.model.fields,field_description:property_administration.field_account_bank_statement_line__expenditure_ids model:ir.model.fields,field_description:property_administration.field_account_move__expenditure_ids
+#: model:ir.model.fields,field_description:property_administration.field_account_payment__expenditure_ids model:ir.ui.menu,name:property_administration.menu_expenditure model_terms:ir.ui.view,arch_db:property_administration.account_property_administration_form_view
+msgid "Expenditures"
+msgstr "Aufwendungen"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__external_admin_id
+msgid "External administrator"
+msgstr "Externer Administrator"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__facility_manager_id
+msgid "Facility Manager"
+msgstr "Hausmeister"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__factor
+msgid "Factor"
+msgstr "Faktor"
+
+#. module: property_administration
+#: code:addons/property_administration/models/mail_template.py:0
+#, python-format
+msgid "Failed to render template : %s"
+msgstr "Vorlage konnte nicht generiert werden: %s"
+
+#. module: property_administration
+#: code:addons/property_administration/models/mail_template.py:0
+#, python-format
+msgid "Failed to render template : %s (%d)"
+msgstr "Vorlage konnte nicht generiert werden: %s (%d)"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__billing_type__flatrate
+msgid "Flatrate Rent"
+msgstr "Flatrate-Miete"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_follower_ids
+msgid "Followers"
+msgstr "Follower"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Follower (Partner)"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Symbol tolle Schrift, z.B. fa-tasks"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_property_administration_list_view
+msgid "Further Data"
+msgstr "Weitere Daten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__gardener_id
+msgid "Gardener"
+msgstr "Gärtner"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_property_administration_form_view
+msgid "Go to Administration"
+msgstr "zur Immobilienverwaltung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__has_message
+msgid "Has Message"
+msgstr "Hat Nachricht"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__heating_cost_type_id
+msgid "Heating Cost Type"
+msgstr "Heizkostenart"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__heating_costs model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Heating Costs"
+msgstr "Heizkosten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__heating_space
+msgid "Heating Space"
+msgstr "Heizfläche"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "Hiermit bestätige ich als"
+msgstr "Hiermit bestätige ich als"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__id model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost__id model:ir.model.fields,field_description:property_administration.field_landlord_certificate__id
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_category__id model:ir.model.fields,field_description:property_administration.field_property_cost_type__id model:ir.model.fields,field_description:property_administration.field_property_expenditure__id
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__id model:ir.model.fields,field_description:property_administration.field_property_journal__id model:ir.model.fields,field_description:property_administration.field_property_rent__id
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__id model:ir.model.fields,field_description:property_administration.field_tenancy_stage__id model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__id
+msgid "ID"
+msgstr "ID"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_exception_icon
+msgid "Icon"
+msgstr "Symbol"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Symbol zur Anzeige einer Ausnahmeaktivität."
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__message_needaction model:ir.model.fields,help:property_administration.field_property_tenancy__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Wenn diese Option aktiviert ist, erfordern neue Nachrichten Ihre Aufmerksamkeit."
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__message_has_error model:ir.model.fields,help:property_administration.field_property_tenancy__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Wenn diese Option aktiviert ist, weisen einige Nachrichten einen Übermittlungsfehler auf."
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__partner_id
+msgid "Invoice address"
+msgstr "Rechnungsadresse"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_cost_type__product_id
+msgid "Invoice product for this cost type"
+msgstr "Rechnungsprodukt für diese Kostenart"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_is_follower
+msgid "Is Follower"
+msgstr "Ist Follower"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__is_published
+msgid "Is Published"
+msgstr "Ist veröffentlicht"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_journal model:ir.model,name:property_administration.model_property_journal model:ir.ui.menu,name:property_administration.menu_journal
+msgid "Journal"
+msgstr "Journal"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Journal Entries"
+msgstr "Buchungssätze"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_account_move
+msgid "Journal Entry"
+msgstr "Buchungssatz"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__journal_entry_count
+msgid "Journal Entry Count"
+msgstr "Anzahl Buchungssätze"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.journal_form
+msgid "Journal Form"
+msgstr "Buchungsormular"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.journal_list
+msgid "Journal list"
+msgstr "Buchungs-Liste"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__key_safe
+msgid "Key Safe"
+msgstr "Schlüsseltresor"
+
+#. module: property_administration
+#: model:ir.actions.report,name:property_administration.action_landlord_certificate_report model:ir.model,name:property_administration.model_landlord_certificate model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_view_form
+msgid "Landlord Certificate"
+msgstr "Mietbescheinigung"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_report_property_administration_landlord_certificate
+msgid "Landlord Certificate Report"
+msgstr "Mietbescheinigung Report"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure____last_update model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost____last_update
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate____last_update model:ir.model.fields,field_description:property_administration.field_property_cost_category____last_update
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type____last_update model:ir.model.fields,field_description:property_administration.field_property_expenditure____last_update
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor____last_update model:ir.model.fields,field_description:property_administration.field_property_journal____last_update
+#: model:ir.model.fields,field_description:property_administration.field_property_rent____last_update model:ir.model.fields,field_description:property_administration.field_property_tenancy____last_update
+#: model:ir.model.fields,field_description:property_administration.field_tenancy_stage____last_update model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill____last_update
+msgid "Last Modified on"
+msgstr "zuletzt geändert am"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__write_uid model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost__write_uid
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate__write_uid model:ir.model.fields,field_description:property_administration.field_property_cost_category__write_uid
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__write_uid model:ir.model.fields,field_description:property_administration.field_property_expenditure__write_uid
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__write_uid model:ir.model.fields,field_description:property_administration.field_property_journal__write_uid
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__write_uid model:ir.model.fields,field_description:property_administration.field_property_tenancy__write_uid model:ir.model.fields,field_description:property_administration.field_tenancy_stage__write_uid
+#: model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__write_uid
+msgid "Last Updated by"
+msgstr "zuletzt aktualisiert von"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__write_date model:ir.model.fields,field_description:property_administration.field_expenditure_split_cost__write_date
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate__write_date model:ir.model.fields,field_description:property_administration.field_property_cost_category__write_date
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__write_date model:ir.model.fields,field_description:property_administration.field_property_expenditure__write_date
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__write_date model:ir.model.fields,field_description:property_administration.field_property_journal__write_date
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__write_date model:ir.model.fields,field_description:property_administration.field_property_tenancy__write_date model:ir.model.fields,field_description:property_administration.field_tenancy_stage__write_date
+#: model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__write_date
+msgid "Last Updated on"
+msgstr "zuletzt aktualisiert am"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_cost_type__allocation_formula__ls
+msgid "Living Space (sqm)"
+msgstr "Wohnfläche (qm)"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__template_id
+msgid "Mail Template"
+msgstr "Mailvorlage"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Hauptanhang"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_managed_objects model:ir.ui.menu,name:property_administration.menu_managed_objects model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Managed Objects"
+msgstr "Verwaltete Objekte"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.managed_objects_view_search_property_administration
+msgid "Managed Objects Search"
+msgstr "Suche verwaltete Objekte"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__medium_id
+msgid "Medium"
+msgstr "Medium"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_has_error
+msgid "Message Delivery error"
+msgstr "Fehler bei der Nachrichtenübermittlung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_ids
+msgid "Messages"
+msgstr "Nachrichten"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_rent__billing_period__monthly
+msgid "Monthly"
+msgstr "Monatlich"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Meine Aktivitätsfrist"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_breadcrumbs_tenancy model_terms:ir.ui.view,arch_db:property_administration.portal_my_home_property_tenancy
+msgid "My Tenancies"
+msgstr "Meine Nutzungsverhältnisse"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__name model:ir.model.fields,field_description:property_administration.field_property_cost_category__name model:ir.model.fields,field_description:property_administration.field_property_cost_type__name
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure__name model:ir.model.fields,field_description:property_administration.field_property_tenancy__name model:ir.model.fields,field_description:property_administration.field_tenancy_stage__name
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancies
+msgid "Name"
+msgstr "Name"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Nächste Aktivität des Kalendereintrags"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Frist nächste Aktivität"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_summary
+msgid "Next Activity Summary"
+msgstr "Übersicht nächste Aktivität"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_type_id
+msgid "Next Activity Type"
+msgstr "Typ nächste Aktivität"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.managed_objects_view_search_property_administration
+msgid "Not Parent Property"
+msgstr "Nur Haupt-Objekte"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.journal_search_view
+msgid "Not invoiced"
+msgstr "Nicht berechnet"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.expenditure_search_view
+msgid "Not splitted"
+msgstr "Nicht umgelegt"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Anzahl Aktionen"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_cost_type__allocation_formula__ru
+msgid "Number of Residential Units"
+msgstr "Anzahl Einheiten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_has_error_counter
+msgid "Number of errors"
+msgstr "Anzahl Fehler"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Anzahl der Nachrichten mit Handlungsbedarf"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Anzahl der Nachrichten mit Zustellungsfehler"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Anzahl ungelesener Nachrichten"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancies
+msgid "Objects"
+msgstr "Objekte"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__type__own
+msgid "Own Use"
+msgstr "Eigennutzung"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__type__owner
+msgid "Ownership"
+msgstr "Eigentum"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__period_begin model:ir.model.fields,field_description:property_administration.field_property_expenditure__date_start
+#: model:ir.model.fields,field_description:property_administration.field_property_journal__date_start
+msgid "Period Begin"
+msgstr "Beginn der Periode"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__period_end model:ir.model.fields,field_description:property_administration.field_property_expenditure__date_end
+#: model:ir.model.fields,field_description:property_administration.field_property_journal__date_end
+msgid "Period End"
+msgstr "Ende der Periode"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__persons model:ir.model.fields.selection,name:property_administration.selection__property_cost_type__allocation_formula__p
+msgid "Persons"
+msgstr "Personen"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__plumber_id
+msgid "Plumber"
+msgstr "Klempner"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__access_url
+msgid "Portal Access URL"
+msgstr "Adresse für den Portalzugriff"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_type__product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_bank_statement_line__property_ids model:ir.model.fields,field_description:property_administration.field_account_move__property_ids
+#: model:ir.model.fields,field_description:property_administration.field_account_payment__property_ids model_terms:ir.ui.view,arch_db:property_administration.account_property_administration_form_view
+msgid "Properties"
+msgstr "Objekte"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_property model:ir.model.fields,field_description:property_administration.field_account_expenditure__property_id model:ir.model.fields,field_description:property_administration.field_property_expenditure__property_id
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure_factor__property_id model:ir.model.fields,field_description:property_administration.field_property_tenancy__property_id
+msgid "Property"
+msgstr "Objekt"
+
+#. module: property_administration
+#: model:ir.ui.menu,name:property_administration.main_menu_property_admin
+msgid "Property Administration"
+msgstr "Immobilienverwaltung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure__expenditure_factor_ids model_terms:ir.ui.view,arch_db:property_administration.expenditure_form
+msgid "Property Factor"
+msgstr "Eigentumsfaktor"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_stage
+msgid "Property Stages"
+msgstr "Objekt-Stati"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_rent__billing_period__quarterly
+msgid "Quarterly"
+msgstr "Quartalsweise"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_journal__reference
+msgid "Reference"
+msgstr "Referenz"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_rent model:ir.model.fields,field_description:property_administration.field_property_rent__rent model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Rent"
+msgstr "Miete"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.rent_form
+msgid "Rent Form"
+msgstr "Formular Miete"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__rent_ids model_terms:ir.ui.view,arch_db:property_administration.tenancy_form
+msgid "Rent Price"
+msgstr "Miete"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__rent_product_id
+msgid "Rent Product"
+msgstr "Produkt Miete"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.rent_list
+msgid "Rent list"
+msgstr "Liste der Mieten"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__type__rental
+msgid "Rental"
+msgstr "Vermietung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_landlord_certificate__resident_id model:ir.model.fields,field_description:property_administration.field_landlord_certificate__resident_ids
+msgid "Resident"
+msgstr "Bewohner"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Residential Untis"
+msgstr "Einheiten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__resident_ids
+msgid "Residents"
+msgstr "Bewohner"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_property_administration_list_view
+msgid "Responsibilities"
+msgstr "Verantwortlichkeiten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwortlicher Benutzer"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__website_id
+msgid "Restrict publishing to this website."
+msgstr "Beschränken Sie die Veröffentlichung auf dieser Website."
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__is_seo_optimized
+msgid "SEO optimized"
+msgstr "SEO optimiert"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS-Zustellungsfehler"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__access_token
+msgid "Security Token"
+msgstr "Sicherheitstoken"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__seo_name
+msgid "Seo name"
+msgstr "SEO Name"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__billing_type__separate
+msgid "Separate advance payments for ancillary costs and heating"
+msgstr "Getrennte Vorauszahlungen für Neben- und Heizkosten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_res_users__signature_img model_terms:ir.ui.view,arch_db:property_administration.res_users_form_property_administration_view
+msgid "Signature"
+msgstr "Unterschrift"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__source_id
+msgid "Source"
+msgstr "Quelle"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__space
+msgid "Space"
+msgstr "Flöche"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_split_cost model_terms:ir.ui.view,arch_db:property_administration.expenditure_split_cost_view_form
+msgid "Split Cost"
+msgstr "Kosten umlegen"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_cost_category__is_splittable
+msgid "Splittable?"
+msgstr "Umlagefähig?"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__stage_id
+msgid "Stage"
+msgstr ""
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_rent__date_start model:ir.model.fields,field_description:property_administration.field_property_tenancy__date_start model:ir.model.fields,field_description:property_administration.field_tenancy_utility_bill__date_start
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status basierend auf Aktivitäten\n"
+"Überfällig: Das Fälligkeitsdatum ist bereits überschritten\n"
+"Heute: Aktivitätsdatum ist heute\n"
+"Geplant: Zukünftige Aktivitäten."
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Switch to data acquisition"
+msgstr "Zur Objektverwaltung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__tax_id model:ir.model.fields,field_description:property_administration.field_property_expenditure__tax_id model:ir.model.fields,field_description:property_administration.field_property_journal__tax_id
+msgid "Tax"
+msgstr "Steuer"
+
+#. module: property_administration
+#: code:addons/property_administration/models/mail_template.py:0
+#, python-format
+msgid "Template rendering should be called only using on a list of IDs."
+msgstr "Das Generieren von Vorlagen sollte nur über eine Liste von IDs aufgerufen werden."
+
+#. module: property_administration
+#: code:addons/property_administration/models/mail_template.py:0
+#, python-format
+msgid "Template rendering supports only jinja or qweb."
+msgstr "Das Generieren von Vorlagen unterstützt nur Jinja oder Qweb."
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_tenancy model:ir.ui.menu,name:property_administration.menu_tenancy model_terms:ir.ui.view,arch_db:property_administration.property_form_administration
+msgid "Tenancies"
+msgstr "Nutzungsverhältnisse"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_property_tenancy model:ir.model.fields,field_description:property_administration.field_property_journal__tenancy_id model:ir.model.fields,field_description:property_administration.field_property_rent__tenancy_id
+msgid "Tenancy"
+msgstr "Nutzungsverhältnis"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.tenancy_form
+msgid "Tenancy Contract"
+msgstr "Mietvertrag"
+
+#. module: property_administration
+#: model:ir.actions.report,name:property_administration.report_tenancy_contract
+msgid "Tenancy Contract Report"
+msgstr "Übersicht Mietverträge"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__contract_text
+msgid "Tenancy Contract Text"
+msgstr "Mietvertragstext"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__tenancy_count
+msgid "Tenancy Count"
+msgstr "Anzahl Mietverträge"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.quick_create_tenancy_form model_terms:ir.ui.view,arch_db:property_administration.tenancy_form
+msgid "Tenancy Form"
+msgstr "Formular Nutzungsverhältnis"
+
+#. module: property_administration
+#: model:ir.actions.act_window,name:property_administration.action_list_tenancy_stage model:ir.model,name:property_administration.model_tenancy_stage model:ir.ui.menu,name:property_administration.menu_tenancy_stage
+msgid "Tenancy Stage"
+msgstr "Status der Nutzungsverhältnisse"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.tenancy_stage_list
+msgid "Tenancy Stage list"
+msgstr "Liste der Stati der Nutzungsverhältnisse"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_tenancy_utility_bill
+msgid "Tenancy Utility Bill"
+msgstr "Nebenkostenabrechnung Nutzungsverhältnis"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.tenancy_list
+msgid "Tenancy list"
+msgstr "Liste der Nutzungsverhältnisse"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__website_url
+msgid "The full URL to access the document through the website."
+msgstr "Die vollständige URL für den Zugriff auf das Dokument über die Website."
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancies
+msgid "There are currently no objects for your account."
+msgstr "Derzeit sind keine Objekte für Ihr Konto vorhanden."
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__campaign_id
+msgid "This is a name that helps you keep track of your different campaign efforts, e.g. Fall_Drive, Christmas_Special"
+msgstr "Dies ist ein Name, der Ihnen hilft, den Überblick über Ihre verschiedenen Kampagnenaktivitäten zu behalten, z.B. Neubau Hauptstraße, Renovierung Penthouse"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr "Dies ist die Versandart, z.B. Postkarten-, E-Mail- oder Bannerwerbung"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__source_id
+msgid "This is the source of the link, e.g. Search Engine, another domain, or name of email list"
+msgstr "Dies ist die Quelle des Links, z.B. Suchmaschine, eine andere Domain oder der Name einer E-Mail-Liste"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__type model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancies
+msgid "Type"
+msgstr "Typ"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_unread
+msgid "Unread Messages"
+msgstr "ungelesene Nachrichten"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Anzahl ungelesene Nachrichten"
+
+#. module: property_administration
+#: code:addons/property_administration/models/mail_template.py:0
+#, python-format
+msgid "Unsuspected None"
+msgstr "Keine unerwartet"
+
+#. module: property_administration
+#: model:ir.model,name:property_administration.model_res_users
+msgid "Users"
+msgstr "Benutzer"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_tenancy__type__vacancy
+msgid "Vacancy"
+msgstr "Leerstand"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_account_expenditure__vendor_id model:ir.model.fields,field_description:property_administration.field_property_expenditure__vendor_id
+msgid "Vendor"
+msgstr "Lieferant"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_expenditure__bill_id
+msgid "Vendor Bill"
+msgstr "Eingangsrechnung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_published
+msgid "Visible on current website"
+msgstr "Sichtbar auf aktueller Website"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_id
+msgid "Website"
+msgstr "Website"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_message_ids
+msgid "Website Messages"
+msgstr "Nachrichten Website"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_url
+msgid "Website URL"
+msgstr "Website URL"
+
+#. module: property_administration
+#: model:ir.model.fields,help:property_administration.field_property_tenancy__website_message_ids
+msgid "Website communication history"
+msgstr "Kommunikationsverlauf der Website"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_meta_description
+msgid "Website meta description"
+msgstr "Website-Meta-Beschreibung"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_meta_keywords
+msgid "Website meta keywords"
+msgstr "Website-Meta-Keywords"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_meta_title
+msgid "Website meta title"
+msgstr "Metatitel der Website"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_tenancy__website_meta_og_img
+msgid "Website opengraph image"
+msgstr "Website opengraph Bilder"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.portal_my_tenancy_object
+msgid "Welcome to the Tenancy by"
+msgstr "Willkommen beim Nutzungsverhältnis von"
+
+#. module: property_administration
+#: model:ir.model.fields,field_description:property_administration.field_property_property__winter_service_id
+msgid "Winter Service"
+msgstr "Winterdienst"
+
+#. module: property_administration
+#: model:ir.model.fields.selection,name:property_administration.selection__property_rent__billing_period__yearly
+msgid "Yearly"
+msgstr "Jährlich"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "der vermieteten Wohnung in"
+msgstr "der vermieteten Wohnung in"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "des Mieters/der Mieterin/der Mieter bzw. des Untermieters<br/>(nach § 17 Abs. 1 und 2 BMG meldepflichtige Personen)"
+msgstr "des Mieters/der Mieterin/der Mieter bzw. des Untermieters<br/>(nach § 17 Abs. 1 und 2 BMG meldepflichtige Personen)"
+
+#. module: property_administration
+#: model_terms:ir.ui.view,arch_db:property_administration.landlord_certificate_report
+msgid "gemäß § 19 Abs. 1 Bundesmeldegesetz (BMG) den"
+msgstr "gemäß § 19 Abs. 1 Bundesmeldegesetz (BMG) den"

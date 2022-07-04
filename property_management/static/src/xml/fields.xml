@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="CustomHiddenInputFile" t-extend="HiddenInputFile">
+        <t t-jquery="input[t-if='widget.image_only']" t-operation="attributes">
+            <attribute name="t-att">{'multiple': multi_upload ? 'multiple' : null}</attribute>
+        </t>
+    </t>
+
+    <t t-name="CustomFieldBinaryFileUploader.attachment_preview" t-extend="FieldBinaryFileUploader.attachment_preview">
+        <t t-jquery="span.o_image" t-operation="replace">
+            <t t-set="webimage" t-value="new RegExp('image.*(gif|jpeg|jpg|png)').test(mimetype)"/>
+            <span t-if="!webimage" class="o_image o_hover" t-att-data-mimetype="mimetype" t-att-data-ext="ext" role="img"/>
+            <img t-if="webimage" class="o_image o_hover" t-attf-src="/web/content/#{file.id}" t-att-data-mimetype="mimetype" t-att-data-ext="ext" role="img"/>
+        </t>
+    </t>
+
+    <div t-name="FieldMultiAttachments" t-attf-class="oe_fileupload #{widget.attrs.class ? widget.attrs.class :''}" aria-atomic="true">
+        <div t-if="widget.mode !== 'readonly'" class="oe_add">
+            <button class="btn btn-secondary o_attach" title="Attach"><span class="fa fa-paperclip" aria-label="Attach"/> <t t-esc="widget.string"/></button>
+            <t t-call="CustomHiddenInputFile">
+                <t t-set="fileupload_id" t-value="widget.fileupload_id"/>
+                <t t-set="fileupload_action" t-translation="off">/web/binary/upload_attachment</t>
+                <t t-set="multi_upload" t-value="true"/>
+                <input type="hidden" name="model" t-att-value="widget.model"/>
+                <input type="hidden" name="id" value="0"/>
+            </t>
+        </div>
+        <div class="oe_placeholder_files"/>
+    </div>
+
+    <div t-name="CustomFieldBinaryFileUploader.files" class="o_attachments" aria-atomic="true">
+        <t t-foreach="widget.value.data" t-as="file">
+            <t t-if="!file.data.upload" t-call="CustomFieldBinaryFileUploader.attachment_preview"/>
+        </t>
+        <t t-foreach="widget.uploadingFiles" t-as="file">
+            <t t-set="upload" t-value="true"/>
+            <t t-call="CustomFieldBinaryFileUploader.attachment_preview"/>
+        </t>
+    </div>
+
+</templates>

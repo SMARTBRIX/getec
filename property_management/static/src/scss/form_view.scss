@@ -1,0 +1,151 @@
+// JAT: Should be in secondary variable
+$dr-chatter-min-width: 530px;
+$dr-form-sheet-min-width: 990px;
+
+.o_form_view {
+
+    @mixin o-form-sheet-inner-left-padding {
+        padding-left: $o-horizontal-padding;
+        @include media-breakpoint-between(lg, xl, $o-extra-grid-breakpoints) {
+            padding-left: $o-horizontal-padding*2;
+        }
+    }
+    @mixin o-form-sheet-inner-right-padding {
+        padding-right: $o-horizontal-padding;
+        @include media-breakpoint-between(lg, xl, $o-extra-grid-breakpoints) {
+            padding-right: $o-horizontal-padding*2;
+        }
+    }
+    // Compensate margins
+    @mixin o-form-sheet-negative-margin {
+        margin-left: -$o-horizontal-padding;
+        margin-right: -$o-horizontal-padding;
+        @include media-breakpoint-between(lg, xl, $o-extra-grid-breakpoints) {
+            margin-left: -$o-horizontal-padding*2;
+            margin-right: -$o-horizontal-padding*2;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        flex-flow: column nowrap;
+        min-height: 100%;
+    }
+
+    // Sheet
+    .o_form_sheet_bg {
+        flex: 1 0 auto;
+        background-color: $o-webclient-background-color;
+        border-bottom: 1px solid gray('300');
+
+        > .o_form_sheet {
+            @include make-container();
+            @include make-container-max-widths();
+
+            background-color: $o-view-background-color;
+            border: 1px solid gray('400');
+            box-shadow: 0 5px 20px -15px black;
+            margin: $o-sheet-vpadding*0.2 auto;
+            @include media-breakpoint-up(md) {
+                margin: $o-sheet-vpadding*0.5 auto;
+            }
+            padding: $o-sheet-vpadding;
+            @include o-form-sheet-inner-right-padding;
+            @include o-form-sheet-inner-left-padding;
+
+            // Selection
+            > .o_selection {
+                float: right;
+            }
+        }
+    }
+
+    // Chatter
+    > .oe_chatter {
+        flex: 1000 0 auto;
+        @include make-container();
+        @include make-container-max-widths();
+        padding: $grid-gutter-width*0.25 0;
+    }
+
+    @include media-breakpoint-up(xxl, $o-extra-grid-breakpoints) {
+        flex-flow: row nowrap;
+        height: 100%;
+
+        > .o_form_sheet_bg {
+            flex: 1 1 auto; // Side chatter is disabled if this has to shrink but this was added for safety
+            width: $dr-form-sheet-min-width + 2 * $o-horizontal-padding;
+            // max-width: map-get($container-max-widths, xl) + 2 * $o-horizontal-padding; // would be logical but breaks no-chatter form views
+            padding: 0 $o-horizontal-padding;
+            overflow: auto;
+            border-bottom: none;
+
+            > :not(.o_form_sheet) {
+                margin-left: -$o-horizontal-padding;
+                margin-right: -$o-horizontal-padding;
+            }
+            > .o_form_sheet {
+                width: 100%;
+                max-width: map-get($container-max-widths, xl);
+            }
+        }
+        > .oe_chatter {
+            flex: 1 1 auto; // Side chatter is disabled if this has to shrink but this was added for safety
+            width: $dr-chatter-min-width;
+            padding: 0;
+            overflow: auto;
+            border-left: 1px solid gray('300');
+            background-color: white;
+
+            .o_chatter_topbar {
+                margin: 0;
+                padding: 0;
+
+                > .btn, > .o_followers {
+                    padding-top: 0;
+                    padding-bottom:0;
+                    height: $o-statusbar-height;
+                    line-height: $o-statusbar-height - ($o-root-font-size * ($input-btn-padding-y/1rem)); // FIXME
+
+                    .dropdown-menu {
+                        line-height: $line-height-base;
+                    }
+                }
+                > .btn:first-child {
+                    padding: 0 $o-horizontal-padding;
+                    border-left: none!important;
+                }
+                .o_followers {
+                    padding-right: $o-horizontal-padding;
+                }
+            }
+            &.o_chatter_composer_active .o_chatter_topbar {
+                > .btn.o_active {
+                    border-width: 0 1px;
+                }
+            }
+            .o_thread_composer {
+                border-width: 1px 0;
+                margin-top: 0;
+
+                // have mention drowdown below composer
+                .o_composer_mention_dropdown {
+                    position: absolute;
+                    top: 100%;
+
+                    > .dropdown-menu {
+                        top: 100%;
+                        bottom: auto;
+                    }
+                }
+            }
+            .o_followers_title_box {
+                margin-left: $o-horizontal-padding/2;
+
+                .dropdown-toggle {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

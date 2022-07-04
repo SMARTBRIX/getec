@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<record model="ir.ui.view" id="tenancy_form">
+    <field name="name">tenancy.form</field>
+    <field name="model">property.tenancy</field>
+    <field name="arch" type="xml">
+        <form string="Tenancy Form">
+            <header>
+                <field name="stage_id" widget="statusbar" options="{'clickable': '1'}" />
+            </header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="property_id"/>
+                        <field name="type"/>
+                        <field name="partner_id"/>
+                        <field name="contractual_partner_ids" widget="many2many_tags"/>
+                        <field name="resident_ids" widget="many2many_tags"/>
+                        <field name="rent_product_id" required="1"/>
+                        <field name="company_id"/>
+                    </group>
+                    <group>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="billing_type"/>
+                        <field name="property_cost_type_ids" invisible="1"/>
+                        <field name="cost_type_ids" domain="[('id', 'in', property_cost_type_ids)]" widget="many2many_tags"/>
+                        <field name="documents"  widget="dr_field_multi_attachments"/>
+                        <field name="template_id"/>
+                        <field name="heating_cost_type_id" required="1"/>
+                        <field name="ancillary_cost_type_id" required="1"/>
+                    </group>
+                </group>
+                <group string="Rent Price">
+                    <field name="rent_ids" context="{'property_id': property_id, 'resident_ids': resident_ids}" nolabel="1" colspan="4">
+                        <tree editable="bottom">
+                            <field name="date_start" required="1"/>
+                            <field name="rent"/>
+                            <field name="heating_costs"/>
+                            <field name="ancillary_costs"/>
+                            <!-- <field name="combined_costs"/> -->
+                            <!-- <field name="advance_payment"/> -->
+                            <!-- <field name="flatrate_rent"/> -->
+                            <field name="billing_period" required="1"/>
+                            <field name="day_of_invoice" required="1"/>
+                            <field name="space" optional="hide"/>
+                            <field name="heating_space" optional="hide"/>
+                            <field name="persons" optional="hide"/>
+                            <field name="co_owenership" optional="hide"/>
+                        </tree>
+                    </field>
+                </group>
+                <notebook>
+                    <page name="contract" string="Tenancy Contract">
+                        <field name="contract_text" nolabel="1"/>
+                    </page>
+                </notebook>
+            </sheet>
+             <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                <field name="activity_ids" widget="mail_activity"/>
+                <field name="message_ids" widget="mail_thread"/>
+             </div> 
+        </form>
+    </field>
+</record>
+<record model="ir.ui.view" id="quick_create_tenancy_form">
+    <field name="name">tenancy.form</field>
+    <field name="model">property.tenancy</field>
+    <field name="arch" type="xml">
+        <form string="Tenancy Form">
+            <group>
+                <field name="name" required="1"/>
+            </group>
+        </form>
+    </field>
+</record>
+<record model="ir.ui.view" id="tenancy_list">
+    <field name="name">tenancy.list</field>
+    <field name="model">property.tenancy</field>
+    <field name="arch" type="xml">
+        <tree string="Tenancy list">
+            <field name="name"/>
+    		<field name="property_id"/>
+    		<field name="type"/>
+            <field name="partner_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="billing_type"/>
+		</tree>
+    </field>
+</record>
+<record model="ir.ui.view" id="tenancy_kanban">
+    <field name="name">tenancy.kanban</field>
+    <field name="model">property.tenancy</field>
+    <field name="arch" type="xml">
+        <kanban default_group_by="stage_id" class="o_res_partner_kanban" on_create="quick_create" quick_create_view="property_administration.quick_create_tenancy_form" archivable="false">
+            <field name="stage_id" />
+            <field name="property_id"/>
+            <field name="type"/>
+            <field name="partner_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="billing_type"/>
+            <field name="id"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                         
+                        <t t-set="placeholder" t-value="'/base/static/img/company_image.png'"/>
+                        <div class="o_kanban_image_fill_left o_kanban_image_full" t-attf-style="background-image: url(#{kanban_image('property.tenancy', 'cover_photo', record.id.raw_value, placeholder)})" role="img"/>
+                        <div class="oe_kanban_details">
+                            <strong class="o_kanban_record_title">
+                                <field name="name"/>
+                            </strong>
+                        
+                            <div>
+                                 <field name="property_id"/>
+                            </div>
+                            <div>
+                                 <field name="type" />
+                            </div>
+                            <div>
+                                 <field name="partner_id"/>
+                            </div>
+                            <div>
+                                 <field name="billing_type" />
+                            </div>
+                            <div>
+                                 <field name="date_start" t-options='{"widget": "date"}'/>
+                                 <span> - <field name="date_end" t-options='{"widget": "date"}'/></span>
+                           </div>
+
+                        <!--     <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                   <div>
+                                     <field name="date_start" t-options='{"widget": "date"}'/>
+                                     <span> - <field name="date_end" t-options='{"widget": "date"}'/></span>
+                                   </div>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                     
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="oe_clear"/>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+<record id="tenancy_search_view" model="ir.ui.view">
+    <field name="name">tenancy.search.view</field>
+    <field name="model">property.tenancy</field>
+    <field name="arch" type="xml">
+        <search>
+            <filter string="Current Tenancies" name="tenancy_search" domain="[('date_start', '&lt;', context_today().strftime('%Y-%m-%d')), ('date_end', '&gt;', context_today().strftime('%Y-%m-%d'))]">
+            </filter>
+
+        </search>
+    </field>
+</record>
+<record model="ir.actions.act_window" id="action_list_tenancy">
+    <field name="name">Tenancies</field>
+    <field name="res_model">property.tenancy</field>
+    <field name="view_mode">kanban,tree,form</field>
+    <field name="context">{'search_default_tenancy_search':1}</field>
+</record>
+
+<menuitem id="menu_tenancy" parent="main_menu_property_admin"
+          action="action_list_tenancy" sequence="20"/>
+<!-- Tenancy Stage -->
+<record model="ir.ui.view" id="tenancy_stage_list">
+    <field name="name">tenancy.stage.list</field>
+    <field name="model">tenancy.stage</field>
+    <field name="arch" type="xml">
+        <tree string="Tenancy Stage list" editable="bottom">
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+<record model="ir.actions.act_window" id="action_list_tenancy_stage">
+    <field name="name">Tenancy Stage</field>
+    <field name="res_model">tenancy.stage</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_tenancy_stage" parent="main_menu_property_admin"
+          action="action_list_tenancy_stage" sequence="80"/>
+</odoo>

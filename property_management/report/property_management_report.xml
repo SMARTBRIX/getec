@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="paper_format_a4_portrait" model="report.paperformat">
+        <field name="name">A4 Manifest Landscape</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="property_management_report_id"
+            string="Expose (detail)"
+            model="property.property"
+            report_type="qweb-html"
+            name="property_management.property_management_report_templates"
+            file="property_management.property_management_report_templates"
+            print_report_name="'Property - %s' % (object.name)"
+            paperformat="property_management.paper_format_a4_portrait"
+    />
+    <template id="property_management_report_templates">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-foreach="docs" t-as="property">
+                    <t t-call="property_management.property_management_report_template"/>
+                </t>
+            </div>
+        </t>
+    </template>
+    <template id="property_management_report_template">
+        <div class="page">
+            <div class="container">
+                <div class="col-12 mb-3">
+                    <div class="text-center">
+                        <img class="img img-fluid m-auto" style="width: 460px;"
+                             src="/property_management/static/src/imgs/Mallorca Dream Living.png"/>
+                    </div>
+                </div>
+                <div class="col-12 mb-2 pb-2 p-0">
+                    <div class="text-center pb-3">
+                        <img t-if="property.cover_photo"
+                             t-att-src="'data:image/png;base64,%s' % to_text(property.cover_photo)"
+                             class="img img-fluid"/>
+                    </div>
+                    <div class="text-center mt-3 pb-3">
+                        <h1 class="pt-4">
+                            <t t-esc="property.external_headline"/>
+                        </h1>
+                        <h6 t-if="property.reference_id">Ref.
+                            <span t-esc="property.reference_id"/>
+                        </h6>
+                    </div>
+                </div>
+                <div class="row mt-3 text-muted d-flex">
+                    <div style="margin-top: 24px;"
+                         t-att-class="'col-6 text-center' if property.purchase_price != 0 else 'col-4 text-center'"
+                         t-if="property.purchase_price != 0">
+                        <h2>
+                            Purchase Price
+                        </h2>
+
+                    </div>
+                    <div t-att-class="'col-6 text-center' if property.purchase_price != 0 else 'col-4 text-center'"
+                         t-if="property.rent_incl_heat != 0">
+                        <h2>
+                            Mietpreis
+                        </h2>
+                        <p>Rent
+                            <br/>
+                            <span style="font-size: 20px;">
+                                (including heating)
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-4 text-center" t-if="property.rent_price != 0">
+
+                        <h2>
+                            Rent
+                            <br/>
+                            <span style="font-size: 20px;">
+                                (whithout heating)
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row mb-3 text-muted mb-2 pb-3">
+                    <div t-att-class="'col-6 text-center' if property.purchase_price != 0 else 'col-4 text-center'"
+                         t-if="property.purchase_price != 0">
+                        <h4 class="my-1 text-primary"
+                            t-field="property.purchase_price"
+                            t-options="{'widget': 'property.monetary'}"/>
+
+                    </div>
+                    <div t-att-class="'col-6 text-center' if property.purchase_price != 0 else 'col-4 text-center'"
+                         t-if="property.rent_incl_heat != 0">
+                        <h2>
+                            Mietpreis
+                        </h2>
+                        <h4 class="my-1 text-primary"
+                            t-field="property.rent_incl_heat"
+                            t-options="{'widget': 'property.monetary'}"/>
+                    </div>
+                    <div class="col-4 text-center" t-if="property.rent_price != 0">
+                        <h4 class="my-1 text-primary" t-field="property.rent_price"
+                            t-options="{'widget': 'property.monetary'}"/>
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3 pt-4" style="page-break-inside: avoid;">
+                    <div class="col-2 text-center"
+                         t-if="property.plot_area">
+                        <img style="max-height: 40px;"
+                             src="/theme_realestate/static/src/img/plot_area.png"/>
+                        <div>Plot area</div>
+                        <h5 class="mt-2">
+                            <t t-esc="property.plot_area"/>
+                            m
+                            <sup>2</sup>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center"
+                         t-if="property.living_space">
+                        <img style="max-height: 40px;"
+                             src="/theme_realestate/static/src/img/living_space.png"/>
+                        <t t-if="property.is_commercial">
+                            <div>Space</div>
+                        </t>
+                        <t t-else="">
+                            <div>Living space</div>
+                        </t>
+                        <h5 class="mt-2">
+                            <t t-esc="property.living_space"/>
+                            m
+                            <sup>2</sup>
+                        </h5>
+                    </div>
+                    <div class="col-2 text-center"
+                         t-if="property.bed_rooms">
+                        <img style="max-height: 40px;"
+                             src="/theme_realestate/static/src/img/bedroom.png"/>
+                        <div>Bedrooms</div>
+                        <h5 class="mt-2" t-esc="property.bed_rooms"/>
+                    </div>
+                    <div class="col-2 text-center"
+                         t-if="property.bath_rooms">
+                        <img style="max-height: 40px;"
+                             src="/theme_realestate/static/src/img/bathroom.png"/>
+                        <div>Bathrooms</div>
+                        <h5 class="mt-2" t-esc="property.bath_rooms"/>
+                    </div>
+                    <div class="col-2 text-center"
+                         t-if="property.no_of_garages">
+                        <img style="max-height: 40px;"
+                             src="/theme_realestate/static/src/img/garage.png"/>
+                        <div>Garages</div>
+                        <h5 class="mt-2" t-esc="property.no_of_garages"/>
+                    </div>
+                    <div class="col-2 text-center"
+                         t-if="property.no_of_parking">
+                        <img style="max-height: 40px;"
+                             src="/theme_realestate/static/src/img/parking.png"/>
+                        <div>Parking</div>
+                        <h5 class="mt-2" t-esc="property.no_of_parking"/>
+                    </div>
+                </div>
+                <t t-set="count" t-value="1"/>
+                <t t-set="image_lst" t-value="property.image_format(property.public_photos_ids)"/>
+                <div class="row" t-foreach="image_lst" t-as="lst" style="page-break-inside: avoid;">
+                    <t t-foreach="lst" t-as="public_photo">
+                        <div class="item col-6 mt-2 mb-2">
+                            <img t-if="public_photo.sudo().datas"
+                                 t-att-src="'data:image/png;base64,%s' % to_text(public_photo.sudo().datas)"
+                                 class="img img-fluid w-100"/>
+                        </div>
+                    </t>
+                </div>
+                <!--
+                                <t t-foreach="image_lst" t-as="i">
+                                    <p style="page-break-before:always;"/>
+                                    <div class="row" t-foreach="i" t-as="lst">
+                                        <t t-foreach="lst" t-as="public_photo">
+                                            <div class="item col-6 pt-3 pb-3">
+                                                <img t-if="public_photo.sudo().datas"
+                                                     t-att-src="'data:image/png;base64,%s' % to_text(public_photo.sudo().datas)"
+                                                     class="img img-fluid w-100"/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </t>
+                -->
+<!--                <p style="page-break-before:always;"/>-->
+                <div class="row" style="page-break-inside: avoid;">
+                    <div class="col-12 my-3 dr-description">
+                        <div class="border shadow-sm rounded">
+                            <div class="bg-200 shadow-sm">
+                                <h5 class="p-3 m-0">Description</h5>
+                                <hr class="m-0"/>
+                            </div>
+                            <div class="p-4">
+                                <t t-if="property._is_html_field_value_set('freitext')">
+                                    <div class="lead" t-field="property.freitext"/>
+                                </t>
+
+                                <t t-if="property._is_html_field_value_set('location_info')">
+                                    <hr/>
+                                    <h5 class="py-2">Location</h5>
+                                    <div class="lead" t-field="property.location_info"/>
+                                </t>
+                                <t t-if="property._is_html_field_value_set('furnishing_info')">
+                                    <hr/>
+                                    <h5 class="py-2">Furnishing</h5>
+                                    <div class="lead" t-field="property.furnishing_info"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="page-break-inside: avoid;" t-if="property.property_features_ids">
+                    <div class="col-12 my-3 dr-features">
+                        <div class="border shadow-sm rounded">
+                            <div class="bg-200 shadow-sm">
+                                <h5 class="p-3 m-0">Features</h5>
+                                <hr class="m-0"/>
+                            </div>
+                            <t t-set="property_features_ids"
+                               t-value="property.property_features(property.property_features_ids)"/>
+
+                            <div class="row px-4" t-foreach="property_features_ids" t-as="f">
+                                <div t-foreach="f" t-as="feature"
+                                     class="col-3 my-2">
+                                    <h6 t-field="feature.feature_id"/>
+                                    <div t-esc="', '.join(feature.value_ids.mapped('name'))"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <style>
+                    .leaflet-control-zoom{
+                    display:none;
+                    }
+                </style>
+                <link rel="stylesheet" type="text/scss"
+                      href="/theme_realestate/static/lib/leaflet/leaflet.css"/>
+                <script type="text/javascript" src="/theme_realestate/static/lib/leaflet/leaflet.js"/>
+                <div class="row" style="page-break-inside: avoid;">
+                    <div class="col-12 my-3 dr-map">
+                        <div class="border shadow-sm rounded">
+                            <div class="bg-200 shadow-sm">
+                                <h5 class="p-3 m-0">Map</h5>
+                                <hr class="m-0"/>
+                            </div>
+                            <div class="p-4">
+                                <div id="leaflet_map" t-att-data-latitude="property.latitude"
+                                     t-att-data-longitude="property.longitude"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <t t-if="property.property_features_ids">
+
+                    <style>
+                        #leaflet_map {
+                        height: 250px;
+                        width:800px;
+                        }
+                    </style>
+                </t>
+                <t t-else="">
+                    <style>
+                        #leaflet_map {
+                        height: 395px;
+                        width:800px;
+                        }
+                    </style>
+                </t>
+                <script>
+                    var latitude =
+                    <t t-if="property.latitude">
+                        <t t-esc="property.latitude"/>
+                    </t>
+                    ;
+                    var longitude =
+                    <t t-if="property.latitude">
+                        <t t-esc="property.longitude"/>
+                    </t>
+                    ;
+                    var map = L.map('leaflet_map', {
+                    attributionControl: false,
+                    doubleClickZoom: false,
+                    maxZoom: 18,
+                    boxZoom: false,
+                    touchZoom: false,
+                    }).setView([latitude, longitude], 16);
+                    L.marker([latitude, longitude]).addTo(map);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+                </script>
+<!--                <p style="page-break-before:always;"/>-->
+                <div class="col-12 my-3 dr-energy-certificate pt-2 pb-3 px-0" style="page-break-inside: avoid;">
+                    <div class="border shadow-sm rounded">
+                        <div class="bg-200 shadow-sm">
+                            <h5 class="p-3 m-0">Energy Certificate</h5>
+                            <hr class="m-0"/>
+                        </div>
+                        <div class="p-4">
+                            <table t-attf-class="dr-property-energy w-100 mx-auto #{'' if property.eec else 'dr-property-energy-disable'}">
+                                <tbody>
+                                    <tr>
+                                        <td class="energy-heading-cell">
+                                        </td>
+                                        <td class="energy-heading-cell">
+                                            Emission kWh / m per year
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="['A+', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']" t-as="rating">
+                                        <tr>
+                                            <td class="energy-cell mt-0">
+                                                <div t-attf-class="energy-rating energy-#{rating == 'A+' and 'Aplus' or rating}">
+                                                    <t
+                                                            t-esc="rating"/>
+                                                </div>
+                                            </td>
+                                            <td class="energy-cell">
+                                                <div class="d-flex justify-content-end"
+                                                     t-if="property.eec == rating">
+                                                    <div t-attf-class="energy-value energy-#{rating == 'A+' and 'Aplus' or rating} w-50">
+                                                        <t
+                                                                t-esc="property.energy_characteristic"/>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 my-3 energieausweis pt-3 pb-3 px-0" style="page-break-inside: avoid;">
+                    <div class="border shadow-sm rounded">
+                        <div class="bg-200 shadow-sm">
+                            <h5 class="p-3 m-0">Energieausweis</h5>
+                            <hr class="m-0"/>
+                        </div>
+                        <div class="p-4">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <b>Zertifikatstype</b>
+                                        </th>
+                                        <td>
+                                            <t t-foreach="property._fields['certificate_type'].selection"
+                                               t-as="type">
+                                                <t t-if="type[0]==property.certificate_type">
+                                                    <t t-esc="type[1]"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <b>Energieeffizienzklasse</b>
+                                        </th>
+                                        <td>
+                                            <t t-esc="property.eec"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <b>Energieverbrauch</b>
+                                        </th>
+                                        <td>
+                                            <t t-esc="property.energy_characteristic"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <b>Energiequelle</b>
+                                        </th>
+                                        <td>
+                                            <t t-esc="property.energy_source"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <b>Baujahr</b>
+                                        </th>
+                                        <td>
+                                            <t t-esc="property.construction_year"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 my-3 comission pt-4 pb-4 px-0" style="page-break-inside: avoid;">
+                    <div class="border shadow-sm rounded">
+                        <div class="bg-200 shadow-sm">
+                            <h5 class="p-3 m-0">Comission</h5>
+                            <hr class="m-0"/>
+                        </div>
+                        <div class="p-4">
+                            <p>
+                                The customer Commission is
+                                <span t-field="property.provision_client"
+                                      t-options="{'widget': 'property.monetary'}"/>
+                                <!--                                <t t-esc="property.provision_client"/>-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <t t-set="protected_imgs" t-value="property.image_format(property.protected_photos_ids)"/>
+                <div class="col-12 my-3 energieausweis pt-3 pb-3 px-0 " t-if="protected_imgs"
+                     style="page-break-inside: avoid;">
+                    <p style="page-break-before:always;"/>
+                    <div class="border shadow-sm rounded">
+                        <div class="bg-200 shadow-sm">
+                            <h5 class="p-3 m-0">Further informations</h5>
+                            <hr class="m-0"/>
+                        </div>
+                        <div class="p-4">
+                            <t t-foreach="protected_imgs" t-as="i">
+                                <p style="page-break-before:always;"/>
+                                <div class="row" t-foreach="i" t-as="lst">
+                                    <t t-foreach="lst" t-as="protected_photo">
+                                        <div class="item col-6 mt-2 mb-2">
+                                            <img t-if="protected_photo.sudo().datas"
+                                                 t-att-src="'data:image/png;base64,%s' % to_text(protected_photo.sudo().datas)"
+                                                 class="img img-fluid w-100"/>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    <p style="page-break-before:always;"/>
+                </div>
+                <div class="col-12 my-3 energieausweis px-0 pb-3 pt-4" style="page-break-inside: avoid;">
+                    <div class="border shadow-sm rounded">
+                        <div class="bg-200 shadow-sm">
+                            <h5 class="p-3 m-0">Your personal contact</h5>
+                            <!--                            <hr class="m-0"/>-->
+                        </div>
+                        <div class="p-4">
+                            <t t-set="lead"
+                               t-value="property.sales_person_id"/>
+                            <div class="row">
+                                <div class="col-3 text-center">
+                                    <img t-if="lead.partner_id.image_128"
+                                         t-att-src="'data:image/png;base64,%s' % to_text(lead.partner_id.image_128)"
+                                         class="mx-auto p-1 img img-fluid mr-3"/>
+                                    <b>
+                                        <t t-esc="lead.partner_id.name"/>
+                                    </b>
+                                </div>
+                                <div class="col-9 my-3">
+                                    <table class="table-sm w-100">
+                                        <tbody>
+                                            <tr>
+                                                <th>Phone</th>
+                                                <td>
+                                                    <span t-field="lead.partner_id.phone_sanitized"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email</th>
+                                                <td>
+                                                    <span t-field="lead.partner_id.email"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Website</th>
+                                                <td>
+                                                    <span t-field="lead.partner_id.website"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Business Hours</th>
+                                                <td>
+                                                    <t t-esc="lead.partner_id.business_hours"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

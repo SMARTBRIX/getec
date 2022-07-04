@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<record model="ir.ui.view" id="rent_form">
+    <field name="name">rent.form</field>
+    <field name="model">property.rent</field>
+    <field name="arch" type="xml">
+        <form string="Rent Form">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="tenancy_id"/>
+                        <field name="billing_type" invisible="1"/>
+                        <field name="rent"  attrs="{'invisible': [('billing_type', '=', 'flatrate')]}" />
+                        <field name="heating_costs" attrs="{'invisible': [('billing_type', '!=', 'separate')]}"/>
+                        <field name="ancillary_costs" attrs="{'invisible': [('billing_type', '!=', 'separate')]}"/>
+                    </group>
+                    <group>
+                        <!-- <field name="combined_costs"/> -->
+                        <!-- <field name="advance_payment" attrs="{'invisible': [('billing_type', '!=', 'combined')]}"/> -->
+                        <!-- <field name="flatrate_rent" attrs="{'invisible': [('billing_type', '!=', 'flatrate')]}"/> -->
+                        <field name="date_start"/>
+                        <field name="billing_period"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+<record model="ir.ui.view" id="rent_list">
+    <field name="name">rent.list</field>
+    <field name="model">property.rent</field>
+    <field name="arch" type="xml">
+        <tree string="Rent list">
+    		<field name="tenancy_id"/>
+            <field name="rent"/>
+            <field name="heating_costs"/>
+            <field name="ancillary_costs"/>
+            <!-- <field name="combined_costs"/> -->
+            <!-- <field name="advance_payment"/> -->
+            <!-- <field name="flatrate_rent"/> -->
+            <field name="date_start"/>
+		</tree>
+    </field>
+</record>
+<!-- <record model="ir.actions.act_window" id="action_list_rent">
+    <field name="name">Rent</field>
+    <field name="res_model">property.rent</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_rent" parent="main_menu_open"
+          action="action_list_rent"/> -->
+</odoo>

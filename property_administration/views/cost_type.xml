@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="main_menu_property_admin"
+        web_icon="property_administration,static/src/img/utilitybilling.png" 
+        name="Property Administration" />
+
+    <menuitem id="menu_configuration"
+        name="Configuration" 
+        parent="main_menu_property_admin" sequence="100"/>
+
+    <record model="ir.ui.view" id="cost_type_categ_list">
+        <field name="name">cost.type.categ.list</field>
+        <field name="model">property.cost.category</field>
+        <field name="arch" type="xml">
+            <tree string="Cost Category" editable="bottom">
+                <field name="name"/>
+                <field name="is_splittable"/>
+                <field name="is_advance_payment"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_list_cost_category">
+        <field name="name">Cost Category</field>
+        <field name="res_model">property.cost.category</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem id="menu_cost_category" parent="menu_configuration"
+              action="action_list_cost_category" />
+
+
+    <record model="ir.ui.view" id="cost_type_list">
+        <field name="name">cost.type.list</field>
+        <field name="model">property.cost.type</field>
+        <field name="arch" type="xml">
+            <tree string="Cost Type list" editable="bottom">
+        		<field name="name" required="1"/>
+        		<field name="allocation_formula" required="1"/>
+                <field name="property_cost_category_id" required="1"/>
+                <field name="product_id" required="1"/>
+    		</tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_list_cost_type">
+        <field name="name">Cost Types</field>
+        <field name="res_model">property.cost.type</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem id="menu_cost_type" parent="menu_configuration"
+              action="action_list_cost_type" />
+</odoo>

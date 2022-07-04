@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+    ============================================================================
+    Properties Page
+    ============================================================================
+    -->
+    <template id="property_searchbar" name="Property Searchbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-3 shadow dr-property-search-container border rounded">
+                        <form>
+                            <div class="form-row justify-content-between align-items-center">
+                                <div class="form-group mb-xl-0 col-lg-4 col-xl-auto">
+                                    <h6>Search :</h6>
+                                    <input type="text" name="reference" class="form-control"
+                                           t-att-value="request.httprequest.args.get('reference')"
+                                           placeholder="Search..."/>
+                                </div>
+                                <div class="form-group mb-xl-0 col-lg-4 col-xl-auto">
+                                    <h6>Sell Type :</h6>
+                                    <a href="#" class="dr-filter-btn" data-toggle="collapse"
+                                       data-target="#sell-type-collapse">
+                                        <span t-if="request.httprequest.args.get('sell_type')">
+                                            <t t-esc="selected_sell_type_str"/>
+                                        </span>
+                                        <span t-else="">Select</span>
+                                    </a>
+                                </div>
+                                <div class="form-group mb-xl-0 col-lg-4 col-xl-auto">
+                                    <h6>Property Type :</h6>
+                                    <a href="#" class="dr-filter-btn" data-toggle="collapse"
+                                       data-target="#property-type-collapse">
+                                        <span t-if="request.httprequest.args.get('property_type')">
+                                            <t t-esc="selected_property_type_str"/>
+                                        </span>
+                                        <span t-else="">Select</span>
+                                    </a>
+                                </div>
+                                <div class="form-group mb-xl-0 col-lg-4 col-xl-auto">
+                                    <h6>Property Location :</h6>
+                                    <a href="#" class="dr-filter-btn" data-toggle="collapse"
+                                       data-target="#property-location-collapse">
+                                        <span t-if="request.httprequest.args.get('property_sublocation')">
+                                            <t t-esc="selected_property_sublocation_str"/>
+                                        </span>
+                                        <span t-else="">Select</span>
+                                    </a>
+                                </div>
+                                <div class="form-group mb-xl-0 col-lg-4 col-xl-auto">
+                                    <h6>Price Range :</h6>
+                                    <span class="d-none dr-currency-symbol"><t t-esc="currency_symbol"/></span>
+                                    <a href="#" class="dr-filter-btn" data-toggle="collapse"
+                                       data-target="#price-range-collapse">
+                                        <t t-set="from_price" t-value="request.httprequest.args.get('from_price')"/>
+                                        <t t-set="to_price" t-value="request.httprequest.args.get('to_price')"/>
+                                        <span t-if="from_price or to_price">
+                                            <t t-esc="currency_symbol"/>
+                                            <t t-esc="from_price"/> - <t t-esc="to_price"/>
+                                        </span>
+                                        <span t-else="">Select</span>
+                                    </a>
+                                </div>
+                                <div class="form-group mb-xl-0 col-lg-4 col-xl-auto">
+                                    <h6>More Filters :</h6>
+                                    <a href="#" class="dr-filter-btn" data-toggle="collapse"
+                                       data-target="#more-filters-collapse">
+                                        <span>Select</span>
+                                    </a>
+                                </div>
+                                <div class="form-group mb-xl-0 col-lg-12 col-xl-auto">
+                                    <button type="submit"
+                                            class="btn btn-primary btn-lg btn-block dr-properties-search-btn">
+                                        Search</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="collapse dr-root-collapse" id="sell-type-collapse">
+                                    <div class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                        <h6>Sell Type</h6>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="sell-type-buy" name="sell-type"
+                                                   class="custom-control-input" value="buy"
+                                                   t-att-checked="request.httprequest.args.get('sell_type') == 'buy' or None"/>
+                                            <label id="buy" class="custom-control-label" for="sell-type-buy">Buy</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="sell-type-rent" name="sell-type"
+                                                   class="custom-control-input" value="rent"
+                                                   t-att-checked="request.httprequest.args.get('sell_type') == 'rent' or None"/>
+                                            <label id="rent" class="custom-control-label" for="sell-type-rent">
+                                                Rent</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="sell-type-tolease" name="sell-type"
+                                                   class="custom-control-input" value="tolease"
+                                                   t-att-checked="request.httprequest.args.get('sell_type') == 'tolease' or None"/>
+                                            <label id="tolease" class="custom-control-label" for="sell-type-tolease">
+                                                Lease</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collapse dr-root-collapse" id="property-type-collapse">
+                                    <div class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                        <h6>Property Type</h6>
+                                        <t t-foreach="property_types" t-as="property_type">
+                                            <div class="custom-control custom-checkbox my-2">
+                                                <input type="checkbox" class="custom-control-input"
+                                                       t-att-value="property_type.id" t-att-string="property_type.name"
+                                                       t-attf-id="property-type-#{property_type.id}"
+                                                       t-att-checked="selected_property_type_ids and property_type.id in selected_property_type_ids or None"/>
+                                                <label class="custom-control-label"
+                                                       t-attf-for="property-type-#{property_type.id}"><t
+                                                        t-esc="property_type.name"/></label>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="collapse dr-root-collapse" id="property-location-collapse">
+                                    <div class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                        <h6>Property Location</h6>
+                                        <div class="row">
+                                            <div class="col-12 col-lg-6 mt-3" t-foreach="property_locations"
+                                                 t-as="property_location">
+                                                <t t-set="has_any_child_selected"
+                                                   t-value="bool(set(property_locations[property_location].ids or []) &amp; set(selected_property_sublocation_ids or []))"/>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                               t-att-value="property_location[0]"
+                                                               t-att-string="property_location[1]"
+                                                               t-attf-id="property-location-#{property_location[0]}"/>
+                                                        <label class="custom-control-label heading-style"
+                                                               t-attf-for="property-location-#{property_location[0]}"><t
+                                                                t-esc="property_location[1]"/></label>
+                                                    </div>
+                                                    <a t-attf-class="dr-child-collapse dr-filter-btn ml-2 text-body #{has_any_child_selected and 'collapsed' or ''}"
+                                                       data-toggle="collapse"
+                                                       t-attf-data-target="#collapse-property-location-#{property_location[0]}"
+                                                       role="button"
+                                                       t-att-aria-expanded="has_any_child_selected and 'true' or None"/>
+                                                </div>
+                                                <div t-attf-class="collapse dr-child-collapse #{has_any_child_selected and 'show' or ''}"
+                                                     t-attf-id="collapse-property-location-#{property_location[0]}">
+                                                    <div t-foreach="property_locations[property_location]"
+                                                         t-as="sub_location"
+                                                         class="custom-control custom-checkbox custom-control-inline my-2">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                               t-att-data-parent-id="property_location[0]"
+                                                               t-att-value="sub_location.id"
+                                                               t-att-string="sub_location.name"
+                                                               t-attf-id="property-sub-location-#{sub_location.id}"
+                                                               t-att-checked="selected_property_sublocation_ids and sub_location.id in selected_property_sublocation_ids or None"/>
+                                                        <label class="custom-control-label"
+                                                               t-attf-for="property-sub-location-#{sub_location.id}"><t
+                                                                t-esc="sub_location.name"/></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collapse dr-root-collapse" id="price-range-collapse">
+                                    <div class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                        <h6>Price Range</h6>
+                                        <t t-call="theme_realestate.range_filter">
+                                            <t t-set="_classes" t-value="'w-xl-50 mx-auto'"/>
+                                            <t t-set="prefix_value" t-value="currency_symbol"/>
+                                            <t t-set="show_prefix_slider" t-value="True"/>
+                                            <t t-set="range_max_value" t-value="property_max_price"/>
+                                            <t t-set="range_min_value" t-value="property_min_price"/>
+                                            <t t-set="range_from_value"
+                                               t-value="request.httprequest.args.get('from_price')"/>
+                                            <t t-set="range_to_value"
+                                               t-value="request.httprequest.args.get('to_price')"/>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="collapse dr-root-collapse" id="more-filters-collapse">
+                                    <div id="bedrooms-collpase" class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                        <h6>Bedrooms</h6>
+                                        <div t-foreach="['1','2','3','4','5']" t-as="bedroom"
+                                             class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" t-attf-id="bedroom-#{bedroom}" name="bedroom"
+                                                   t-att-value="bedroom" class="custom-control-input"
+                                                   t-att-checked="request.httprequest.args.get('bedrooms') == bedroom or None"/>
+                                            <label t-if="bedroom >= '5'" class="custom-control-label"
+                                                   t-attf-for="bedroom-#{bedroom}"><t t-esc="bedroom"/>+
+                                                Bedrooms</label>
+                                            <label t-else="" class="custom-control-label"
+                                                   t-attf-for="bedroom-#{bedroom}"><t t-esc="bedroom"/> Bedrooms</label>
+                                        </div>
+                                    </div>
+                                    <div id="bathrooms-collpase" class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                        <h6>Bathrooms</h6>
+                                        <div t-foreach="['1','2','3','4','5']" t-as="bathroom"
+                                             class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" t-attf-id="bathroom-#{bathroom}" name="bathroom"
+                                                   t-att-value="bathroom" class="custom-control-input"
+                                                   t-att-checked="request.httprequest.args.get('bathrooms') == bathroom or None"/>
+                                            <label t-if="bathroom >= '5'" class="custom-control-label"
+                                                   t-attf-for="bathroom-#{bathroom}"><t t-esc="bathroom"/>+
+                                                Bathrooms</label>
+                                            <label t-else="" class="custom-control-label"
+                                                   t-attf-for="bathroom-#{bathroom}"><t t-esc="bathroom"/>
+                                                Bathrooms</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6">
+                                            <div id="parkings-collpase"
+                                                 class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                                <h6>Parkings</h6>
+                                                <div t-foreach="['1','2','3','4','5']" t-as="parking"
+                                                     class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" t-attf-id="parking-#{parking}" name="parking"
+                                                           t-att-value="parking" class="custom-control-input"
+                                                           t-att-checked="request.httprequest.args.get('parkings') == parking or None"/>
+                                                    <label t-if="parking >= '5'" class="custom-control-label"
+                                                           t-attf-for="parking-#{parking}"><t t-esc="parking"/>+
+                                                        Parkings</label>
+                                                    <label t-else="" class="custom-control-label"
+                                                           t-attf-for="parking-#{parking}"><t t-esc="parking"/>
+                                                        Parkings</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xl-6">
+                                            <div id="garages-collpase"
+                                                 class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                                <h6>Garages</h6>
+                                                <div t-foreach="['1','2','3','4','5']" t-as="garage"
+                                                     class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" t-attf-id="garage-#{garage}" name="garage"
+                                                           t-att-value="garage" class="custom-control-input"
+                                                           t-att-checked="request.httprequest.args.get('garages') == garage or None"/>
+                                                    <label t-if="garage >= '5'" class="custom-control-label"
+                                                           t-attf-for="garage-#{garage}"><t t-esc="garage"/>+
+                                                        Garages</label>
+                                                    <label t-else="" class="custom-control-label"
+                                                           t-attf-for="garage-#{garage}"><t t-esc="garage"/>
+                                                        Garages</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xl-6">
+                                            <div id="living-space-collpase"
+                                                 class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                                <h6>Living Space</h6>
+                                                <t t-call="theme_realestate.range_filter">
+                                                    <t t-set="prefix_value" t-value="'m&lt;sup&gt;2&lt;/sup&gt;'"/>
+                                                    <t t-set="prefix_position_after" t-value="True"/>
+                                                    <t t-set="range_max_value"
+                                                       t-value="property_living_space_max_value"/>
+                                                    <t t-set="range_min_value"
+                                                       t-value="property_living_space_min_value"/>
+                                                    <t t-set="range_from_value"
+                                                       t-value="request.httprequest.args.get('property_living_space_from_value')"/>
+                                                    <t t-set="range_to_value"
+                                                       t-value="request.httprequest.args.get('property_living_space_to_value')"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xl-6">
+                                            <div id="plot-area-collpase"
+                                                 class="mt-4 p-3 bg-custom-light-gray border rounded">
+                                                <h6>Plot Area</h6>
+                                                <t t-call="theme_realestate.range_filter">
+                                                    <t t-set="prefix_value" t-value="'m&lt;sup&gt;2&lt;/sup&gt;'"/>
+                                                    <t t-set="prefix_position_after" t-value="True"/>
+                                                    <t t-set="range_max_value" t-value="property_plot_area_max_value"/>
+                                                    <t t-set="range_min_value" t-value="property_plot_area_min_value"/>
+                                                    <t t-set="range_from_value"
+                                                       t-value="request.httprequest.args.get('property_plot_area_from_value')"/>
+                                                    <t t-set="range_to_value"
+                                                       t-value="request.httprequest.args.get('property_plot_area_to_value')"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="range_filter" name="Range Filter">
+        <t t-raw="0"/>
+        <div t-attf-class="dr-range-slider-container p-2 #{_classes}">
+            <div class="dr-range-slider" t-att-data-min="range_min_value" t-att-data-max="range_max_value"
+                 t-att-data-from="range_from_value" t-att-data-to="range_to_value"
+                 t-att-data-prefix="show_prefix_slider and prefix_value or None"/>
+            <div class="form-row align-items-center justify-content-center mt-2">
+                <div class="form-group col-5 col-md-auto">
+                    <div class="input-group">
+                        <div t-if="prefix_value and not prefix_position_after" class="input-group-prepend">
+                            <div class="input-group-text bg-white" t-esc="prefix_value"/>
+                        </div>
+                        <input type="text" class="form-control" name="min_value"
+                               t-att-value="range_from_value or range_min_value" placeholder="From"/>
+                        <div t-if="prefix_value and prefix_position_after" class="input-group-append">
+                            <div class="input-group-text bg-white" t-raw="prefix_value"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-2 col-md-auto text-center ml-md-4">
+                    -
+                </div>
+                <div class="form-group col-5 col-md-auto ml-md-4">
+                    <div class="input-group">
+                        <div t-if="prefix_value and not prefix_position_after" class="input-group-prepend">
+                            <div class="input-group-text bg-white" t-esc="prefix_value"/>
+                        </div>
+                        <input type="text" class="form-control" name="max_value"
+                               t-att-value="range_to_value or range_max_value" placeholder="To"/>
+                        <div t-if="prefix_value and prefix_position_after" class="input-group-append">
+                            <div class="input-group-text bg-white" t-raw="prefix_value"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-danger dr-range-validate text-center mb-0"/>
+        </div>
+    </template>
+
+    <template id="property_item" name="Property Item">
+        <div t-attf-class="card h-100 dr-property-card #{_classes}">
+            <div class="dr-property-card-images position-relative">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a t-attf-href="/real_estate/property/#{property.id}">
+                            <img t-attf-data-src="/website/image/property.property/#{property.id}/cover_photo/500x500"
+                                 class="card-img-top owl-lazy" t-att-alt="property.external_headline"/>
+                        </a>
+                    </div>
+                    <div class="item" t-foreach="property.public_photos_ids" t-as="public_photo">
+                        <a t-attf-href="/real_estate/property/#{property.id}">
+                            <img t-attf-data-src="/web/content/#{public_photo.id}" class="card-img-top owl-lazy"
+                                 t-att-alt="property.external_headline"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="badge dr-property-ref-badge text-dark" t-if="property.reference_id">Ref. <span
+                        t-field="property.reference_id"/></div>
+                <div class="btn btn-group btn-group-sm p-0">
+                    <div class="dr-owl-carousel-prev btn">
+                        <i class="fa fa-chevron-left text-dark"/>
+                    </div>
+                    <div class="dr-owl-carousel-next btn">
+                        <i class="fa fa-chevron-right text-dark"/>
+                    </div>
+                </div>
+                <div class="dr-property-price">
+                    <t t-if="property.for_sale">
+                        <div class="text-dark dr-letter-spacing-2 dr-title">Sale Price</div>
+                        <h6 t-if="property.purchase_price" class="mb-0 text-primary" t-field="property.purchase_price"
+                            t-options="{'widget': 'monetary'}"/>
+                        <h6 t-if="not property.purchase_price" class="mb-0 text-primary">Price on demand</h6>
+                    </t>
+                    <hr class="my-1 dr-linear-style" t-if="property.for_sale and property.for_rent"/>
+                    <t t-if="property.for_rent">
+                        <div t-if="property.rent_incl_heat" class="text-dark dr-letter-spacing-2 dr-title">Rent Price
+                            Including Heating</div>
+                        <div t-else="" class="text-dark dr-letter-spacing-2 dr-title">Rent Price</div>
+                        <h6 class="mb-0 text-primary" t-if="property.rent_incl_heat" t-field="property.rent_incl_heat"
+                            t-options="{'widget': 'monetary'}"/>
+                        <h6 class="mb-0 text-primary" t-else="" t-field="property.rent_price"
+                            t-options="{'widget': 'monetary'}"/>
+                    </t>
+                    <hr class="my-1 dr-linear-style"
+                        t-if="(property.for_sale and property.for_rent) or (property.for_sale) or (property.for_rent)"/>
+                    <t t-if="property.for_lease">
+                        <div t-if="property.is_lease_including_vat" class="text-dark dr-letter-spacing-2 dr-title">Lease
+                            Amount Including VAT</div>
+                        <div t-else="" class="text-dark dr-letter-spacing-2 dr-title">Lease Price</div>
+                        <h6 class="mb-0 text-primary" t-field="property.lease_amount"
+                            t-options="{'widget': 'monetary'}"/>
+                    </t>
+                </div>
+            </div>
+            <div class="p-0 position-relative" style="margin-top:10px !important">
+                <div style="min-height:55px;margin-left:18px !important;margin-right:18px !important;">
+                    <h6><a t-attf-href="/real_estate/property/#{property.id}"><span
+                            t-field="property.external_headline"/></a></h6>
+                    <div class="dr-property-description" t-esc="property.property_info"/>
+                </div>
+            </div>
+            <div class="card-footer bg-white p-0">
+                <ul class="list-inline d-flex align-items-center m-0 dr-property-card-icons-container">
+                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3" t-if="property.plot_area">
+                        <img src="/theme_realestate/static/src/img/plot_area.png"/> <strong
+                            class="d-block d-lg-inline"><t t-esc="property.plot_area"/> m<sup>2</sup></strong>
+                        <div class="small d-none d-lg-block mt-lg-1">Plot area</div>
+                    </li>
+                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                        t-if="property.living_space">
+                        <img src="/theme_realestate/static/src/img/living_space.png"/> <strong
+                            class="d-block d-lg-inline"><t t-esc="property.living_space"/> m<sup>2</sup></strong>
+                        <t t-if="property.is_commercial">
+                            <div class="small d-none d-lg-block mt-lg-1">Space</div>
+                        </t>
+                        <t t-else="">
+                            <div class="small d-none d-lg-block mt-lg-1">Living space</div>
+                        </t>
+                    </li>
+                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3" t-if="property.bed_rooms">
+                        <img src="/theme_realestate/static/src/img/bedroom.png"/> <strong class="d-block d-lg-inline"
+                                                                                          t-esc="property.bed_rooms"/>
+                        <div class="small d-none d-lg-block mt-lg-1">Bedrooms</div>
+                    </li>
+                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                        t-if="property.bath_rooms">
+                        <img src="/theme_realestate/static/src/img/bathroom.png"/> <strong class="d-block d-lg-inline"
+                                                                                           t-esc="property.bath_rooms"/>
+                        <div class="small d-none d-lg-block mt-lg-1">Bathrooms</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="properties" name="Properties">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <section class="s_cover parallax pt128 pb128 bg-black-25" data-scroll-background-ratio="1.6"
+                             data-name="Cover" style="background-image: none;">
+                        <span class="s_parallax_bg oe_img_bg oe_custom_bg"
+                              style="background-image: url('/theme_realestate/static/src/img/content/s_real_estate_search.jpg'); background-position: 50% 0px;"></span>
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="s_title offset-lg-3 col-lg-6" data-name="Title" style="">
+                                    <h1 class="s_title_boxed" style="font-size: 62px; text-align: center;"><font
+                                            style="color: rgb(255, 255, 255); font-size: 36px;"><b>Amazing
+                                        Properties</b></font></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="container">
+                    <div class="row pt-4">
+                        <div class="col-12 mb-2 text-right px-3">
+                            <a class="btn-sm" href="/real_estate/properties">(Clear Filters)</a>
+                        </div>
+                    </div>
+                </div>
+                <t t-call="theme_realestate.property_searchbar"/>
+                <div class="container">
+                    <div class="row pt-4 align-items-center justify-content-between">
+                        <div class="col-12 col-sm-auto my-1 my-sm-0">
+                            <t t-if="len(properties)"><strong t-esc="properties_count"/> Properties found.</t>
+                        </div>
+                        <div class="col-12 col-sm-auto my-1 my-sm-0">
+                            <t t-set="property_sortable_current"
+                               t-value="[sort for sort in properties_sort_by if sort[1] == request.params.get('order', 'published_date desc, create_date desc')]"/>
+                            <div class="dropdown">
+                                <h6 class="d-inline mr-1"><i class="fa fa-filter mr-1"/> Sort By :</h6>
+                                <a role="button" href="#" class="btn btn-link dropdown-toggle p-0 text-body"
+                                   data-toggle="dropdown">
+                                    <t t-if="len(property_sortable_current)">
+                                        <t t-raw="property_sortable_current[0][0]"/>
+                                    </t>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-foreach="properties_sort_by" t-as="sortby">
+                                        <a role="menuitem" rel="noindex,nofollow"
+                                           t-att-href="keep('/real_estate/properties', order=sortby[1])"
+                                           class="dropdown-item">
+                                            <span t-raw="sortby[0]"/>
+                                        </a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container py-4">
+                    <div class="row">
+                        <t t-if="len(properties)">
+                            <div t-foreach="properties" t-as="property" class="col-12 col-md-6 col-lg-4 mb-4">
+                                <t t-call="theme_realestate.property_item"/>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="col-12">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 text-center">
+                                            <img class="img img-fluid mx-auto"
+                                                 src="/theme_realestate/static/src/img/no_property.png"/>
+                                            <h2>We couldn't find any matches!</h2>
+                                            <span>Please try searching something else</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 my-2 d-flex justify-content-center">
+                            <t t-call="portal.pager"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--
+    ============================================================================
+    Property Detail Page
+    ============================================================================
+    -->
+    <template id="property" name="Property">
+        <t t-call="website.layout">
+            <div id="wrap" class="dr-property-page">
+                <!-- Desktop -->
+                <div class="container-fluid px-0 d-none d-lg-block">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    <div class="dr-property-cover-images position-relative h-100 overflow-hidden">
+                                        <div class="owl-carousel owl-theme dr-property-cover-carousel h-100 overflow-hidden">
+                                            <div class="item">
+                                                <img class="img img-fluid owl-lazy"
+                                                     t-attf-data-src="/website/image/property.property/#{property.id}/cover_photo/1800x1800"
+                                                     t-att-alt="property.external_headline"/>
+                                            </div>
+                                            <t t-foreach="property.public_photos_ids" t-as="public_photo">
+                                                <div class="item">
+                                                    <img class="img img-fluid owl-lazy"
+                                                         t-attf-data-src="/web/content/#{public_photo.id}"
+                                                         t-att-alt="property.external_headline"/>
+                                                </div>
+                                            </t>
+                                        </div>
+                                        <div class="btn btn-group">
+                                            <div class="dr-owl-carousel-prev btn btn-primary">
+                                                <i class="fa fa-chevron-left"/>
+                                            </div>
+                                            <div class="dr-owl-carousel-next btn btn-primary">
+                                                <i class="fa fa-chevron-right"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="owl-carousel owl-theme dr-property-cover-thumb-carousel">
+                                        <div class="item">
+                                            <div t-field="property.sudo().cover_photo"
+                                                 t-options='{"widget": "image", "qweb_img_responsive": False, "class": "img img-fluid", "alt-field": "name", "resize": "300x300"}'/>
+                                        </div>
+                                        <t t-foreach="property.public_photos_ids" t-as="public_photo">
+                                            <div class="item">
+                                                <div t-field="public_photo.sudo().datas"
+                                                     t-options='{"widget": "image", "qweb_img_responsive": False, "class": "img img-fluid", "alt-field": "name", "resize": "300x300"}'/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tablet / Mobile -->
+                <div class="container dr-property-grid-image">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4 my-2">
+                                    <img class="img img-fluid dr-cursor-pointer"
+                                         t-attf-src="/website/image/property.property/#{property.id}/cover_photo"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container py-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <ol class="breadcrumb bg-transparent mb-0 p-0">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/real_estate/properties">All Properties</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pb-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-md-auto">
+                                    <h6 t-if="property.reference_id">Ref. <span t-esc="property.reference_id"/></h6>
+                                    <h1 class="h3"><t t-esc="property.external_headline"/></h1>
+                                    <t t-if="not request.env.user.has_group('base.group_public')">
+                                        <t t-set="has_favorite"
+                                           t-value="request.env['crm.lead'].sudo().search([('type', '=', 'opportunity'), ('partner_id', '=', request.env.user.partner_id.id), ('property_id', '=', property.id)])"/>
+                                        <a href="#" t-att-property-id="property.id"
+                                           t-attf-class="btn btn-primary-soft btn-sm mb-2 dr-add-to-favorite-btn #{has_favorite and 'disabled' or ''}"><i
+                                                class="fa fa-star"/> Add to Favorite</a>
+                                    </t>
+                                </div>
+                                <div class="col-md-auto text-md-center">
+                                    <div class="bg-100 border shadow-sm p-2 rounded">
+                                        <t t-if="property.for_sale">
+                                            <div class="text-dark small dr-letter-spacing-2">Sale Price</div>
+                                            <h4 t-if="property.purchase_price" class="my-1 text-primary"
+                                                t-field="property.purchase_price"
+                                               t-options="{'widget': 'monetary'}" />
+                                            <h4 t-if="not property.purchase_price" class="my-1 text-primary">Price on
+                                                demand</h4>
+                                        </t>
+                                        <hr class="my-2 dr-linear-style"
+                                            t-if="property.for_sale and property.for_rent"/>
+                                        <t t-if="property.for_rent">
+                                            <div t-if="property.rent_incl_heat"
+                                                 class="text-dark small dr-letter-spacing-2">Rent Price Including
+                                                Heating</div>
+                                            <div t-else="" class="text-dark small dr-letter-spacing-2">Rent Price</div>
+                                            <h4 class="my-1 text-primary" t-if="property.rent_incl_heat"
+                                                t-field="property.rent_incl_heat"
+                                                t-options="{'widget': 'monetary'}"/>
+                                            <h4 class="my-1 text-primary" t-else="" t-field="property.rent_price"
+                                                t-options="{'widget': 'monetary'}"/>
+                                        </t>
+                                        <hr class="my-2 dr-linear-style"
+                                            t-if="(property.for_sale and property.for_rent) or (property.for_sale) or (property.for_rent)"/>
+                                        <t t-if="property.for_lease">
+                                            <div t-if="property.is_lease_including_vat"
+                                                 class="text-dark small dr-letter-spacing-2">Lease Amount Including
+                                                VAT</div>
+                                            <div t-else="" class="text-dark small dr-letter-spacing-2">Lease Price</div>
+                                            <h4 class="my-1 text-primary" t-field="property.lease_amount"
+                                                t-options="{'widget': 'monetary'}"/>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-3 dr-icons">
+                            <t t-if="request.website.viewref('theme_realestate.left_side_icons').active">
+                                <ul class="list-inline m-0">
+                                    <li class="list-inline-item text-center mr-4 pb-2" t-if="property.plot_area">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/plot_area.png"/>
+                                        <h5 class="mt-2 mb-0">
+                                            <t t-esc="property.plot_area"/>
+                                            m<sup>2</sup>
+                                        </h5>
+                                        <small>Plot area</small>
+                                    </li>
+                                    <li class="list-inline-item text-center mr-4 pb-2" t-if="property.living_space">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/living_space.png"/>
+                                        <h5 class="mt-2 mb-0">
+                                            <t t-esc="property.living_space"/>
+                                            m<sup>2</sup>
+                                        </h5>
+                                        <t t-if="property.is_commercial">
+                                            <small>Space</small>
+                                        </t>
+                                        <t t-else="">
+                                            <small>Living space</small>
+                                        </t>
+                                    </li>
+                                    <li class="list-inline-item text-center mr-4 pb-2" t-if="property.bed_rooms">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/bedroom.png"/>
+                                        <h5 class="mt-2 mb-0" t-esc="property.bed_rooms"/>
+                                        <small>Bedrooms</small>
+                                    </li>
+                                    <li class="list-inline-item text-center mr-4 pb-2" t-if="property.bath_rooms">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/bathroom.png"/>
+                                        <h5 class="mt-2 mb-0" t-esc="property.bath_rooms"/>
+                                        <small>Bathrooms</small>
+                                    </li>
+                                    <li class="list-inline-item text-center mr-4 pb-2" t-if="property.no_of_garages">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/garage.png"/>
+                                        <h5 class="mt-2 mb-0" t-esc="property.no_of_garages"/>
+                                        <small>Garages</small>
+                                    </li>
+                                    <li class="list-inline-item text-center mr-4 pb-2" t-if="property.no_of_parking">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/parking.png"/>
+                                        <h5 class="mt-2 mb-0" t-esc="property.no_of_parking"/>
+                                        <small>Parking</small>
+                                    </li>
+                                </ul>
+                            </t>
+                            <div t-else="" class="border shadow-sm rounded">
+                                <ul class="list-inline d-flex flex-column flex-md-row align-items-center m-0 dr-property-card-icons-container">
+                                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                                        t-if="property.plot_area">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/plot_area.png"/>
+                                        <div>Plot area</div>
+                                        <h5 class="mt-2">
+                                            <t t-esc="property.plot_area"/>
+                                            m<sup>2</sup>
+                                        </h5>
+                                    </li>
+                                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                                        t-if="property.living_space">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/living_space.png"/>
+                                        <t t-if="property.is_commercial">
+                                            <div>Space</div>
+                                        </t>
+                                        <t t-else="">
+                                            <div>Living space</div>
+                                        </t>
+                                        <h5 class="mt-2">
+                                            <t t-esc="property.living_space"/>
+                                            m<sup>2</sup>
+                                        </h5>
+                                    </li>
+                                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                                        t-if="property.bed_rooms">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/bedroom.png"/>
+                                        <div>Bedrooms</div>
+                                        <h5 class="mt-2" t-esc="property.bed_rooms"/>
+                                    </li>
+                                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                                        t-if="property.bath_rooms">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/bathroom.png"/>
+                                        <div>Bathrooms</div>
+                                        <h5 class="mt-2" t-esc="property.bath_rooms"/>
+                                    </li>
+                                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                                        t-if="property.no_of_garages">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/garage.png"/>
+                                        <div>Garages</div>
+                                        <h5 class="mt-2" t-esc="property.no_of_garages"/>
+                                    </li>
+                                    <li class="list-inline-item dr-property-card-icon text-center w-100 py-3"
+                                        t-if="property.no_of_parking">
+                                        <img style="max-height: 40px;"
+                                             src="/theme_realestate/static/src/img/parking.png"/>
+                                        <div>Parking</div>
+                                        <h5 class="mt-2" t-esc="property.no_of_parking"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3 dr-description">
+                            <div class="border shadow-sm rounded">
+                                <div class="bg-200 shadow-sm">
+                                    <h5 class="p-3 m-0">Description</h5>
+                                    <hr class="m-0"/>
+                                </div>
+                                <div class="p-4">
+                                    <!-- <div class="lead" t-field="property.freitext"/> -->
+                                    <t t-if="property._is_html_field_value_set('freitext')">
+                                        <!-- <hr/> -->
+                                        <div class="lead" t-field="property.freitext"/>
+                                    </t>
+
+                                    <t t-if="property._is_html_field_value_set('location_info')">
+                                        <hr/>
+                                        <h5 class="py-2">Location</h5>
+                                        <div class="lead" t-field="property.location_info"/>
+                                    </t>
+                                    <t t-if="property._is_html_field_value_set('furnishing_info')">
+                                        <hr/>
+                                        <h5 class="py-2">Furnishing</h5>
+                                        <div class="lead" t-field="property.furnishing_info"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3 dr-features">
+                            <div class="border shadow-sm rounded">
+                                <div class="bg-200 shadow-sm">
+                                    <h5 class="p-3 m-0">Features</h5>
+                                    <hr class="m-0"/>
+                                </div>
+                                <div class="row p-4">
+                                    <div t-foreach="property.property_features_ids" t-as="feature"
+                                         class="col-12 col-md-6 col-lg-3 my-2">
+                                        <h6 t-field="feature.feature_id"/>
+                                        <div t-esc="', '.join(feature.value_ids.mapped('name'))"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container dr-property-grid-image">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div t-foreach="property.public_photos_ids" t-as="public_photo"
+                                             class="col-12 col-md-6 col-lg-4 my-2">
+                                            <img class="img img-fluid dr-cursor-pointer"
+                                                 t-attf-src="/web/content/#{public_photo.id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 my-3 dr-map">
+                            <div class="border shadow-sm rounded">
+                                <div class="bg-200 shadow-sm">
+                                    <h5 class="p-3 m-0">Map</h5>
+                                    <hr class="m-0"/>
+                                </div>
+                                <div class="p-4">
+                                    <div id="leaflet_map" t-att-data-latitude="property.latitude"
+                                         t-att-data-longitude="property.longitude"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 my-3 dr-energy-certificate">
+                            <div class="border shadow-sm rounded">
+                                <div class="bg-200 shadow-sm">
+                                    <h5 class="p-3 m-0">Energy Certificate</h5>
+                                    <hr class="m-0"/>
+                                </div>
+                                <div class="p-4">
+                                    <table t-attf-class="dr-property-energy w-100 mx-auto #{'' if property.eec else 'dr-property-energy-disable'}">
+                                        <tbody>
+                                            <tr>
+                                                <td class="energy-heading-cell">
+                                                </td>
+                                                <td class="energy-heading-cell">
+                                                    Emission kWh / m per year
+                                                </td>
+                                            </tr>
+                                            <t t-foreach="['A+', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']" t-as="rating">
+                                                <tr>
+                                                    <td class="energy-cell">
+                                                        <div t-attf-class="energy-rating energy-#{rating == 'A+' and 'Aplus' or rating}"><t
+                                                                t-esc="rating"/></div>
+                                                    </td>
+                                                    <td class="energy-cell">
+                                                        <div class="d-flex justify-content-end"
+                                                             t-if="property.eec == rating">
+                                                            <div t-attf-class="energy-value energy-#{rating == 'A+' and 'Aplus' or rating} w-50"><t
+                                                                    t-esc="property.energy_characteristic"/></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3 dr-contact-form">
+                            <div class="border shadow-sm rounded">
+                                <div class="bg-200 shadow-sm">
+                                    <h5 class="p-3 m-0">Contact Us</h5>
+                                    <hr class="m-0"/>
+                                </div>
+                                <div t-ignore="true" class="p-4">
+                                    <form action="/website_form/" method="post" data-model_name="crm.lead"
+                                          class="s_website_form s_webiste_form_property_contact container"
+                                          enctype="multipart/form-data" data-editable-form="false">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                                    <label for="contact_name">
+                                                        <h6>Full name</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="contact_name" required=""/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_phone"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'phone')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_phone">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_phone.required else ''}">
+                                                    <label for="phone">
+                                                        <h6>Phone</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="phone"
+                                                           t-att-required="property_contact_field_phone.required or None"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                                    <label for="email_from">
+                                                        <h6>Email</h6>
+                                                    </label>
+                                                    <input type="email"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="email_from" required=""/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_company"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'partner_name')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_company">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_company.required else ''}">
+                                                    <label for="partner_name">
+                                                        <h6>Your company</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="partner_name"
+                                                           t-att-required="property_contact_field_company.required or None"/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_street"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'street')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_street">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_street.required else ''}">
+                                                    <label for="street">
+                                                        <h6>Street</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="street"
+                                                           t-att-required="property_contact_field_street.required or None"/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_street2"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'street2')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_street2">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_street2.required else ''}">
+                                                    <label for="street2">
+                                                        <h6>Street2</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="street2"
+                                                           t-att-required="property_contact_field_street2.required or None"/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_city"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'city')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_city">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_city.required else ''}">
+                                                    <label for="city">
+                                                        <h6>City</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="city"
+                                                           t-att-required="property_contact_field_city.required or None"/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_zip"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'zip')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_zip">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_zip.required else ''}">
+                                                    <label for="zip">
+                                                        <h6>Zip</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="zip"
+                                                           t-att-required="property_contact_field_zip.required or None"/>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_country"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'country_id')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_country">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_country.required else ''}">
+                                                    <label for="country_id">Country</label>
+                                                    <select id="country_id" name="country_id"
+                                                            class="form-control form-control-lg o_website_form_input"
+                                                            t-att-required="property_contact_field_country.required or None">
+                                                        <option value="">Country...</option>
+                                                        <t t-foreach="countries" t-as="c">
+                                                            <option t-att-value="c.id">
+                                                                <t t-esc="c.name"/>
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <t t-set="property_contact_field_state"
+                                               t-value="website.dr_property_contact_fields_ids.filtered(lambda x: x.field_name == 'state_id')"/>
+                                            <div class="col-12 col-md-6" t-if="property_contact_field_state">
+                                                <div t-attf-class="form-group form-field mb-4 #{'o_website_form_required_custom' if property_contact_field_state.required else ''}">
+                                                    <label for="state_id">State</label>
+                                                    <select id="state_id" name="state_id"
+                                                            class="form-control form-control-lg o_website_form_input"
+                                                            t-att-required="property_contact_field_state.required or None">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group form-field mb-4 o_website_form_field_hidden">
+                                                    <label for="property_id">
+                                                        <h6>Property</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="property_id" t-att-value="property.id" required=""/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                                    <label for="name">
+                                                        <h6>Subject</h6>
+                                                    </label>
+                                                    <input type="text"
+                                                           class="form-control form-control-lg o_website_form_input"
+                                                           name="name" required=""
+                                                           t-attf-value="Inquiry about #{property.name} property (Ref.#{property.reference_id})"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group form-field mb-7 mb-md-9 o_website_form_required_custom">
+                                                    <label for="description">
+                                                        <h6>What can we help you with?</h6>
+                                                    </label>
+                                                    <textarea class="form-control form-control-lg o_website_form_input"
+                                                              name="description" rows="5" required=""></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group mb-4">
+                                                    <div class="custom-control custom-checkbox d-inline-block">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                               id="t_and_c"/>
+                                                        <label class="custom-control-label" for="t_and_c">Accepted terms
+                                                            &amp; conditions.</label>
+                                                    </div>
+                                                    <a href="#" class="d-inline-block" data-toggle="modal"
+                                                       data-target="#dr-gdpr-info">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center mt-3">
+                                            <div class="col-12 text-center">
+                                                <button disabled="1" class="btn btn-primary o_website_form_send btn-lg">
+                                                    Send
+                                                </button>
+                                                <div class="mt-3">
+                                                    <span id="o_website_form_result"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- GDPR Model -->
+                            <div class="modal fade" id="dr-gdpr-info" tabindex="-1" aria-labelledby="GDPR"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">GDPR Information</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <i class="fa fa-times"/>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div t-field="request.website.company_id.dr_gdpr_info"/>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                                Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--
+    ============================================================================
+    Snippets Templates
+    ============================================================================
+    -->
+    <template id="s_real_estate_categories_template">
+        <div class="container py-4">
+            <div class="row no-gutters">
+                <t t-if="categories">
+                    <div class="col-12 dr-property-category-box" t-foreach="categories" t-as="category">
+                        <div class="d-md-flex align-items-center justify-content-between mb-3">
+                            <h4 class="mb-md-0"><t t-esc="category['name']"/></h4>
+                            <div>
+                                <a t-attf-href="/real_estate/properties?property_type=#{category['id']}"
+                                   class="btn btn-primary-soft">View All</a>
+                                <button class="btn btn-link dr-owl-category-carousel-prev"><i
+                                        class="fa fa-chevron-left"></i></button>
+                                <button class="btn btn-link dr-owl-category-carousel-next"><i
+                                        class="fa fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="owl-carousel owl-theme dr-property-category mb-5">
+                            <t t-foreach="category['properties']" t-as="property">
+                                <t t-call="theme_realestate.property_item"/>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="col-12">
+                        <img class="img img-fluid mx-auto" src="/theme_realestate/static/src/img/no_property.png"/>
+                        <h4 class="text-center">We couldn't find any properties!</h4>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <template id="s_real_estate_cover_template">
+        <div t-if="properties" class="container-fluid px-0 o_not_editable">
+            <div class="row no-gutters">
+                <div class="owl-carousel owl-theme">
+                    <div t-foreach="properties" t-as="property" class="item position-relative">
+                        <img class="owl-lazy"
+                             t-attf-data-src="/website/image/property.property/#{property.id}/cover_photo/1800x1800"
+                             t-att-alt="property.external_headline"/>
+                        <div class="detail-box w-100 bg-black-50 py-2 text-center">
+                            <a t-attf-href="/real_estate/property/#{property.id}">
+                                <h6 t-esc="property.external_headline" class="mb-0 text-white"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div t-else="" class="container py-4">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <img class="img img-fluid mx-auto" src="/theme_realestate/static/src/img/no_property.png"/>
+                    <h4 class="text-center">We couldn't find any properties!</h4>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!--
+    ============================================================================
+    Photoswipe
+    ============================================================================
+    -->
+    <template id="photoswipe" inherit_id="website.layout" name="Photoswipe">
+        <xpath expr="//div[@id='wrapwrap']" position="after">
+            <!-- Root element of PhotoSwipe. Must have class pswp. -->
+            <div name="PhotoSwipeContainer" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+                <!-- Background of PhotoSwipe.
+                    It's a separate element as animating opacity is faster than rgba(). -->
+                <div class="pswp__bg"></div>
+
+                <!-- Slides wrapper with overflow:hidden. -->
+                <div class="pswp__scroll-wrap">
+
+                    <!-- Container that holds slides.
+                        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                        Don't modify these 3 pswp__item elements, data is added later on. -->
+                    <div class="pswp__container">
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                        <div class="pswp__item"></div>
+                    </div>
+
+                    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                    <div class="pswp__ui pswp__ui--hidden">
+
+                        <div class="pswp__top-bar">
+
+                            <!--  Controls are self-explanatory. Order can be changed. -->
+
+                            <div class="pswp__counter"></div>
+
+                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                            <!-- element will get class pswp__preloader__active when preloader is running -->
+                            <div class="pswp__preloader">
+                                <div class="pswp__preloader__icn">
+                                    <div class="pswp__preloader__cut">
+                                        <div class="pswp__preloader__donut"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div>
+                        </div>
+
+                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                        </button>
+
+                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                        </button>
+
+                        <div class="pswp__caption">
+                            <div class="pswp__caption__center text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

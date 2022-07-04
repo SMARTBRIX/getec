@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_portfolio_graph" model="ir.ui.view">
+         <field name="name">Portfolio Development Graph</field>
+         <field name="model">portfolio.report.graph</field>
+         <field name="arch" type="xml">
+             <graph string="Property Analysis" type="line">
+                 <field name="start_date" type="row" interval="month"/>
+                 <field name="property_type" type="col"/>
+                 <field name="property_active" type="measure"/>
+                 <field name="vacant" type="measure"/>
+                 <field name="under_renovation" type="measure"/>
+                 <field name="total_active" type="measure"/>
+                 <field name="planned" type="measure"/>
+                 <field name="total_planned" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+    
+
+    <record id="action_portfolio_report_graph_all" model="ir.actions.act_window">
+        <field name="name">Portfolio Development Graph</field>
+        <field name="res_model">portfolio.report.graph</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id"></field>
+        <field name="context"></field>
+    </record>
+
+</odoo>

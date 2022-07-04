@@ -1,0 +1,38 @@
+.dr-portal-property-contact-info {
+    .dr-avatar-image {
+        max-height: 80px;
+        max-width: 80px;
+        border-width: 2px !important;
+    }
+}
+.dr-portal-property-page {
+    .dr-property-card-icons-container {
+        .dr-property-card-icon {
+            margin-right: 0px;
+            img {
+                max-height: 40px;
+                max-width: 26px;
+                margin-right: 0.3rem;
+                display: inline;
+            }
+        }
+    }
+    .dr-property-image {
+        background-size: cover;
+        padding-top: 80%;
+        background-position: center;
+    }
+    #leaflet_map {
+        height: 395px;
+    }
+    .dr-protected-document {
+        .dr-document-image {
+            background-size: cover;
+            padding-top: 60%;
+            background-position: center;
+        }
+        .dr-protected-download {
+            @include o-position-absolute($top: 8px, $right: 8px);
+        }
+    }
+}

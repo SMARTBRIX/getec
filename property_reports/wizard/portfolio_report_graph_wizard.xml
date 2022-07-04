@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_portfolio_report_graph_wizard_form" model="ir.ui.view">
+            <field name="name">Portfolio Development Graph</field>
+            <field name="model">portfolio.graph</field>
+            <field name="arch" type="xml">
+                <form string="Property Report Wizard">
+                    <group>
+                        <group>
+                            <field name="start_year" required="1"/>
+                        </group>
+                        <group>
+                            <field name="end_year" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_show_graph" type="object" string="Display Portfolio" class="oe_highlight" context="{'start_year': start_year, 'end_year': end_year }" />
+                        <button special="cancel"  string="Discard" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_portfolio_report_graph_wizard" model="ir.actions.act_window">
+            <field name="name">Portfolio Development Graph</field>
+            <field name="res_model">portfolio.graph</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+        <menuitem
+        id="menu_portfolio_report_graph_wizard"
+        name="Portfolio Development Graph"
+        parent="menu_property_reporting"
+        action="action_portfolio_report_graph_wizard"/>
+    </data>
+</odoo>

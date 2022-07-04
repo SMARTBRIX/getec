@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_real_estate_mail_form" model="ir.ui.view">
+        <field name="name">real.estate.mail.form</field>
+        <field name="inherit_id" ref="mail.mail_notification_paynow"/>
+        <field name="arch" type="xml">
+            <xpath expr="//table/tr[2]/td" position="replace">
+                 <td align="center" style="min-width: 590px; padding: 8px; font-size:11px;">
+                    Powered by <a target="_blank" href="https://www.smartbrix.io?utm_source=db&amp;utm_medium=email" style="color: #875A7B;">SmartBrix</a>
+                </td>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_real_estate_notification_mail_form" model="ir.ui.view">
+        <field name="name">real.estate.notification.mail.form</field>
+        <field name="inherit_id" ref="mail.message_notification_email"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div/p/a" position="replace">
+                 <a target="_blank" href="https://www.smartbrix.io?utm_source=db&amp;utm_medium=email" style="text-decoration:none; color: #875A7B;">SmartBrix</a>.
+            </xpath>
+        </field>
+    </record>
+</odoo>

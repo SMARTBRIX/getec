@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Website Config -->
+    <record id="res_config_settings_view_form_smartbrix" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.property.management</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <div id="webmaster_settings" position="after">
+                <h2>Property Management</h2>
+                <div class="row mt16 o_settings_container" id="dr_property_settings">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="dr_property_sales_team"/>
+                            <span class="fa fa-lg fa-globe" title="Values set here are website-specific." groups="website.group_multi_website"/>
+                            <div class="text-muted">
+                                Default sales team for created opportunity.
+                            </div>
+                            <field name="dr_property_sales_team" class="mt-2"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="dr_property_crm_stage"/>
+                            <span class="fa fa-lg fa-globe" title="Values set here are website-specific." groups="website.group_multi_website"/>
+                            <div class="text-muted">
+                                Default crm stage for created opportunity.
+                            </div>
+                            <field name="dr_property_crm_stage" class="mt-2"/>
+                        </div>
+                    </div>
+                    <div class="col-12 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="dr_property_contact_fields_ids"/>
+                            <span class="fa fa-lg fa-globe" title="Values set here are website-specific." groups="website.group_multi_website"/>
+                            <div class="text-muted">
+                                Select fields which you want to show on contact us form in property detail page.
+                            </div>
+                            <field name="dr_property_contact_fields_ids" options="{'no_create': True}" class="mt-2">
+                                <tree>
+                                    <field name="name" string="Field"/>
+                                    <field name="required"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="name" readonly="1"/>
+                                        <field name="field_id" readonly="1"/>
+                                        <field name="required"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>

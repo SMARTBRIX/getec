@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_property_cost_type,access_property_cost_type,model_property_cost_type,base.group_user,1,1,1,1
+access_property_rent,access_property_rent,model_property_rent,base.group_user,1,1,1,1
+access_property_tenancy,access_property_tenancy,model_property_tenancy,base.group_user,1,1,1,1
+access_property_expenditure,access_property_expenditure,model_property_expenditure,base.group_user,1,1,1,1
+access_property_journal,access_property_journal,model_property_journal,base.group_user,1,1,1,1
+access_property_expenditure_factor,access_property_expenditure_factor,model_property_expenditure_factor,base.group_user,1,1,1,1
+access_tenancy_stage,access_tenancy_stage,model_tenancy_stage,base.group_user,1,1,1,1
+access_property_cost_category,access_property_cost_category,model_property_cost_category,base.group_user,1,1,1,1
+access_tenancy_portal,property_administration.portal_tenancy,model_property_tenancy,base.group_portal,1,1,1,1

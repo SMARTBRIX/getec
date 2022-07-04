@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="portal_my_home_property_tenancy" inherit_id="portal.portal_my_home" priority="40">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+        	<t t-call="portal.portal_docs_entry">
+                <t t-set="title">My Tenancies</t>
+                <t t-set="url" t-value="'/my/tenancies'"/>
+                <t t-set="count" t-value="tenancies_count"/>
+            </t>
+           </xpath>
+    </template>
+
+    <template id="portal_breadcrumbs_tenancy" inherit_id="portal.portal_breadcrumbs" priority="40">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+        	<li t-if="page_name == 'tenancies' or property_object" t-attf-class="breadcrumb-item #{'active ' if not property_object else ''}">
+                <a t-if="property_object" href="/my/tenancies">
+                    My Tenancies
+                </a>
+                <t t-else="">
+                    My Tenancies
+                </t>
+            </li>
+        </xpath>
+    </template>
+
+   	<template id="portal_my_tenancies" name="My Tenancies">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Objects</t>
+            </t>
+            <t t-if="not objects">
+                <p>There are currently no objects for your account.</p>
+            </t>
+            <t t-if="objects" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Billing Type</th>
+                        <th class="text-right">Created Date</th>
+                    </tr>
+                </thead>
+                <t t-foreach="objects" t-as="object">
+                    <tr>
+                        <td><a t-attf-href="/my/tenancy/#{object.id}"><t t-esc="object.name"/></a></td>
+                        <td>
+                            <a t-if="object.type"><i class="fa fa-external-link"/> <span t-field="object.type"/></a>
+                        </td>
+                        <td>
+                            <a t-if="object.billing_type"><i class="fa fa-external-link"/> <span t-field="object.billing_type"/></a>
+                        </td>
+                        <td class="text-right"><span t-field="object.create_date" t-options="{'widget': 'date'}"/></td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <!-- My Tenancies -->
+    
+    <!-- Custom Start -->
+     <template id="portal_my_tenancy_object" name="My Tenancy">
+        <t t-call="portal.portal_layout">
+
+            <t>
+                <div class="card mt-0 border-top-0 rounded-0 rounded-bottom">
+                    <div class="card-body row">
+                        <div class="col-12 text-center">
+                            <h4 class="my-3">Welcome to the Tenancy by <span t-field="request.website.company_id.partner_id"/></h4>
+                            <hr/>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <strong>Name:</strong>
+                                    <span t-field="tenancy.name"/>
+                                </div>
+                                <div class="col-6">
+                                    <strong>Type:</strong>
+                                    <span t-field="tenancy.type"/>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <strong>Billing Type:</strong>
+                                    <span t-field="tenancy.billing_type"/>
+                                </div>
+                                <div class="col-6">
+                                    <strong>Contractual Partners:</strong>
+                                    <span t-esc="contractual_partner"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body row mb-2">
+                        <div class="col-12 col-md-6" t-if="tenancy.property_id">
+                            <strong>Property Address</strong>
+                            <div class="col pl-md-0">
+                                <span t-field="tenancy.property_id.name"/><br />
+                                <span t-field="tenancy.property_id.street_d"/><br />
+                                <span t-field="tenancy.property_id.zip_d"/><br />
+                                <span t-field="tenancy.property_id.city_d"/><br />
+                                <span t-field="tenancy.property_id.country_id_d.name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                        <div class="col-lg-6 offset-lg-3 my-3">
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <th>Rent</th>
+                                    <th>Heating Costs</th>
+                                    <th>Ancillary Costs</th>
+                                    <th>Billing Period</th>
+                                    <th>Day of Invoice</th>
+                                    <th>Start Date</th>
+                                </thead>
+                                <t t-foreach="tenancy.rent_ids" t-as="rent">
+                                    <tbody>
+                                        <tr>
+                                            <td><span t-field="rent.rent"/></td>
+                                            <td><span t-field="rent.heating_costs"/></td>
+                                            <td><span t-field="rent.ancillary_costs"/></td>
+                                            <td><span t-field="rent.billing_period"/></td>
+                                            <td><span t-field="rent.day_of_invoice"/></td>
+                                            <td><span t-field="rent.date_start"/></td>
+                                        </tr>
+                                    </tbody>
+                                </t>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <div class="mt32">
+                <h4><strong>Message and communication history</strong></h4>
+                <div class="mt16">
+                    <t t-call="portal.message_thread">
+                        <t t-set="object" t-value="tenancy"/>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- Custom End -->
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_portfolio_report_wizard_form" model="ir.ui.view">
+            <field name="name">Portfolio Report Wizard</field>
+            <field name="model">portfolio.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Portfolio Report">
+                    <group>
+                        <group>
+                            <field name="date" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_show_graph" type="object" string="Display Portfolio" class="oe_highlight" context="{'date': date }" />
+                        <button special="cancel"  string="Discard" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_portfolio_report_wizard" model="ir.actions.act_window">
+            <field name="name">Portfolio Report</field>
+            <field name="res_model">portfolio.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+        id="menu_property_reporting"
+        name="Reporting"
+        parent="property_management.main_menu_real_estate"
+        sequence="30"/>
+
+        <menuitem
+        id="menu_portfolio_report_wizard"
+        name="Portfolio Report"
+        parent="menu_property_reporting"
+        action="action_portfolio_report_wizard"/>
+    </data>
+</odoo>

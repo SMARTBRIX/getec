@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="journal_form">
+        <field name="name">journal.form</field>
+        <field name="model">property.journal</field>
+        <field name="arch" type="xml">
+            <form string="Journal Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="expenditure_id"/>
+                            <field name="tenancy_id"/>
+                            <field name="cost_type_id"/>
+                            <field name="amount" />
+                            <field name="tax_id"/>
+                        </group>
+                        <group>
+                            <field name="reference"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="cleared"/>
+                            <field name="documents" widget="dr_field_multi_attachments"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="journal_list">
+        <field name="name">journal.list</field>
+        <field name="model">property.journal</field>
+        <field name="arch" type="xml">
+            <tree string="Journal list">
+        		  <field name="expenditure_id"/>
+                  <field name="tenancy_id"/>
+                  <field name="cost_type_id"/>
+                  <field name="amount"/>
+                  <field name="date_start"/>
+                  <field name="date_end"/>
+                  
+    		</tree>
+        </field>
+    </record>
+    <record id="journal_search_view" model="ir.ui.view">
+        <field name="name">journal.search.view</field>
+        <field name="model">property.journal</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Not invoiced" name="journal_not_invoiced" domain="[('cleared', '=', False)]">
+                </filter>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_list_journal">
+        <field name="name">Journal</field>
+        <field name="res_model">property.journal</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_journal_not_invoiced':1}</field>
+    </record>
+
+    <menuitem id="menu_journal" parent="main_menu_property_admin"
+          action="action_list_journal" sequence="40"/>
+</odoo>

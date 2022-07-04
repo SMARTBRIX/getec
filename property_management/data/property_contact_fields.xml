@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+
+    <data noupdate="1">
+        <record id="property_contact_phone" model="dr.property.contact.fields">
+            <field name="name">Phone</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__phone')"/>
+        </record>
+        <record id="property_contact_company" model="dr.property.contact.fields">
+            <field name="name">Company</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__partner_name')"/>
+        </record>
+        <record id="property_contact_street" model="dr.property.contact.fields">
+            <field name="name">Street</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__street')"/>
+        </record>
+        <record id="property_contact_street2" model="dr.property.contact.fields">
+            <field name="name">Street2</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__street2')"/>
+        </record>
+        <record id="property_contact_city" model="dr.property.contact.fields">
+            <field name="name">City</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__city')"/>
+        </record>
+        <record id="property_contact_zip" model="dr.property.contact.fields">
+            <field name="name">Zip</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__zip')"/>
+        </record>
+        <record id="property_contact_country" model="dr.property.contact.fields">
+            <field name="name">Country</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__country_id')"/>
+        </record>
+        <record id="property_contact_state" model="dr.property.contact.fields">
+            <field name="name">State</field>
+            <field name="field_id" eval="ref('crm.field_crm_lead__state_id')"/>
+        </record>
+    </data>
+
+</odoo>

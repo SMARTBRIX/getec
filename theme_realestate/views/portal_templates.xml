@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_layout_inherit" inherit_id="portal.portal_layout" name="Portal Layout">
+        <xpath expr="//div[hasclass('o_portal_wrap')]/div[hasclass('container')]" position="attributes">
+            <attribute name="class">container-fluid mb64 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('o_portal')]" position="attributes">
+            <attribute name="class">o_portal mt-3 container-fluid p-0</attribute>
+        </xpath>
+    </template>
+</odoo>

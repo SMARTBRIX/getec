@@ -1,0 +1,153 @@
+table.dr-property-energy {
+  &.dr-property-energy-disable {
+    opacity: 0.6;
+    filter: grayscale(1);
+  }
+
+  tbody {
+    .energy-heading-cell {
+      width: 46%;
+      line-height: 30px;
+      min-height: 30px;
+      font-weight: bold;
+      margin: 4px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .energy-cell {
+      width: 46%;
+      line-height: 30px;
+      min-height: 30px;
+      font-weight: bold;
+      color: white;
+      margin: 4px;
+      display: inline-block;
+      background-color: #f1f1f1;
+    }
+
+    .energy-rating {
+      line-height: 30px;
+      position: relative;
+      padding-left: 12px;
+
+      &:after {
+        @include utils-caret-boilerplate;
+        position: absolute;
+        right: -15px;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid;
+        border-right: 0;
+        border-top: 15px solid transparent;
+        -moz-transform: scale(0.9999);
+      }
+    }
+
+    .energy-value {
+      line-height: 30px;
+      position: relative;
+      padding-left: 12px;
+
+      &:after {
+        @include utils-caret-boilerplate;
+        position: absolute;
+        left: -15px;
+        border-bottom: 15px solid transparent;
+        border-left: 0;
+        border-right: 15px solid;
+        border-top: 15px solid transparent;
+        -moz-transform: scale(0.9999);
+      }
+    }
+
+    .energy-Aplus {
+      background-color: #6d9e00;
+      width: 35%;
+
+      &:after {
+        border-left-color: #6d9e00;
+        border-right-color: #6d9e00;
+      }
+    }
+
+    .energy-A {
+      background-color: #7fb800;
+      width: 43%;
+
+      &:after {
+        border-left-color: #7fb800;
+        border-right-color: #7fb800;
+      }
+    }
+
+    .energy-B {
+      background-color: #91d100;
+      width: 48%;
+
+      &:after {
+        border-left-color: #91d100;
+        border-right-color: #91d100;
+      }
+    }
+
+    .energy-C {
+      background-color: #ebc400;
+      width: 54%;
+
+      &:after {
+        border-left-color: #ebc400;
+        border-right-color: #ebc400;
+      }
+    }
+
+    .energy-D {
+      background-color: #eb9d00;
+      width: 61%;
+
+      &:after {
+        border-left-color: #eb9d00;
+        border-right-color: #eb9d00;
+      }
+    }
+
+    .energy-E {
+      background-color: #e67300;
+      width: 68%;
+
+      &:after {
+        border-left-color: #e67300;
+        border-right-color: #e67300;
+      }
+    }
+
+    .energy-F {
+      background-color: #d22300;
+      width: 76%;
+
+      &:after {
+        border-left-color: #d22300;
+        border-right-color: #d22300;
+      }
+    }
+
+    .energy-G {
+      background-color: #b80000;
+      width: 86%;
+
+      &:after {
+        border-left-color: #b80000;
+        border-right-color: #b80000;
+      }
+    }
+
+    .energy-H {
+      background-color: #790000;
+      width: 90%;
+
+      &:after {
+        border-left-color: #790000;
+        border-right-color: #790000;
+      }
+    }
+  }
+}

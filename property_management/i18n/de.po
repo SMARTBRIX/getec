@@ -1,0 +1,2435 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* property_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-08 12:47+0000\n"
+"PO-Revision-Date: 2022-03-08 15:51+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "&amp;times;"
+msgstr "&amp;times;"
+
+#. module: property_management
+#: model:ir.actions.report,print_report_name:property_management.expose_overview_report_id
+#: model:ir.actions.report,print_report_name:property_management.property_management_report_id
+msgid "'Property - %s' % (object.name)"
+msgstr "'Objekt - %s' % (object.name)"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "*Required"
+msgstr "* Erforderlich"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "- Select -"
+msgstr "- Auswählen -"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "10 Hrs"
+msgstr "10 Std."
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "<b>Baujahr</b>"
+msgstr "<b>Baujahr</b>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "<b>Energieeffizienzklasse</b>"
+msgstr "<b>Energieeffizienzklasse</b>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "<b>Energiequelle</b>"
+msgstr "<b>Energiequelle</b>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "<b>Energieverbrauch</b>"
+msgstr "<b>Energieverbrauch</b>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "<b>Zertifikatstype</b>"
+msgstr "<b>Zertifikatstype</b>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.crm_case_kanban_view_leads_inherit_crm
+msgid "<i class=\"fa fa-comments\" aria-label=\"Unread messages\" role=\"img\"/>"
+msgstr "<i class=\"fa fa-comments\" aria-label=\"Ungelesene Nachrichten\" role=\"img\"/>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "<i class=\"fa fa-external-link\"/> View Property"
+msgstr "<i class=\"fa fa-external-link\"/> Immobilie anzeigen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "<i class=\"fa fa-plus-circle\"/> Create"
+msgstr "<i class=\"fa fa-plus-circle\"/> Erstellen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "<small>(Including VAT)</small>"
+msgstr "<small>(Inklusive USt.)</small>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "<small>(Including heating)</small>"
+msgstr "<small>(Warmmiete)</small>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "<small>(Plus additional costs)</small>"
+msgstr "<small>(Zuzüglich Betriebskosten)</small>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
+msgid ""
+"<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" "
+"groups=\"website.group_multi_website\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-globe\" title=\"hier gesetzte Werte sind websitespezifisch."
+"\" groups=\"website.group_multi_website\"/>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "<strong>Message and communication history</strong>"
+msgstr "<strong>Kommunikationsverlauf</strong>"
+
+#. module: property_management
+#: model:mail.template,body_html:property_management.inquiry_mail
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; "
+"background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; "
+"width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: "
+"16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<tbody>\n"
+"    <!-- HEADER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
+"collapse:separate;\">\n"
+"                <tr><td valign=\"middle\">\n"
+"                    <span style=\"font-size: 10px;\">Your Account</span><br/>\n"
+"                    <span style=\"font-size: 20px; font-weight: bold;\">\n"
+"                        ${ctx['user'].name}\n"
+"                    </span>\n"
+"                </td><td valign=\"middle\" align=\"right\">\n"
+"                    <img src=\"/logo.png?company=${ctx['user'].company_id.id}\" style="
+"\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${ctx['user']."
+"company_id.name}\"/>\n"
+"                </td></tr>\n"
+"                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
+"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
+"margin:16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- CONTENT -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
+"collapse:separate;\">\n"
+"                <tr><td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                    %if ctx['is_new']:\n"
+"                        <div>\n"
+"                            Dear ${ctx['user'].name or ''},<br/> <br/>\n"
+"                            You have been given access to ${ctx['user'].company_id."
+"name}'s portal.<br/>\n"
+"                            Your login account data is:\n"
+"                            <ul>\n"
+"                                <li>Username: ${ctx['user'].login or ''}</li>\n"
+"                                <li>Password: ${ctx['password'] or ''}</li>\n"
+"                                <li>Portal: <a href=\"${'portal_url' in ctx and "
+"ctx['portal_url'] or ''}\">${'portal_url' in ctx and ctx['portal_url'] or ''}</a></"
+"li>\n"
+"                                <li>Database: ${'dbname' in ctx and ctx['dbname'] or "
+"''}</li>\n"
+"                                <li>Property: <a href=\"${'object_url' in ctx and "
+"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
+"li>\n"
+"                            </ul>\n"
+"                            You can set or change your password via the following "
+"url:\n"
+"                            <ul>\n"
+"                                <li><a href=\"${ctx['user'].signup_url}\">"
+"${ctx['user'].signup_url}</a></li>\n"
+"                            </ul>\n"
+"                        </div>\n"
+"                    %else:\n"
+"                        <div>\n"
+"                            Dear ${ctx['user'].name or ''},<br/> <br/>\n"
+"                            You have been given access to ${ctx['user'].company_id."
+"name}'s portal.<br/>\n"
+"                            <ul>\n"
+"                                <li>Property: <a href=\"${'object_url' in ctx and "
+"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
+"li>\n"
+"                            </ul>\n"
+"                        </div>\n"
+"                    %endif\n"
+"                </td></tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
+"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
+"margin: 16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- FOOTER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px "
+"0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"middle\" align=\"left\">\n"
+"                    ${ctx['user'].company_id.name}\n"
+"                </td></tr>\n"
+"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: 0.7;\">\n"
+"                    ${ctx['user'].company_id.phone}\n"
+"                    % if ctx['user'].company_id.email\n"
+"                        | <a href=\"'mailto:%s' % ${ctx['user'].company_id.email}\" "
+"style=\"text-decoration:none; color: #454748;\">${ctx['user'].company_id.email}</a>\n"
+"                    % endif\n"
+"                    % if ctx['user'].company_id.website\n"
+"                        | <a href=\"'%s' % ${ctx['user'].company_id.website}\" style="
+"\"text-decoration:none; color: #454748;\">\n"
+"                        ${ctx['user'].company_id.website}\n"
+"                    </a>\n"
+"                    % endif\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"</tbody>\n"
+"</table>\n"
+"</td></tr>\n"
+"<!-- POWERED BY -->\n"
+"<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
+"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-"
+"width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:"
+"separate;\">\n"
+"      <tr><td style=\"text-align: center; font-size: 13px;\">\n"
+"        Powered by <a target=\"_blank\" href=\"https://www.smartbrix.io?"
+"utm_source=db&amp;utm_medium=portalinvite\" style=\"color: #875A7B;\">SmartBrix</a>\n"
+"      </td></tr>\n"
+"    </table>\n"
+"</td></tr>\n"
+"</table>\n"
+"            "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; "
+"background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; "
+"width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: "
+"16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<tbody>\n"
+"    <!-- HEADER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
+"collapse:separate;\">\n"
+"                <tr><td valign=\"middle\">\n"
+"                    <span style=\"font-size: 10px;\">Ihr Konto</span><br/>\n"
+"                    <span style=\"font-size: 20px; font-weight: bold;\">\n"
+"                        ${ctx['user'].name}\n"
+"                    </span>\n"
+"                </td><td valign=\"middle\" align=\"right\">\n"
+"                    <img src=\"/logo.png?company=${ctx['user'].company_id.id}\" style="
+"\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${ctx['user']."
+"company_id.name}\"/>\n"
+"                </td></tr>\n"
+"                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
+"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
+"margin:16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- CONTENT -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-"
+"collapse:separate;\">\n"
+"                <tr><td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                    %if ctx['is_new']:\n"
+"                        <div>\n"
+"                            Sehr geehrte/r ${ctx['user'].name or ''},<br/> <br/>\n"
+"                            Ihnen wurde Zugriff auf das Portal von ${ctx['user']."
+"company_id.name} gewährt.<br/>\n"
+"                            Ihre Zugangsdaten lauten:\n"
+"                            <ul>\n"
+"                                <li>Benutzername: ${ctx['user'].login or ''}</li>\n"
+"                                <li>Passwort: ${ctx['password'] or ''}</li>\n"
+"                                <li>Portal: <a href=\"${'portal_url' in ctx and "
+"ctx['portal_url'] or ''}\">${'portal_url' in ctx and ctx['portal_url'] or ''}</a></"
+"li>\n"
+"                                <li>Datenbank: ${'dbname' in ctx and ctx['dbname'] or "
+"''}</li>\n"
+"                                <li>Objekt: <a href=\"${'object_url' in ctx and "
+"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
+"li>\n"
+"                            </ul>\n"
+"                            Sie können Ihr Passwort über die folgende Adresse ändern:\n"
+"                            <ul>\n"
+"                                <li><a href=\"${ctx['user'].signup_url}\">"
+"${ctx['user'].signup_url}</a></li>\n"
+"                            </ul>\n"
+"                        </div>\n"
+"                    %else:\n"
+"                        <div>\n"
+"                            Sehr geehrte/r ${ctx['user'].name or ''},<br/> <br/>\n"
+"                            Ihnen wurde Zugriff auf das Portal von ${ctx['user']."
+"company_id.name} gewährt<br/>\n"
+"                            <ul>\n"
+"                                <li>Objekt: <a href=\"${'object_url' in ctx and "
+"ctx['object_url'] or ''}\">${'object_url' in ctx and ctx['object_url'] or ''}</a></"
+"li>\n"
+"                            </ul>\n"
+"                        </div>\n"
+"                    %endif\n"
+"                </td></tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:"
+"medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; "
+"margin: 16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- FOOTER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" "
+"style=\"min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px "
+"0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"middle\" align=\"left\">\n"
+"                    ${ctx['user'].company_id.name}\n"
+"                </td></tr>\n"
+"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: 0.7;\">\n"
+"                    ${ctx['user'].company_id.phone}\n"
+"                    % if ctx['user'].company_id.email\n"
+"                        | <a href=\"'mailto:%s' % ${ctx['user'].company_id.email}\" "
+"style=\"text-decoration:none; color: #454748;\">${ctx['user'].company_id.email}</a>\n"
+"                    % endif\n"
+"                    % if ctx['user'].company_id.website\n"
+"                        | <a href=\"'%s' % ${ctx['user'].company_id.website}\" style="
+"\"text-decoration:none; color: #454748;\">\n"
+"                        ${ctx['user'].company_id.website}\n"
+"                    </a>\n"
+"                    % endif\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"</tbody>\n"
+"</table>\n"
+"</td></tr>\n"
+"<!-- POWERED BY -->\n"
+"<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
+"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-"
+"width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:"
+"separate;\">\n"
+"      <tr><td style=\"text-align: center; font-size: 13px;\">\n"
+"        Powered by <a target=\"_blank\" href=\"https://www.smartbrix.io?"
+"utm_source=db&amp;utm_medium=portalinvite\" style=\"color: #875A7B;\">SmartBrix</a>\n"
+"      </td></tr>\n"
+"    </table>\n"
+"</td></tr>\n"
+"</table>\n"
+"            "
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Accept Terms"
+msgstr "Bedingungen akzeptieren"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__accepted_terms_ids
+msgid "Accepted Terms"
+msgstr "Bedingungen akzeptiert"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__access_warning
+msgid "Access warning"
+msgstr "Zugriffsbenachrichtigung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Acquisition"
+msgstr "Akquise"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_needaction
+msgid "Action Needed"
+msgstr "Handlungsbedarf"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_ids
+msgid "Activities"
+msgstr "Aktivitäten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Gestaltung Aktivität Ausnahme"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_state
+msgid "Activity State"
+msgstr "Aktivitätsstatus"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Symbol Aktivitätentyp"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Additional Information"
+msgstr "Zusätzliche Informationen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__administration_stage
+msgid "Administration Stage"
+msgstr "Verwaltungs-Status"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__ancillary_costs
+msgid "Ancillary Costs"
+msgstr "Betriebskosten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__asking_price
+msgid "Asking Price"
+msgstr "Preisvorstellung"
+
+#. module: property_management
+#. openerp-web
+#: code:addons/property_management/static/src/xml/fields.xml:0
+#, python-format
+msgid "Attach"
+msgstr "Anhängen"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_ir_attachment
+msgid "Attachment"
+msgstr "Dateianhang"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_attachment_count
+msgid "Attachment Count"
+msgstr "Anzahl Anhänge"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Auto Marketing"
+msgstr "Automatische Benachrichtigungen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__auto_marketing
+msgid "Automatic Marketing"
+msgstr "Automatisiertes Marketing"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__available_from
+#: model:ir.model.fields,field_description:property_management.field_property_property__available_from_d
+msgid "Available From"
+msgstr "Verfügbar ab"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__balcony
+msgid "Balcony?"
+msgstr "Balkon?"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Basic Data"
+msgstr "Basisdaten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__bath_rooms
+#: model:ir.model.fields,field_description:property_management.field_property_property__bath_rooms_d
+msgid "Bath Rooms"
+msgstr "Badezimmer"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Bathrooms"
+msgstr "Badezimmer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__bed_rooms
+#: model:ir.model.fields,field_description:property_management.field_property_property__bed_rooms_d
+msgid "Bed Rooms"
+msgstr "Schlafzimmer"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate_type__b
+msgid "Bedarfsausweis"
+msgstr "Bedarfsausweis"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Bedrooms"
+msgstr "Schlafzimmer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__contract_begin
+msgid "Begin of Contract"
+msgstr "Vertragsbeginn"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_search_profile__contract_type__both
+msgid "Both"
+msgstr "Beides"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_res_partner__business_hours
+#: model:ir.model.fields,field_description:property_management.field_res_users__business_hours
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Business Hours"
+msgstr "Geschäftszeiten"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_search_profile__contract_type__buy
+msgid "Buy"
+msgstr "Kaufen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_res_config_settings__dr_property_crm_stage
+#: model:ir.model.fields,field_description:property_management.field_website__dr_property_crm_stage
+msgid "CRM Stage"
+msgstr "CRM-Stufe"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__campaign_id
+msgid "Campaign"
+msgstr "Kampagne"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__can_publish
+msgid "Can Publish"
+msgstr "Kann veröffentlichen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_import_lead_wizard
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_type__category_id
+msgid "Category"
+msgstr "Kategorie"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__certificate
+msgid "Certificate"
+msgstr "Ausweis"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Certificate Type"
+msgstr "Zertifikatstyp"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__certificate_type
+msgid "Certificte Type"
+msgstr "Art des Ausweises"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_location__child_location_ids
+msgid "Child Location"
+msgstr "Detail-Region"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__child_prop_count
+msgid "Child Prop Count"
+msgstr "Anzahl zugehörige Objekte"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Child Properties"
+msgstr "Zugehörige Objekte"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__child_property_ids
+msgid "Child Property"
+msgstr "zugehöriges Objekt"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__city
+#: model:ir.model.fields,field_description:property_management.field_property_property__city_d
+msgid "City"
+msgstr "Stadt"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Close"
+msgstr "Schließen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Comission"
+msgstr "Provision"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Comission Buyer"
+msgstr "Provision Käufer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_category__is_commercial
+#: model:ir.model.fields,field_description:property_management.field_property_property__is_commercial
+msgid "Commercial ?"
+msgstr "gewerblich?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__commission_client
+#: model:ir.model.fields,field_description:property_management.field_property_property__commission_client
+msgid "Commission Client"
+msgstr "Provision Klient"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__provision_client
+msgid "Commission Customer"
+msgstr "Provision Käufer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__comm_incl_vat
+msgid "Commission Including VAT?"
+msgstr "Provision inkl. USt.?"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigurationseinstellungen"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.menu_property_config
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__construction_year
+#: model:ir.model.fields,field_description:property_management.field_property_property__construction_year
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Construction Year"
+msgstr "Baujahr"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_res_config_settings__dr_property_contact_fields_ids
+#: model:ir.model.fields,field_description:property_management.field_website__dr_property_contact_fields_ids
+msgid "Contact Form Fields"
+msgstr "Felder des Kontaktformulars"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__contract_document
+msgid "Contract Documents"
+msgstr "Vertragsdokumente"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__contract_type
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Contract Type"
+msgstr "Vertragstyp"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Contract and Qualification"
+msgstr "Vertrag und Qualifikation"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__country_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__country_id_d
+msgid "Country"
+msgstr "Land"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__cover_photo
+#: model:ir.model.fields,field_description:property_management.field_property_property__cover_photo
+msgid "Cover Photo"
+msgstr "Titelfoto"
+
+#. module: property_management
+#: model:ir.actions.server,name:property_management.create_opportunity_property_ir_actions_server
+#: model:ir.cron,cron_name:property_management.create_opportunity_property
+#: model:ir.cron,name:property_management.create_opportunity_property
+msgid "Create Opportunity Property"
+msgstr "Verkaufschancen für Objekte erstellen (automatisiertes Marketing)"
+
+#. module: property_management
+#: model:ir.actions.server,name:property_management.create_property_distance_ir_actions_server
+#: model:ir.cron,cron_name:property_management.create_property_distance
+#: model:ir.cron,name:property_management.create_property_distance
+msgid "Create Property Distance"
+msgstr "Koordinaten und Lokalisierung berechnen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
+msgid "Created Date"
+msgstr "Erstellungsdatum"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__created_on
+msgid "Created On"
+msgstr "Erstellt am"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__create_uid
+#: model:ir.model.fields,field_description:property_management.field_features_features__create_uid
+#: model:ir.model.fields,field_description:property_management.field_features_values__create_uid
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__create_uid
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_category__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_distance__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_features__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_location__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_property__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_stage__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_terms__create_uid
+#: model:ir.model.fields,field_description:property_management.field_property_type__create_uid
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__create_date
+#: model:ir.model.fields,field_description:property_management.field_features_features__create_date
+#: model:ir.model.fields,field_description:property_management.field_features_values__create_date
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__create_date
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_category__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_distance__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_features__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_location__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_property__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_stage__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_terms__create_date
+#: model:ir.model.fields,field_description:property_management.field_property_type__create_date
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__currency_id
+msgid "Currency"
+msgstr "Währung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_distance__partner_id
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__partner_id
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__access_url
+msgid "Customer Portal URL"
+msgstr "Kundenportal-URL"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
+msgid "Default crm stage for created opportunity."
+msgstr "Standard CRM-Stufe für neue Chance"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
+msgid "Default sales team for created opportunity."
+msgstr "Standard Verkaufsteam für neue Chance"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Delete"
+msgstr "Entfernen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_terms__description
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+#: model_terms:ir.ui.view,arch_db:property_management.property_terms_view_form
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Detail Data"
+msgstr "Dataillierte Daten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__display_name
+#: model:ir.model.fields,field_description:property_management.field_features_features__display_name
+#: model:ir.model.fields,field_description:property_management.field_features_values__display_name
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__display_name
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_category__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_distance__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_features__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_location__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_property__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_stage__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_terms__display_name
+#: model:ir.model.fields,field_description:property_management.field_property_type__display_name
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__display_name
+msgid "Display Name"
+msgstr "Anzeigenahme"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_distance__distance
+msgid "Distance"
+msgstr "Entfernung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.ir_attachment_real_estate_kanban_view
+msgid "Document"
+msgstr "Dokument"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Documents"
+msgstr "Dokumente"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Download Document"
+msgstr "Dokument herunterladen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Download Photo"
+msgstr "Foto herunterladen"
+
+#. module: property_management
+#: code:addons/property_management/controllers/main.py:0
+#, python-format
+msgid "Downloaded protected document %s."
+msgstr "Hat geschütztes Dokument heruntergeladen %s."
+
+#. module: property_management
+#: code:addons/property_management/controllers/main.py:0
+#, python-format
+msgid "Downloaded protected photo %s."
+msgstr "Hat geschütztes Foto heruntergeladen %s."
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__eec
+msgid "EEC"
+msgstr "Energieeffizienklasse"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Email"
+msgstr "E-Mail"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Emission kWh / m per year"
+msgstr "Verbrauch kWh / m² pro Jahr"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__contract_end
+msgid "End of Contract"
+msgstr "Vertragsende"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Energieausweis"
+msgstr "Energieausweis"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Energy Certificate"
+msgstr "Energieausweis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__energy_characteristic
+msgid "Energy Characteristic"
+msgstr "Energiebedarf / -verbrauch"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Energy Class"
+msgstr "Energieeffizienzklasse"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__energy_source
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Energy Source"
+msgstr "Wesentlicher Energieträger"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Energy performance certificate"
+msgstr "Energieausweis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__equipped_kitchen
+msgid "Equipped Kitchen?"
+msgstr "Ausgestattete Küche?"
+
+#. module: property_management
+#: model:ir.actions.report,name:property_management.expose_overview_report_id
+msgid "Expose (Overview)"
+msgstr "Exposé (Übersicht)"
+
+#. module: property_management
+#: model:ir.actions.report,name:property_management.property_management_report_id
+msgid "Expose (detail)"
+msgstr "Exposé (Detail)"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__external_headline
+#: model:ir.model.fields,field_description:property_management.field_property_property__external_headline_d
+msgid "External Headline"
+msgstr "Externer Titel"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Extra Pictures"
+msgstr "Weitere Bilder"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_features_values__feature_id
+#: model:ir.model.fields,field_description:property_management.field_property_features__feature_id
+msgid "Feature"
+msgstr "Ausstattungs-Kategorie"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_features_features__feature_value_ids
+msgid "Feature Value"
+msgstr "Ausstattungs-Wert"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_features
+#: model:ir.model,name:property_management.model_features_features
+#: model:ir.ui.menu,name:property_management.menu_features
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Features"
+msgstr "Ausstattung"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_features_values
+msgid "Features Values"
+msgstr "Ausstattungs-Werte"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__field_id
+#: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
+msgid "Field"
+msgstr "Feld"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__field_name
+msgid "Field Name"
+msgstr "Feldname"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__file
+msgid "File"
+msgstr "Datei"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__name
+msgid "File Name"
+msgstr "Dateiname"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_follower_ids
+msgid "Followers"
+msgstr "Follower"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Follower (Partner)"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Schriftart tolles Symbol, z.B. fa-task"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__for_lease
+msgid "For Lease?"
+msgstr "Zu Verpachten?"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__crm_lead__property_type__r
+msgid "For Rent"
+msgstr "Zur Miete"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__for_rent
+#: model:ir.model.fields,field_description:property_management.field_property_property__for_rent_d
+msgid "For Rent?"
+msgstr "Zur Miete?"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__crm_lead__property_type__s
+msgid "For Sale"
+msgstr "Zu Verkaufen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_type
+msgid "For Sale / For Rent"
+msgstr "Zu Verkaufen / Zur Miete"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__for_sale
+#: model:ir.model.fields,field_description:property_management.field_property_property__for_sale_d
+msgid "For Sale?"
+msgstr "Zu Verkaufen?"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Freitext"
+msgstr "Freitext"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__freitext
+msgid "Frietext"
+msgstr "Freitext"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__furnish_quality
+msgid "Furnised Quality"
+msgstr "Qualität der Möblierung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__furnishing_info
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Furnishing"
+msgstr "Möblierung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Further informations"
+msgstr "weitere Informationen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_res_company__dr_gdpr_info
+msgid "GDPR Info"
+msgstr "DSGVO Informationen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Garages"
+msgstr "Garagen / Carports"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__guest_toilet
+msgid "Guest Toilet?"
+msgstr "Gäste-WC?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__has_message
+msgid "Has Message"
+msgstr "Hat eine Nachricht"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__heating_space
+msgid "Heating Space"
+msgstr "Heizfläche"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__furnish_quality__2
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__prob_complete__2
+msgid "High"
+msgstr "Hoch"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__id
+#: model:ir.model.fields,field_description:property_management.field_features_features__id
+#: model:ir.model.fields,field_description:property_management.field_features_values__id
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__id
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__id
+#: model:ir.model.fields,field_description:property_management.field_property_category__id
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__id
+#: model:ir.model.fields,field_description:property_management.field_property_distance__id
+#: model:ir.model.fields,field_description:property_management.field_property_features__id
+#: model:ir.model.fields,field_description:property_management.field_property_location__id
+#: model:ir.model.fields,field_description:property_management.field_property_property__id
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__id
+#: model:ir.model.fields,field_description:property_management.field_property_stage__id
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__id
+#: model:ir.model.fields,field_description:property_management.field_property_terms__id
+#: model:ir.model.fields,field_description:property_management.field_property_type__id
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__id
+msgid "ID"
+msgstr "ID"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_exception_icon
+msgid "Icon"
+msgstr "Symbol"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Symbol zur Anzeige einer Ausnahmeaktivität."
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__message_needaction
+#: model:ir.model.fields,help:property_management.field_property_property__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Wenn diese Option aktiviert ist, erfordern neue Nachrichten Ihre Aufmerksamkeit."
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__message_has_error
+#: model:ir.model.fields,help:property_management.field_property_property__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+"Wenn diese Option aktiviert ist, weisen einige Nachrichten einen Übermittlungsfehler "
+"auf."
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_import_lead_wizard
+msgid "Import"
+msgstr "Import"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_import_lead_wizard
+msgid "Import CRM"
+msgstr "CRM-Import"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_import_lead_wizard
+msgid "Import Lead"
+msgstr "Lead-Import"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_import_lead_wizard
+msgid "Import Lead Wizard"
+msgstr "Lead-Akquise Assistent"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.action_import_lead_wizard_menu
+msgid "Import Leads"
+msgstr "Lead-Akquise Assistent"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__incl_warm_water
+msgid "Including Warm Water"
+msgstr "Inkl. Warmwasser"
+
+#. module: property_management
+#: model:crm.stage,name:property_management.stage_lead_interest_property
+msgid "Interest in Property"
+msgstr "Interesse an Immobilie"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__internal_documents_ids
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Internal Documents"
+msgstr "Interne Dokumente"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__internal_label
+msgid "Internal Label"
+msgstr "Interner Arbeitstitel"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__internal_photos_ids
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Internal Photos"
+msgstr "Interne Fotos"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_is_follower
+msgid "Is Follower"
+msgstr "Ist Follower"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_terms__is_required
+msgid "Is Mandatory?"
+msgstr "Erforderlich?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__is_published
+msgid "Is Published"
+msgstr "Ist veröffentlicht"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields____last_update
+#: model:ir.model.fields,field_description:property_management.field_features_features____last_update
+#: model:ir.model.fields,field_description:property_management.field_features_values____last_update
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard____last_update
+#: model:ir.model.fields,field_description:property_management.field_lead_origin____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_category____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_distance____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_features____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_location____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_property____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_stage____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_terms____last_update
+#: model:ir.model.fields,field_description:property_management.field_property_type____last_update
+#: model:ir.model.fields,field_description:property_management.field_sale_reason____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__write_uid
+#: model:ir.model.fields,field_description:property_management.field_features_features__write_uid
+#: model:ir.model.fields,field_description:property_management.field_features_values__write_uid
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__write_uid
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_category__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_distance__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_features__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_location__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_property__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_stage__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_terms__write_uid
+#: model:ir.model.fields,field_description:property_management.field_property_type__write_uid
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt geändert von"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__write_date
+#: model:ir.model.fields,field_description:property_management.field_features_features__write_date
+#: model:ir.model.fields,field_description:property_management.field_features_values__write_date
+#: model:ir.model.fields,field_description:property_management.field_import_lead_wizard__write_date
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_category__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_distance__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_features__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_location__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_property__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_stage__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_terms__write_date
+#: model:ir.model.fields,field_description:property_management.field_property_type__write_date
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt geändert am"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__latitude
+#: model:ir.model.fields,field_description:property_management.field_res_partner__latitude
+#: model:ir.model.fields,field_description:property_management.field_res_users__latitude
+msgid "Latitude"
+msgstr "Breitengrad"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_lead_origin
+#: model:ir.model.fields,field_description:property_management.field_property_property__lead_origin_id
+msgid "Lead Origin"
+msgstr "Ursprung des Leads"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Interessent / Chance"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__lease_amount
+msgid "Lease Amount"
+msgstr "Pacht"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__is_lease_including_vat
+msgid "Lease including VAT?"
+msgstr "Pacht inkl. USt.?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__living_space
+#: model:ir.model.fields,field_description:property_management.field_property_property__living_space
+#: model:ir.model.fields,field_description:property_management.field_property_property__living_space_d
+msgid "Living Space"
+msgstr "Wohnfläche"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Living space"
+msgstr "Wohnfläche"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_location__name
+#: model:ir.model.fields,field_description:property_management.field_property_property__location_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__location_info
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Location"
+msgstr "Region"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__longitude
+#: model:ir.model.fields,field_description:property_management.field_res_partner__longitude
+#: model:ir.model.fields,field_description:property_management.field_res_users__longitude
+msgid "Longitude"
+msgstr "Längengrad"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__furnish_quality__1
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__prob_complete__1
+msgid "Low"
+msgstr "Niedrig"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Hauptanlage"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__parent_location_id
+msgid "Main Location"
+msgstr "Hauptregion"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Map"
+msgstr "Karte"
+
+#. module: property_management
+#: model:ir.actions.server,name:property_management.map_customer_property_distance_ir_actions_server
+#: model:ir.cron,cron_name:property_management.map_customer_property_distance
+#: model:ir.cron,name:property_management.map_customer_property_distance
+msgid "Map Customer Property Distance"
+msgstr "Kundenentferung berechnen"
+
+#. module: property_management
+#: model:ir.actions.server,name:property_management.match_profile_property_ir_actions_server
+#: model:ir.cron,cron_name:property_management.match_profile_property
+#: model:ir.cron,name:property_management.match_profile_property
+msgid "Match Property"
+msgstr "Objekt matchen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Max. Distance"
+msgstr "Maximale Entfernung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__max_living_space
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Max. Living Space"
+msgstr "Maximale Wohnfläche"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Max. Price"
+msgstr "Maximaler Preis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__max_distance
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Maximum Distance"
+msgstr "Maximale Entfernung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Maximum Living Space"
+msgstr "Maximale Wohnfläche"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__max_price
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Maximum Price"
+msgstr "Maximaler Preis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__medium_id
+msgid "Medium"
+msgstr "Durchschnitt"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_has_error
+msgid "Message Delivery error"
+msgstr "Zustellungsfehler"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_ids
+msgid "Messages"
+msgstr "Nachrichten"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Mietpreis"
+msgstr "Mietpreis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__min_living_space
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Min. Living Space"
+msgstr "Minimale Wohnfläche"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Minimum Living Space"
+msgstr "Minimale Wohnfläche"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Multimedia"
+msgstr "Multimedia"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Meine Aktivitätsfrist"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_home_property
+msgid "My Exposes"
+msgstr "Meine Exposés"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "My Search Profile"
+msgstr "Mein Suchprofil"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_home_property
+msgid "My Search Profiles"
+msgstr "Meine Suchprofile"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__name
+#: model:ir.model.fields,field_description:property_management.field_features_features__name
+#: model:ir.model.fields,field_description:property_management.field_lead_origin__name
+#: model:ir.model.fields,field_description:property_management.field_property_category__name
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__name
+#: model:ir.model.fields,field_description:property_management.field_property_property__complete_name
+#: model:ir.model.fields,field_description:property_management.field_property_property__name
+#: model:ir.model.fields,field_description:property_management.field_property_stage__name
+#: model:ir.model.fields,field_description:property_management.field_property_terms__name
+#: model:ir.model.fields,field_description:property_management.field_property_type__name
+#: model:ir.model.fields,field_description:property_management.field_sale_reason__name
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
+msgid "Name"
+msgstr "Name"
+
+#. module: property_management
+#: code:addons/property_management/models/realestate.py:0
+#, python-format
+msgid "New"
+msgstr "Neu"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Nächste Aktivität des Kalendereintrags"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Frist nächste Aktivität"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_summary
+msgid "Next Activity Summary"
+msgstr "Übersicht nächste Aktivität"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_type_id
+msgid "Next Activity Type"
+msgstr "Typ nächste Aktivität"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate__ni
+msgid "Nicht benotigt"
+msgstr "Nicht benötigt"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "No energy certificate needed for this property."
+msgstr "Für diese Immobilie wird kein Energieausweis benötigt."
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate__no
+msgid "Noch nicht vorhanden"
+msgstr "Noch nicht vorhanden"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__furnish_quality__0
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__prob_complete__0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Not Now"
+msgstr "nicht jetzt"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Anzahl Aktionen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__no_of_garages
+msgid "Number of Gareges"
+msgstr "Anzahl Garagen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__no_of_parking
+msgid "Number of Parking Spaces"
+msgstr "Anzahl Parkplätze"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_has_error_counter
+msgid "Number of errors"
+msgstr "Anzahl Fehler"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Anzahl der Nachrichten mit Handlungsbedarf"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Anzahl der Nachrichten mit Zustellungsfehler"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Anzahl ungelesener Nachrichten"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
+msgid "Objects"
+msgstr "Objekte"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Ok"
+msgstr "Ok"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__opportunity_ids
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Opportunities"
+msgstr "Verkaufschancen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__opportunity_count
+msgid "Opportunity Count"
+msgstr "Anzahl Verkaufschancen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__owner_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__owner_id_d
+msgid "Owner"
+msgstr "Eigentümer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__parent_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__parent_property_id
+msgid "Parent Property"
+msgstr "Teil dieser Haupt-Immobilie"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Parking"
+msgstr "Parkplatz"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: property_management
+#: code:addons/property_management/wizard/import_lead_wizard.py:0
+#, python-format
+msgid ""
+"Please Check Row #%s\n"
+"Line : %s\n"
+"Problem : %s"
+msgstr ""
+"Bitte prüfen Zeile Nr. %s\n"
+"Stelle: %s\n"
+"Problem : %s"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__plot_area
+#: model:ir.model.fields,field_description:property_management.field_property_property__plot_area_d
+msgid "Plot Area"
+msgstr "Grundstücksfläche"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Plot area"
+msgstr "Grundstücksfläche"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__access_url
+msgid "Portal Access URL"
+msgstr "Adresse für den Portalzugriff"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Power Consumption"
+msgstr "Energieverbrauch"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_real_estate_mail_form
+msgid "Powered by"
+msgstr "Bereitgestellt von"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+msgid ""
+"Price on\n"
+"                                            demand"
+msgstr ""
+"Preis on\n"
+"                                            demand"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__prob_complete
+msgid "Probability of Complition"
+msgstr "Erfolgswahrscheinlichkeit"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Profile Saved !"
+msgstr "Profil gespeichert!"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "Profiles"
+msgstr "Profile"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property_category
+msgid "Propertie Category"
+msgstr "Objektkategorie"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property_contract_type
+msgid "Propertie Contract Type"
+msgstr "Vertrags- / Vermarktungstyp"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property_location
+msgid "Propertie Locations"
+msgstr "Regionen"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property_sub_location
+msgid "Propertie Sub Locations"
+msgstr "Genaue Regionen"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property_type
+msgid "Propertie Types"
+msgstr "Objektkategorien"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__property_ids
+#: model:ir.ui.menu,name:property_management.main_menu_property
+#: model:ir.ui.menu,name:property_management.menu_property
+#: model_terms:ir.ui.view,arch_db:property_management.property_search_profile_form_view
+msgid "Properties"
+msgstr "Objekte"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_property
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_id
+#: model:ir.model.fields,field_description:property_management.field_property_distance__property_id
+#: model:ir.model.fields,field_description:property_management.field_property_features__property_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_info
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Property"
+msgstr "Objekt"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.menu_property_category
+msgid "Property Categories"
+msgstr "Objektkategorie"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_category
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_type
+#: model_terms:ir.ui.view,arch_db:property_management.property_category_tree_view
+msgid "Property Category"
+msgstr "Objektkategorie"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_city
+msgid "Property City"
+msgstr "Ort des Objekts"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_dr_property_contact_fields
+msgid "Property Contact Fields"
+msgstr "Kontaktfelder des Objekts"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_contract_type
+#: model:ir.ui.menu,name:property_management.menu_property_contract_type
+#: model_terms:ir.ui.view,arch_db:property_management.property_contract_type_tree_view
+msgid "Property Contract Type"
+msgstr "Vertrags- / Vermarktungstyp"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_lead_form_property
+msgid "Property Details"
+msgstr "Objektdetails"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_distance
+#: model:ir.model.fields,field_description:property_management.field_res_partner__property_distance_ids
+#: model:ir.model.fields,field_description:property_management.field_res_users__property_distance_ids
+msgid "Property Distance"
+msgstr "Entfernung des Objekts"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_features
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_features_ids
+#: model_terms:ir.ui.view,arch_db:property_management.features_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.features_tree_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Property Features"
+msgstr "Ausstattungsmerkmale"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__property_ids_count
+msgid "Property Ids Count"
+msgstr "Anzahl Immobilen IDs"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_location
+#: model:ir.model,name:property_management.model_property_sub_location
+msgid "Property Location"
+msgstr "Region"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.menu_property_location
+#: model_terms:ir.ui.view,arch_db:property_management.property_location_tree_view
+msgid "Property Locations"
+msgstr "Regionen"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.main_menu_real_estate
+#: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
+msgid "Property Management"
+msgstr "Objektverwaltung"
+
+#. module: property_management
+#: model:mail.template,name:property_management.inquiry_mail
+msgid "Property Management: Inquiry"
+msgstr "Hausverwaltung: Anfrage"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_price
+msgid "Property Price"
+msgstr "Preis des Objekts"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_property_search_profile
+#: model:ir.model,name:property_management.model_property_search_profile
+#: model:ir.model.fields,field_description:property_management.field_res_partner__property_search_profile_ids
+#: model:ir.model.fields,field_description:property_management.field_res_users__property_search_profile_ids
+#: model:ir.ui.menu,name:property_management.menu_property_search_profile
+#: model_terms:ir.ui.view,arch_db:property_management.property_search_profile_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_search_profile_tree_view
+msgid "Property Search Profile"
+msgstr "Suchprofil"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_search_profile_count
+msgid "Property Search Profile Count"
+msgstr "Anzahl Suchprofile"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.property_stages_action
+#: model:ir.model,name:property_management.model_property_stage
+#: model:ir.ui.menu,name:property_management.menu_property_stages
+#: model_terms:ir.ui.view,arch_db:property_management.property_stage_view_tree
+msgid "Property Stages"
+msgstr "Objekt-Stati"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_stage_ids
+msgid "Property Status"
+msgstr "Objekt-Status"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_street
+msgid "Property Street"
+msgstr "Straße des Objekts"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.menu_property_sub_location
+#: model_terms:ir.ui.view,arch_db:property_management.property_sub_location_tree_view
+msgid "Property Sub Locations"
+msgstr "Detail-Regionen"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.property_terms_action
+#: model:ir.model,name:property_management.model_property_terms
+#: model:ir.ui.menu,name:property_management.menu_property_terms
+#: model_terms:ir.ui.view,arch_db:property_management.property_terms_view_form
+#: model_terms:ir.ui.view,arch_db:property_management.property_terms_view_tree
+msgid "Property Terms"
+msgstr "Geschäftsbedingungen"
+
+#. module: property_management
+#: code:addons/property_management/models/crm.py:0
+#, python-format
+msgid "Property Terms Changed."
+msgstr "Geschäftsbedingungen geändert."
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_property_type
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_type_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_type_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__property_type_id_d
+#: model:ir.model.fields,field_description:property_management.field_property_search_profile__property_type_id
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+#: model_terms:ir.ui.view,arch_db:property_management.property_type_tree_view
+msgid "Property Type"
+msgstr "Objekttyp"
+
+#. module: property_management
+#: model:ir.ui.menu,name:property_management.menu_property_type
+msgid "Property Types"
+msgstr "Objekttypen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__property_zip
+msgid "Property Zip"
+msgstr "PLZ des Objekts"
+
+#. module: property_management
+#: model:mail.template,subject:property_management.inquiry_mail
+msgid "Property inquiry at ${ctx['user'].company_id.name}"
+msgstr "Anfrage für ${ctx['user'].company_id.name}"
+
+#. module: property_management
+#: code:addons/property_management/models/realestate.py:0
+#, python-format
+msgid "Property with the same reference already exist !"
+msgstr "Es besteht bereis eine Immobilie mit dieser Referenz."
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__protected_documents_ids
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Protected Documents"
+msgstr "Geschützte Dokumente"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__protected_photos_ids
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Protected Photos"
+msgstr "Geschützte Fotos"
+
+#. module: property_management
+#: model:ir.actions.act_window,name:property_management.action_list_ir_attachment_real_estate
+#: model:ir.model.fields,field_description:property_management.field_property_property__public_photos_ids
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Public Photos"
+msgstr "Öffentliche Fotos"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__published_date
+msgid "Published Date"
+msgstr "Datum der Veröffentlichung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Publishing"
+msgstr "Veröffentlichung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__purchase_date
+msgid "Purchase Date"
+msgstr "Kaufdatum"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__purchase_price
+#: model:ir.model.fields,field_description:property_management.field_property_property__purchase_price_d
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Purchase Price"
+msgstr "Kaufpreis"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_kanban_view
+msgid "Purchase Price:"
+msgstr "Kaufpreis:"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_ir_qweb_field_property_monetary
+msgid "Qweb Field Property Monetary"
+msgstr "Qweb Feld Objekt-Währung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.ir_attachment_real_estate_list_view
+msgid "Real Estate Attachment List"
+msgstr "Liste der Immobilienanhängen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__reason_sale_id
+msgid "Reason for Sale"
+msgstr "Grund des Verkaufs"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Ref."
+msgstr "Ref."
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Ref:"
+msgstr "Ref.:"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__reference_id
+msgid "Reference ID"
+msgstr "Referenz"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__rent_price
+#: model:ir.model.fields,field_description:property_management.field_property_property__rent_price_d
+#: model:ir.model.fields.selection,name:property_management.selection__property_search_profile__contract_type__rent
+msgid "Rent"
+msgstr "Kaltmiete"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid ""
+"Rent\n"
+"                            <br/>\n"
+"                            <span style=\"font-size: 20px;\">\n"
+"                                (including heating)\n"
+"                            </span>"
+msgstr ""
+"Miete\n"
+"                            <br/>\n"
+"                            <span style=\"font-size: 20px;\">\n"
+"                                (inklusive Heizung)\n"
+"                            </span>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid ""
+"Rent\n"
+"                            <br/>\n"
+"                            <span style=\"font-size: 20px;\">\n"
+"                                (whithout heating)\n"
+"                            </span>"
+msgstr ""
+"Miete\n"
+"                            <br/>\n"
+"                            <span style=\"font-size: 20px;\">\n"
+"                                (ohne Heizung)\n"
+"                            </span>"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__rent_incl_heat
+#: model:ir.model.fields,field_description:property_management.field_property_property__rent_incl_heat_d
+msgid "Rent Including Heating"
+msgstr "Warmmiete"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Rent Price"
+msgstr "Mietpreis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_dr_property_contact_fields__required
+msgid "Required?"
+msgstr "Erforderlich?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwortlicher Benutzer"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__website_id
+msgid "Restrict publishing to this website."
+msgstr "Veröffentlichung auf dieser Seite verhindern."
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__rooms
+#: model:ir.model.fields,field_description:property_management.field_property_property__rooms
+#: model:ir.model.fields,field_description:property_management.field_property_property__rooms_d
+msgid "Rooms"
+msgstr "Zimmer"
+
+#. module: property_management
+#: code:addons/property_management/models/ir_qweb_fields.py:0
+#, python-format
+msgid "Rounding precision"
+msgstr "Rundungsgenauigkeit"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__is_seo_optimized
+msgid "SEO optimized"
+msgstr "SEO-optimiert"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS-Zustellungsfehler"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Sale Price"
+msgstr "Verkaufspreis"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_sale_reason
+msgid "Sale Reason"
+msgstr "Verkaufsgrund"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__sales_person_id
+#: model:ir.model.fields,field_description:property_management.field_property_property__sales_person_id_d
+msgid "Sales Person"
+msgstr "Verkäufer"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_res_config_settings__dr_property_sales_team
+#: model:ir.model.fields,field_description:property_management.field_website__dr_property_sales_team
+msgid "Sales Team"
+msgstr "Verkaufsteam"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_search_profile
+msgid "Save"
+msgstr "Speichern"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_crm_lead__search_profile_id
+#: model:ir.ui.menu,name:property_management.menu_search_profile_main
+msgid "Search Profile"
+msgstr "Suchprofil"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Search Profiles"
+msgstr "Suchprofile"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__access_token
+msgid "Security Token"
+msgstr "Sicherheitscode"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.res_config_settings_view_form_smartbrix
+msgid "Select fields which you want to show on contact us form in property detail page."
+msgstr ""
+"Wählen Sie die Felder aus, die Sie im Kontaktformular auf der Detailseite der "
+"Unterkunft anzeigen möchten."
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__seo_name
+msgid "Seo name"
+msgstr "SEO Name"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_ir_attachment__sequence
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Short Description"
+msgstr "Kurzbeschreibung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__show_on_cover
+msgid "Show on Cover ?"
+msgstr "Im Cover-Slider auf der Startseite anzeigen?"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__show_on_website
+msgid "Show on Start Page?"
+msgstr "Auf Startseite anzeigen?"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_real_estate_mail_form
+#: model_terms:ir.ui.view,arch_db:property_management.view_real_estate_notification_mail_form
+msgid "SmartBrix"
+msgstr "SMARTBRIX"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__source_id
+msgid "Source"
+msgstr "Ursprung"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Space"
+msgstr "Fläche"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_form_view
+msgid "Start Page"
+msgstr "Veröffentlichungsoptionen"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status basierend auf Aktivitäten\n"
+"Überfällig: Fälligkeitsdatum überschritten\n"
+"Heute: Datum der Aktivität ist heute\n"
+"Geplant: Zukünftige Aktivitäten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__street
+#: model:ir.model.fields,field_description:property_management.field_property_property__street_d
+msgid "Street"
+msgstr "Straße"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__sub_location_id
+#: model:ir.model.fields,field_description:property_management.field_property_sub_location__name
+msgid "Sub Location"
+msgstr "Detail-Region"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_contract_type__terms_ids
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Terms"
+msgstr "Geschäftsbedingungen"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.view_company_form_inherit_property_management
+msgid "Terms and Conditions"
+msgstr "Geschäftsbedingungen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__terrace
+msgid "Terrace?"
+msgstr "Terrasse?"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "The customer Commission is"
+msgstr "Die Kunden-Provision ist"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid ""
+"The energy certificate is not available yet. We will update this expose and inform you "
+"once it is available."
+msgstr ""
+"Es ist noch kein Energieausweis vorhanden. Wir werden das Exposé aktualisieren und Sie "
+"informieren, sobald der Energieausweis verfügbar ist."
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__website_url
+msgid "The full URL to access the document through the website."
+msgstr "Die vollständige URL, um das Dokument über die Website aufzurufen."
+
+#. module: property_management
+#: code:addons/property_management/models/ir_qweb_fields.py:0
+#, python-format
+msgid "The value send to monetary field is not a number."
+msgstr "Der an das monetäre Feld gesendete Wert ist keine Zahl."
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_objects
+msgid "There are currently no objects for your account."
+msgstr "Aktuell haben Sie keine gespeicherten Exposés."
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_search_profiles
+msgid "There are currently no profile for your account."
+msgstr "Aktuell haben Sie keine Suchprofile."
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign efforts, e.g. "
+"Fall_Drive, Christmas_Special"
+msgstr ""
+"Dies ist ein Name der Ihnen dabei hilft, verschiedene Kampagnen zu unterscheiden."
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr "Dies ist die Auslieferungsmethode, z.B. E-Mail oder Postkarte"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__source_id
+msgid ""
+"This is the source of the link, e.g. Search Engine, another domain, or name of email "
+"list"
+msgstr "Dies ist der Ursprung des Links, z.B. Websuchen"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__contract_type_id
+msgid "Type"
+msgstr "Typ"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Art der aufgezeichneten Ausnahmeaktivität."
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_unread
+#: model_terms:ir.ui.view,arch_db:property_management.crm_case_kanban_view_leads_inherit_crm
+msgid "Unread Messages"
+msgstr "Ungelesene Nachrichten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Anzahl ungelesener Nachrichten"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__valid_till
+msgid "Valid Till"
+msgstr "Gültig bis"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_features_values__name
+#: model:ir.model.fields,field_description:property_management.field_property_features__value_ids
+msgid "Value"
+msgstr "Wert"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.features_form_view
+msgid "Values"
+msgstr "Werte"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate_type__v
+msgid "Vebrauchsausweis"
+msgstr "Vebrauchsausweis"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__furnish_quality__3
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__prob_complete__3
+msgid "Very High"
+msgstr "Sehr hoch"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_published
+msgid "Visible on current website"
+msgstr "Sichtbar auf aktueller Webseite"
+
+#. module: property_management
+#: model:ir.model.fields.selection,name:property_management.selection__property_property__certificate__vo
+msgid "Vorhanden"
+msgstr "Vorhanden"
+
+#. module: property_management
+#: model:ir.model,name:property_management.model_website
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_id
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Website"
+msgstr "Webseite"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_message_ids
+msgid "Website Messages"
+msgstr "Nachrichten von der Webseite"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_url
+msgid "Website URL"
+msgstr "Webseiten-URL"
+
+#. module: property_management
+#: model:ir.model.fields,help:property_management.field_property_property__website_message_ids
+msgid "Website communication history"
+msgstr "Webseiten-Kommunikationsverlauf"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_meta_description
+msgid "Website meta description"
+msgstr "Webseiten-Meta-Beschreibung"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_meta_keywords
+msgid "Website meta keywords"
+msgstr "Webseiten-Meta-Stichworte"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_meta_title
+msgid "Website meta title"
+msgstr "Webseiten-Meta-Titel"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__website_meta_og_img
+msgid "Website opengraph image"
+msgstr "Website opengraph Bilder"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Welcome to the digital Expose by"
+msgstr "Willkommen im Online-Exposé von"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "Your Contact Person"
+msgstr "Ihr Ansprechpartner"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid "Your personal contact"
+msgstr "Ihr Ansprechpartner"
+
+#. module: property_management
+#: model:ir.model.fields,field_description:property_management.field_property_property__zip
+#: model:ir.model.fields,field_description:property_management.field_property_property__zip_d
+msgid "Zip"
+msgstr "PLZ"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.crm_case_kanban_view_leads_inherit_crm
+msgid "image"
+msgstr "Bild"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.expose_overview_report
+#: model_terms:ir.ui.view,arch_db:property_management.property_management_report_template
+msgid ""
+"m\n"
+"                            <sup>2</sup>"
+msgstr ""
+"m\n"
+"                            <sup>2</sup>"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.portal_my_property_object
+msgid "m<sup>2</sup>"
+msgstr "m<sup>2</sup>"
+
+#. module: property_management
+#: code:addons/property_management/models/realestate.py:0
+#, python-format
+msgid "opportunity already created for this Customer and Property !"
+msgstr ""
+"Es existiert bereits eine Verkaufschance für diese Kombination aus Kunde und Immobilie!"
+
+#. module: property_management
+#: model_terms:ir.ui.view,arch_db:property_management.property_tree_view
+msgid "properties"
+msgstr "Objekte"
+
+#. module: property_management
+#. openerp-web
+#: code:addons/property_management/static/src/xml/fields.xml:0
+#, python-format
+msgid "{'multiple': multi_upload ? 'multiple' : null}"
+msgstr ""

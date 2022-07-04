@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="expenditure_form">
+        <field name="name">expenditure.form</field>
+        <field name="model">property.expenditure</field>
+        <field name="arch" type="xml">
+            <form string="Expenditure Form">
+                <sheet>
+                    <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="property_id"/>
+                                <field name="cost_type_id"/>
+                                <field name="vendor_id" />
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="amount"/>
+                                <field name="tax_id"/>
+                                <field name="documents" widget="dr_field_multi_attachments"/>
+                                <field name="cleared"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <field name="allocation_formula" invisible="1"/>
+                            <page string="Property Factor" name="property_factor" attrs="{'invisible': [('allocation_formula', '!=', 'da')]}">
+                                <field name="expenditure_factor_ids">
+                                    <tree string="Property Factor" editable="bottom">
+                                        <field name="child_property_ids" invisible="1"/>
+                                        <field name="property_id" domain="[('id', 'in', child_property_ids)]" options="{'no_create': True}"/>
+                                        <field name="factor"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="expenditure_list">
+        <field name="name">expenditure.list</field>
+        <field name="model">property.expenditure</field>
+        <field name="arch" type="xml">
+            <tree string="Expenditure list">
+        		  <field name="name"/>
+                  <field name="property_id"/>
+                  <field name="cost_type_id"/>
+                  <field name="vendor_id" />
+                  <field name="date_start"/>
+                  <field name="date_end"/>
+                  <field name="amount"/>
+                  <field name="tax_id"/>
+    		</tree>
+        </field>
+    </record>
+    <record id="expenditure_search_view" model="ir.ui.view">
+        <field name="name">expenditure.search.view</field>
+        <field name="model">property.expenditure</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Not splitted" name="expenditure_not_splitted" domain="[('cleared', '=', False)]">
+                </filter>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_list_expenditure">
+        <field name="name">Expenditures</field>
+        <field name="res_model">property.expenditure</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_expenditure_not_splitted':1}</field>
+    </record>
+
+    <menuitem id="menu_expenditure" parent="main_menu_property_admin"
+          action="action_list_expenditure" sequence="30"/>
+</odoo>

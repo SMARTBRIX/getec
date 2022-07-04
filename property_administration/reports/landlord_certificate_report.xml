@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="paper_format_a4_portrait" model="report.paperformat">
+        <field name="name">A4 Landlord Certificate</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <template id="landlord_certificate">
+        <t t-call="web.basic_layout">
+            <t t-foreach="tenancies" t-as="tenancy">
+                <t t-call="property_administration.landlord_certificate_report"/>
+            </t>
+        </t>
+    </template>
+    <template id="landlord_certificate_report">
+        <div class="page">
+            <div class="container">
+                <t t-set="resident" t-value="resident"/>
+                    <div>
+                        <p>Hiermit bestätige ich als</p>
+                    </div>
+                    <div t-if="user.company_id == tenancy.property_id.company_id" style="margin-bottom:30px">
+                        <strong>( ) Eigentümer</strong>
+                    </div>
+                    <div t-else="" style="margin-bottom:30px">
+                        <strong>( ) vom Eigentümer Beauftragter/Verwalter</strong>
+                    </div>
+                    <div>
+                        <span t-field="user.partner_id"/>
+                        <hr style="border-bottom: 1px solid black;margin-top:0px;margin-bottom:0px"/>
+                        <span>Vorname Name ggfs. Stempel</span>
+                        <div style="margin-top:30px">
+                            <span t-field="user.partner_id.street"/>, <span t-field="user.partner_id.zip"/> <span t-field="user.partner_id.city"/>
+                        </div>
+                        <hr style="border-bottom: 1px solid black;margin-top:0px;margin-bottom:0px"/>
+                        <span>Straße Hausnummer / PLZ Ort</span>
+                    </div>
+                    <div style="margin-top:30px">
+                        <p>der vermieteten Wohnung in</p>
+                        <div>
+                            <span t-field="tenancy.property_id.street"/>, <span t-field="tenancy.property_id.zip"/> <span t-field="tenancy.property_id.city"/>
+                        </div>
+                        <hr style="border-bottom: 1px solid black;margin-top:0px;margin-bottom:0px"/>
+                        <span>Straße Hausnummer / PLZ Ort (neue Anschrift / ggfs. alte Anschrift* – Unzutreffendes bitte streichen)
+                        </span>
+                    </div>
+                    <div style="margin-top:30px">
+                        <p>gemäß § 19 Abs. 1 Bundesmeldegesetz (BMG) den</p>
+                        <div class="row">
+                            <span class="col-2">( ) Einzug zum</span>
+                            <div class="col-10">
+                                <span t-field="tenancy.date_start"/>
+                                <hr style="border-bottom: 1px solid black;margin-top:0px;margin-bottom:0px"/>
+                                <span>Einzugsdatum</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="col-2">( ) Auszug zum</span>
+                            <div class="col-10">
+                                <hr style="border-bottom: 1px solid black;margin-top:30px;margin-bottom:0px"/>
+                                <span>Auszugsdatum (nur auszufüllen bei Umzug ins Ausland*)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:30px">
+                        <p>des Mieters/der Mieterin/der Mieter bzw. des Untermieters<br/>(nach § 17 Abs. 1 und 2 BMG meldepflichtige Personen)</p>
+                        <div class="row">
+                            <span class="col-1">1.</span>
+                            <div class="col-11">
+                                <span t-field="resident.name"/>
+                                <hr style="border-bottom: 1px solid black;margin-top:0px;margin-bottom:0px"/>
+                                <span>Vorname Name</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:30px">
+                        <p>Erklärung gem. § 19 Abs. 6 BMG: Die oben genannten Angaben entsprechen den Tatsachen. Mir ist bekannt,
+                        dass es gem. § 19 Abs. 6 BMG verboten ist, eine Wohnungsanschrift für eine Anmeldung nach § 17 Abs. 1 BMG
+                        einem Dritten anzubieten oder zur Verfügung zu stellen, wenn ein tatsächlicher Bezug der Wohnung durch einen
+                        Dritten weder stattfindet noch beabsichtigt ist. Des Weiteren ist mir bekannt, dass ein Verstoß gegen diese Rege-lung sowie das Ausfüllen einer Vermieterbescheinigung als Nichtberechtigter zu einer Ordnungswidrigkeit führt,was gem. § 54 BMG mit einer Geldbuße geahndet wird.</p>
+                        <div>
+                            <div class="row">
+                                <div class="col-6">
+                                <span t-field="user.partner_id.city"/>, <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d.%m.%Y')"/></div>
+                                <!-- <span t-field="user.signature_img" class="text-right"/> -->
+
+                                <div t-if="user.signature_img" class="col-6 text-right">
+                                    <img  t-att-src="image_data_uri(user.signature_img)" style="max-height: 45px;"/>
+                                </div>
+                            </div>
+                            <hr style="border-bottom: 1px solid black;margin-top:0px;margin-bottom:0px"/>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span>Ort, Datum</span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <span>Unterschrift des Eigentümers/Vermieters<br/>oder des Beauftragten</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        * Findet der Umzug innerhalb Deutschlands statt, muss der neuen Meldebehörde die neue Adresse vorgelegt
+                        werden. Geht der Umzug ins Ausland, muss sich der Mieter bei der bisherigen Meldebehörde abmelden,
+                        dabei ist die Anschrift der alten Wohnung anzugeben.</div>
+            </div>
+        </div>
+    </template>
+
+    <report
+            id="action_landlord_certificate_report"
+            string="Landlord Certificate"
+            model="property.tenancy"
+            report_type="qweb-pdf"
+            name="property_administration.landlord_certificate"
+            file="property_administration.landlord_certificate"
+            print_report_name="'Property - %s' % (object.name)"
+            paperformat="property_administration.paper_format_a4_portrait"
+    />
+</odoo>

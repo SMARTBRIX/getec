@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="landlord_certificate_view_form" model="ir.ui.view">
+            <field name="name">landlord.certificate.form</field>
+            <field name="model">landlord.certificate</field>
+            <field name="arch" type="xml">
+                <form string="Landlord Certificate">
+                    <group>
+                        <field name="resident_ids" invisible="1"/>
+                        <field name="resident_id" domain="[('id', 'in', resident_ids)]" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                    <footer>
+                        <button name="create_landlord_report" string="Create Landlord Certificate" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+      <record id="action_landlord_certificate" model="ir.actions.act_window">
+            <field name="name">Create Landlord Certificate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">landlord.certificate</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="property_administration.model_property_tenancy" />
+            <field name="binding_view_types">form</field>
+        </record>
+</odoo>

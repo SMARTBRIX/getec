@@ -1,0 +1,12 @@
+<odoo>
+        <record model="product.product" id="rent">
+            <field name="name">Rent</field>
+        </record>
+        <record model="product.product" id="ancillary_costs">
+            <field name="name">Ancillary Costs</field>
+        </record>
+        <record model="product.product" id="heating_costs">
+            <field name="name">Heating Costs</field>
+        </record>
+
+</odoo>

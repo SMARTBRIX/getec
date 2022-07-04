@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_property_project_account_move" model="ir.ui.view">
+            <field name="name">property.project.account.move</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='invoice_line_ids']/tree/field[@name='analytic_account_id']" position="after">
+                    <field name="budget_pos_id" optional="hide"/>
+                </xpath>
+                <xpath expr="//page[@id='aml_tab']/field/tree" position="inside">
+                    <field name="budget_pos_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+       
+    </data>
+</odoo>

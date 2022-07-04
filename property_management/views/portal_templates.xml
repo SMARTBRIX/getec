@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+    ============================================================================
+    General
+    ============================================================================
+    -->
+    <template id="portal_my_home_property" name="Portal My Home: Property" inherit_id="portal.portal_my_home" priority="40">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">My Exposes</t>
+                <t t-set="url" t-value="'/my/property_objects'"/>
+                <t t-set="count" t-value="property_objects_count"/>
+            </t>
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">My Search Profiles</t>
+                <t t-set="url" t-value="'/my/property_search_profiles'"/>
+                <t t-set="count" t-value="property_search_profiles_count"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_breadcrumbs" name="Portal layout: Property" inherit_id="portal.portal_breadcrumbs" priority="40">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'property_objects' or property_object" t-attf-class="breadcrumb-item #{'active ' if not property_object else ''}">
+                <a t-if="property_object" href="/my/property_objects">
+                    My Exposes
+                </a>
+                <t t-else="">
+                    My Exposes
+                </t>
+            </li>
+
+            <t t-if="page_name == 'my_expose' and lead">
+                <li class="breadcrumb-item">
+                    <a href="/my/property_objects">
+                        My Exposes
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span t-field="lead.name"/>
+                </li>
+            </t>
+
+            <li t-if="page_name == 'property_search_profiles' or profile_id" t-attf-class="breadcrumb-item #{'active ' if not profile_id else ''}">
+                <a t-if="profile_id" href="/my/property_search_profiles">
+                    Search Profiles
+                </a>
+                <t t-else="">
+                    Search Profiles
+                </t>
+            </li>
+            <li t-if="profile_id" class="breadcrumb-item active">
+                <span t-field="profile_id.property_type_id"/>
+            </li>
+        </xpath>
+    </template>
+
+    <!--
+    ============================================================================
+    My Exposes
+    ============================================================================
+    -->
+    <template id="portal_my_objects" name="My Exposes">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Objects</t>
+            </t>
+            <t t-if="not objects">
+                <p>There are currently no objects for your account.</p>
+            </t>
+            <t t-if="objects" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Name</th>
+                        <th>Property</th>
+                        <th class="text-right">Created Date</th>
+                    </tr>
+                </thead>
+                <t t-foreach="objects" t-as="object">
+                    <tr>
+                        <td><a t-attf-href="/my/object/#{object.id}"><t t-esc="object.name"/></a></td>
+                        <td>
+                            <a t-if="object.property_id" target="_blank" t-attf-href="/real_estate/property/#{object.property_id.id}"><i class="fa fa-external-link"/> <span t-field="object.property_id"/></a>
+                        </td>
+                        <td class="text-right"><span t-field="object.create_date" t-options="{'widget': 'date'}"/></td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="portal_my_property_object" name="My Object">
+        <t t-call="portal.portal_layout">
+
+            <t t-if="terms and not len(accepted_terms_ids)">
+                <div class="modal fade" id="termsModal" t-att-data-lead-id="lead.id" data-backdrop="static" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="termsModalLabel">Terms</h5>
+                                <button type="button" class="close" data-dismiss="modal">&amp;times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-check mt-2" t-foreach="terms" t-as="term">
+                                                <input class="form-check-input" type="checkbox" t-att-required="term.is_required or None" t-att-checked="(term.is_required or None) or term.id in accepted_terms_ids or None" t-att-id="term.id"/>
+                                                <label class="form-check-label" t-att-for="term.id">
+                                                    <t t-esc="term.name"/>
+                                                </label>
+                                                <a href="#" t-if="term.description" data-toggle="modal" t-attf-data-target="#termsModal-#{term.id}" class="ml-1">
+                                                    <i class="fa fa-question-circle-o"/>
+                                                </a>
+                                                <small t-if="term.is_required" class="form-text text-muted mt-0">*Required</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a type="button" href="/my/property_objects" class="btn btn-secondary">Not Now</a>
+                                <button type="button" class="btn btn-primary accept">Accept Terms</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <t t-foreach="terms" t-as="term">
+                    <div t-if="term.description" class="modal fade" t-attf-id="termsModal-#{term.id}" data-backdrop="static" tabindex="-1" t-attf-aria-labelledby="termsModalLabel-#{term.id}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" t-attf-id="termsModalLabel-#{term.id}">Description</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&amp;times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div t-raw="term.description"/>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+
+            <t t-else="">
+                <t t-set="property_id" t-value="lead.property_id"/>
+                <div class="container-fluid p-0 bg-white border my-3 dr-portal-property-contact-info">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h4 class="my-3">Welcome to the digital Expose by <span t-field="request.website.company_id.partner_id"/></h4>
+                            <hr/>
+                        </div>
+                        <div class="col-12" t-if="lead.user_id">
+                            <h6 class="text-center">Your Contact Person</h6>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img  t-if="lead.user_id.partner_id.image_128" class="rounded-circle mx-auto border border-primary p-1 dr-avatar-image mr-3" t-att-src="image_data_uri(lead.user_id.partner_id.image_128)"/>
+                                    <span class="badge badge-light mt-2 text-primary border" t-field="lead.user_id.partner_id"/>
+                                </div>
+                                <div class="col-lg-6 offset-lg-3 my-3">
+                                    <table class="table table-sm table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <th>Phone</th>
+                                                <td><span t-field="lead.user_id.partner_id.phone_sanitized"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email</th>
+                                                <td><span t-field="lead.user_id.partner_id.email"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Website</th>
+                                                <td><span t-field="lead.user_id.partner_id.website"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Business Hours</th>
+                                                <td>10 Hrs</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid p-0 dr-portal-property-page bg-white border pb-3 pr-3 pl-3" t-att-data-lead-id="lead.id">
+                    <div class="row justify-content-between align-items-center py-2 border-bottom shadow-sm bg-100">
+                        <div class="col-auto">
+                            <h4 class="my-1 text-primary" t-field="property_id.external_headline"/>
+                            <h6 class="my-1">Ref: <span t-field="property_id.reference_id"/></h6>
+                        </div>
+                        <div class="col-auto">
+                            <a target="_blank" t-attf-href="/real_estate/property/#{property_id.id}" class="btn btn-primary-soft my-1"><i class="fa fa-external-link"/> View Property</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-around">
+                        <div t-if="property_id.for_sale" class="col-md-auto text-center my-2">
+                            <h6>Sale Price</h6>
+                            <h4 class="text-primary mb-0" t-field="property_id.purchase_price" t-options="{'widget': 'property.monetary'}"/>
+                        </div>
+                        <div t-if="property_id.for_rent" class="col-md-auto text-center my-2">
+                            <h6 class="mb-0">Rent Price</h6>
+                            <small>(Plus additional costs)</small>
+                            <h4 class="text-primary mb-0" t-field="property_id.rent_price" t-options="{'widget': 'property.monetary'}"/>
+                        </div>
+                        <div t-if="property_id.for_rent and property_id.rent_incl_heat" class="col-md-auto text-center my-2">
+                            <h6 class="mb-0">Rent Price</h6>
+                            <small>(Including heating)</small>
+                            <h4 class="text-primary mb-0" t-field="property_id.rent_incl_heat" t-options="{'widget': 'property.monetary'}"/>
+                        </div>
+                        <div t-if="property_id.for_rent and property_id.rent_incl_heat" class="col-md-auto text-center my-2">
+                            <h6 class="mb-0">Comission Buyer</h6>
+                            <small>(Including VAT)</small>
+                            <h4 class="text-primary mb-0" t-field="property_id.provision_client"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <hr/>
+                            <ul class="list-unstyled d-flex flex-column flex-md-row align-items-center dr-property-card-icons-container">
+                                <li class="dr-property-card-icon text-center w-100 py-3" t-if="property_id.plot_area">
+                                    <img src="/theme_realestate/static/src/img/plot_area.png"/>
+                                    <div>Plot area</div>
+                                    <h5 class="mt-2">
+                                        <t t-esc="property_id.plot_area"/>
+                                        m<sup>2</sup>
+                                    </h5>
+                                </li>
+                                <li class="dr-property-card-icon text-center w-100 py-3" t-if="property_id.living_space">
+                                    <img src="/theme_realestate/static/src/img/living_space.png"/>
+                                    <div>Living space</div>
+                                    <h5 class="mt-2">
+                                        <t t-esc="property_id.living_space"/>
+                                        m<sup>2</sup>
+                                    </h5>
+                                </li>
+                                <li class="dr-property-card-icon text-center w-100 py-3" t-if="property_id.rooms">
+                                    <img src="/theme_realestate/static/src/img/bedroom.png"/>
+                                    <div>Bedrooms</div>
+                                    <h5 class="mt-2" t-esc="property_id.rooms"/>
+                                </li>
+                                <li class="dr-property-card-icon text-center w-100 py-3" t-if="property_id.rooms">
+                                    <img src="/theme_realestate/static/src/img/bathroom.png"/>
+                                    <div>Bathrooms</div>
+                                    <h5 class="mt-2" t-esc="property_id.bath_rooms"/>
+                                </li>
+                                <li class="dr-property-card-icon text-center w-100 py-3" t-if="property_id.no_of_garages">
+                                    <img src="/theme_realestate/static/src/img/garage.png"/>
+                                    <div>Garages</div>
+                                    <h5 class="mt-2" t-esc="property_id.no_of_garages"/>
+                                </li>
+                                <li class="dr-property-card-icon text-center w-100 py-3" t-if="property_id.no_of_parking">
+                                    <img src="/theme_realestate/static/src/img/parking.png"/>
+                                    <div>Parking</div>
+                                    <h5 class="mt-2" t-esc="property_id.no_of_parking"/>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4 my-2">
+                                    <div class="dr-property-image" t-attf-style="background-image: url(/website/image/property.property/#{property_id.id}/cover_photo)"/>
+                                </div>
+                                <div t-foreach="property_id.public_photos_ids" t-as="public_photo" class="col-12 col-md-6 col-lg-4 my-2">
+                                    <div class="dr-property-image" t-attf-style="background-image: url(/web/content/#{public_photo.id})"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <t t-if="property_id._is_html_field_value_set('freitext')">
+                                <h5 class="mt-4 text-primary">Description</h5>
+                                <hr/>
+                                <div class="lead" t-field="property_id.freitext"/>
+                            </t>
+                            <t t-if="property_id._is_html_field_value_set('location_info')">
+                                <h5 class="mt-4 text-primary">Location</h5>
+                                <hr/>
+                                <div class="lead" t-field="property_id.location_info"/>
+                            </t>
+                            <t t-if="property_id._is_html_field_value_set('furnishing_info')">
+                                <h5 class="mt-4 text-primary">Furnishing</h5>
+                                <hr/>
+                                <div class="lead" t-field="property_id.furnishing_info"/>
+                            </t>
+                        </div>
+                        <div class="col-12" t-if="property_id.property_features_ids">
+                            <h5 class="mt-4 text-primary">Features</h5>
+                            <hr/>
+                            <div class="row">
+                                <div t-foreach="property_id.property_features_ids" t-as="feature" class="col-12 col-md-6 col-lg-3 my-2">
+                                    <h6 t-field="feature.feature_id"/>
+                                    <div t-esc="', '.join(feature.value_ids.mapped('name'))"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <h5 class="mt-4 text-primary">Map</h5>
+                            <hr/>
+                            <div id="leaflet_map" t-att-data-latitude="property_id.latitude" t-att-data-longitude="property_id.longitude"/>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="mt-4 text-primary">Power Consumption</h5>
+                            <hr/>
+                            <table t-attf-class="dr-property-energy w-100 mx-auto #{'' if property_id.eec else 'dr-property-energy-disable'}">
+                                <tbody>
+                                    <tr>
+                                        <td class="energy-heading-cell">
+                                        </td>
+                                        <td class="energy-heading-cell">
+                                            Emission kWh / m per year
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="['A+', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']" t-as="rating">
+                                        <tr>
+                                            <td class="energy-cell">
+                                                <div t-attf-class="energy-rating energy-#{rating == 'A+' and 'Aplus' or rating}"><t t-esc="rating"/></div>
+                                            </td>
+                                            <td class="energy-cell">
+                                                <div class="d-flex justify-content-end" t-if="property_id.eec == rating">
+                                                    <div t-attf-class="energy-value energy-#{rating == 'A+' and 'Aplus' or rating} w-50"><t t-esc="property_id.energy_characteristic"/></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="mt-4 text-primary">Energy Certificate</h5>
+                            <hr/>
+                            <t t-if="property_id.certificate == 'vo'">
+                                <table class="table table-sm table-bordered mt-3">
+                                    <tbody>
+                                        <tr>
+                                            <th>Certificate Type</th>
+                                            <td><span t-field="property_id.certificate_type"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Energy Class</th>
+                                            <td><span t-field="property_id.eec"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Power Consumption</th>
+                                            <td><span t-field="property_id.energy_characteristic"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Energy Source</th>
+                                            <td><span t-field="property_id.energy_source"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Construction Year</th>
+                                            <td><span t-field="property_id.construction_year"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </t>
+                            <t t-if="property_id.certificate == 'no'">
+                                The energy certificate is not available yet. We will update this expose and inform you once it is available.
+                            </t>
+                            <t t-if="property_id.certificate == 'ni'">
+                                No energy certificate needed for this property.
+                            </t>
+                        </div>
+                        <div class="col-12">
+                            <h5 class="mt-4 text-primary">Additional Information</h5>
+                            <hr/>
+                            <t t-if="property_id.protected_photos_ids">
+                                <h6>Extra Pictures</h6>
+                                <div class="row">
+                                    <t t-foreach="property_id.protected_photos_ids" t-as="protected_photo">
+                                        <div class="col-6 col-md-3 col-lg-2 my-1">
+                                            <div class="position-relative dr-protected-document">
+                                                <div class="dr-document-image" t-attf-style="background-image: url(/web/content/#{protected_photo.id})"/>
+                                                <a t-attf-href="/web/content/#{protected_photo.id}?download=true" class="btn btn-light text-primary btn-sm dr-protected-download" data-model="protected.photo" t-att-data-id="protected_photo.id" title="Download Photo">
+                                                    <i class="fa fa-cloud-download"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-if="property_id.protected_documents_ids">
+                                <h6 class="mt-3">Documents</h6>
+                                <div class="row">
+                                    <t t-foreach="property_id.protected_documents_ids" t-as="protected_document">
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-1">
+                                            <div class="position-relative dr-protected-document p-2 border">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="o_image" t-att-data-mimetype="protected_document.mimetype"/>
+                                                    <div class="ml-2 text-truncate" t-esc="protected_document.name"/>
+                                                </div>
+                                                <a t-attf-href="/web/content/#{protected_document.id}?download=true" class="btn btn-primary-soft btn-sm dr-protected-download" data-model="protected.document" t-att-data-id="protected_document.id" title="Download Document">
+                                                    <i class="fa fa-cloud-download"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt32">
+                    <h4><strong>Message and communication history</strong></h4>
+                    <div class="mt16">
+                        <t t-call="portal.message_thread">
+                            <t t-set="object" t-value="lead"/>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!--
+    ============================================================================
+    My Search Profiles
+    ============================================================================
+    -->
+    <template id="portal_my_search_profiles" name="My Search Profiles">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Profiles</t>
+                <a href="/my/property_search_profile" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"/> Create</a>
+            </t>
+            <t t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Property Type</th>
+                        <th>Contract Type</th>
+                        <th>Min. Living Space</th>
+                        <th>Max. Living Space</th>
+                        <th>Max. Price</th>
+                        <th>Max. Distance</th>
+                        <th>Auto Marketing</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <t t-foreach="profiles" t-as="profile">
+                    <tr>
+                        <td>
+                            <span t-field="profile.property_type_id.name"/>
+                        </td>
+                        <td>
+                            <span t-field="profile.contract_type"/>
+                        </td>
+                        <td>
+                            <span t-field="profile.min_living_space"/>
+                        </td>
+                        <td>
+                            <span t-field="profile.max_living_space"/>
+                        </td>
+                        <td>
+                            <span t-field="profile.max_price"/>
+                        </td>
+                        <td>
+                            <span t-field="profile.max_distance"/>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" disabled="" class="custom-control-input" id="auto_marketing" t-att-checked="profile.auto_marketing"/>
+                                <label class="custom-control-label" for="auto_marketing"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <a t-attf-href="/my/property_search_profile/#{profile.id}" title="Edit">
+                                <i class="fa fa-pencil-square-o"/>
+                            </a>
+                            <a class="ml-3" t-attf-href="/my/property_search_profile_delete/#{profile.id}" title="Delete">
+                                <i class="fa fa-trash-o text-danger"/>
+                            </a>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+            <div t-if="not profiles" class="my-3">
+                <p class="text-center">
+                    There are currently no profile for your account.
+                </p>
+                <div class="text-center">
+                    <a href="/my/property_search_profile" class="btn btn-primary btn-sm d-inline-block"><i class="fa fa-plus-circle"/> Create</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_property_search_profile" name="My Property Search Profile">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">My Search Profile</t>
+            <form action="/my/property_search_profile" method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="p-3 bg-white mt-3 border">
+                    <div t-if="request.params.get('saved')" class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+                        Profile Saved !
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="fa fa-times"/>
+                        </button>
+                    </div>
+                    <div class="row o_portal_details">
+                        <div class="form-group col-xl-6">
+                            <label class="col-form-label" for="property_type_id">Property Type</label>
+                            <select name="property_type_id" class="form-control">
+                                <option value="">- Select -</option>
+                                <option t-foreach="property_types or []" t-as="property_type" t-att-value="property_type.id" t-att-selected="property_type.id == profile_id.property_type_id.id if profile_id else None">
+                                    <t t-esc="property_type.name" />
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label class="col-form-label" for="contract_type">Contract Type</label>
+                            <select name="contract_type" class="form-control">
+                                <option value="">- Select -</option>
+                                <option t-foreach="contracts" t-as="contract" t-att-value="contract[0]" t-att-selected="contract[0] == profile_id.contract_type if profile_id else None">
+                                    <t t-esc="contract[1]"/>
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label class="col-form-label" for="min_living_space">Minimum Living Space</label>
+                            <input type="text" name="min_living_space" class="form-control" t-att-value="profile_id.min_living_space if profile_id else None" />
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label class="col-form-label" for="max_living_space">Maximum Living Space</label>
+                            <input type="text" name="max_living_space" class="form-control" t-att-value="profile_id.max_living_space if profile_id else None" />
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label class="col-form-label" for="max_price">Maximum Price</label>
+                            <input type="text" name="max_price" class="form-control" t-att-value="profile_id.max_price if profile_id else None" />
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label class="col-form-label" for="max_distance">Maximum Distance</label>
+                            <input type="text" name="max_distance" class="form-control" t-att-value="profile_id.max_distance if profile_id else None" />
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="auto_marketing" name="auto_marketing" t-att-checked="profile_id.auto_marketing if profile_id else None"/>
+                                <label class="custom-control-label" for="auto_marketing">Auto Marketing</label>
+                            </div>
+                        </div>
+                        <input type="hidden" name="profile_id" t-if="profile_id" t-att-value="profile_id.id"/>
+                        <div class="col-12 my-2 text-center">
+                            <button type="submit" class="btn btn-primary">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </t>
+    </template>
+
+</odoo>

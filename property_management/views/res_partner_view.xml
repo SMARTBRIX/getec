@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_property" model="ir.ui.view">
+            <field name="name">res.partner.form.property</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+            	<!--<xpath expr="//notebook" position="inside">
+                     <page string="Search Profile">
+                        <group string="Search profile">
+                            <group>
+                                <field name="property_type_id"/>
+                                <field name="contract_type"/>
+                                 <label for="min_living_space" string="Living Space"/>
+                                <div class="o_row">
+                                    <field name="min_living_space"/> to 
+                                    <field name="max_living_space"/>
+                                </div>
+                                <field name="max_price"/>
+                                <field name="property_street"/>
+                                <field name="property_zip"/>
+                                <field name="property_city"/>
+                                <field name="max_distance"/>
+                            </group>
+                            <group></group>
+                        </group>
+                        <group string="Matching objects">
+                            <field name="property_ids" 
+                                domain="[('property_type_id','=',property_type_id),
+                                         ('zip', '=', property_zip),
+                                         ('city','=', property_city)]">
+                                         <tree string="Properties">
+                                            <field name="name"/>
+                                            <field name="internal_label"/>
+                                            <field name="city"/>
+                                            <field name="street"/>
+                                            <field name="property_type_id"/>
+                                            <field name="living_space"/>
+                                            <field name="purchase_price"/>
+                                            <button name="create_opportuniy" type="object" string="Create Opportunity" class="btn-primary" context="{'partner_id': parent.id}"/>
+                                         </tree>
+                             </field>
+                         </group>
+                    </page>
+                    <page string="Property Distance">
+                        <field name="property_distance_ids">
+                            <tree>
+                                <field name="property_id"/>
+                                <field name="distance"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath> -->
+
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="business_hours"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

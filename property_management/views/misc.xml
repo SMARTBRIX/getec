@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem
+        id="menu_property_config"
+        name="Configuration"
+        parent="main_menu_real_estate"
+        sequence="50"/>
+
+        <!-- Property Type -->
+	    <record id="property_type_tree_view" model="ir.ui.view">
+	        <field name="name">property.type.tree</field>
+	        <field name="model">property.type</field>
+	        <field name="arch" type="xml">
+	            <tree string="Property Type" editable="bottom">
+                        <field name="name" required="1"/>
+                        <field name="category_id"/>
+	            </tree>
+        	</field>
+	    </record>
+
+    	<record id="action_property_type" model="ir.actions.act_window">
+	        <field name="name">Propertie Types</field>
+	        <field name="res_model">property.type</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="domain">[]</field>
+	        <field name="context">{}</field>
+    	</record>
+        
+        <menuitem
+        id="menu_property_type"
+        name="Property Types"
+        action="action_property_type"
+        parent="menu_property_config"
+        sequence="10"/>
+
+    <!-- Property Category -->
+    <record id="property_category_tree_view" model="ir.ui.view">
+            <field name="name">property.category.tree</field>
+            <field name="model">property.category</field>
+            <field name="arch" type="xml">
+                <tree string="Property Category" editable="bottom">
+                        <field name="name" required="1"/>
+                        <field name="is_commercial"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_property_category" model="ir.actions.act_window">
+            <field name="name">Propertie Category</field>
+            <field name="res_model">property.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <menuitem
+        id="menu_property_category"
+        name="Property Categories"
+        action="action_property_category"
+        parent="menu_property_config"
+        sequence="20"/>
+
+    <!-- Property Location -->
+        <record id="property_location_tree_view" model="ir.ui.view">
+            <field name="name">property.location.tree</field>
+            <field name="model">property.location</field>
+            <field name="arch" type="xml">
+                <tree string="Property Locations" editable="bottom">
+                        <field name="name" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_property_location" model="ir.actions.act_window">
+            <field name="name">Propertie Locations</field>
+            <field name="res_model">property.location</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <menuitem
+        id="menu_property_location"
+        name="Property Locations"
+        action="action_property_location"
+        parent="menu_property_config"
+        sequence="20"/>
+
+    <!-- Property SUB Location -->
+        <record id="property_sub_location_tree_view" model="ir.ui.view">
+            <field name="name">property.sub.location.tree</field>
+            <field name="model">property.sub.location</field>
+            <field name="arch" type="xml">
+                <tree string="Property Sub Locations" editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="parent_location_id" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_property_sub_location" model="ir.actions.act_window">
+            <field name="name">Propertie Sub Locations</field>
+            <field name="res_model">property.sub.location</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <menuitem
+        id="menu_property_sub_location"
+        name="Property Sub Locations"
+        action="action_property_sub_location"
+        parent="menu_property_config"
+        sequence="30"/>
+
+    <!--  Features -->
+        <record id="features_tree_view" model="ir.ui.view">
+            <field name="name">features.features.tree</field>
+            <field name="model">features.features</field>
+            <field name="arch" type="xml">
+                <tree string="Property Features">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="features_form_view" model="ir.ui.view">
+            <field name="name">features.features.form</field>
+            <field name="model">features.features</field>
+            <field name="arch" type="xml">
+                <form string="Property Features">
+                    <gorup>
+                        <field name="name"/>
+                    </gorup>
+                    <group string="Values">
+                        <field name="feature_value_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_features" model="ir.actions.act_window">
+            <field name="name">Features</field>
+            <field name="res_model">features.features</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <menuitem
+        id="menu_features"
+        name="Features"
+        action="action_features"
+        parent="menu_property_config"
+        sequence="40"/>
+
+    `<!-- Property Contract Type -->
+        <record id="property_contract_type_tree_view" model="ir.ui.view">
+            <field name="name">property.contract.type.tree</field>
+            <field name="model">property.contract.type</field>
+            <field name="arch" type="xml">
+                <tree string="Property Contract Type" editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="terms_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_property_contract_type" model="ir.actions.act_window">
+            <field name="name">Propertie Contract Type</field>
+            <field name="res_model">property.contract.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <menuitem
+        id="menu_property_contract_type"
+        name="Property Contract Type"
+        action="action_property_contract_type"
+        parent="menu_property_config"
+        sequence="30"/>
+
+    <!-- Property Terms -->
+    <record id="property_terms_view_form" model="ir.ui.view">
+        <field name="name">property.terms.view.form</field>
+        <field name="model">property.terms</field>
+        <field name="arch" type="xml">
+            <form string="Property Terms">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="is_required"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="property_terms_view_tree" model="ir.ui.view">
+        <field name="name">property.terms.view.tree</field>
+        <field name="model">property.terms</field>
+        <field name="arch" type="xml">
+            <tree string="Property Terms">
+                <field name="name"/>
+                <field name="is_required"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="property_terms_action" model="ir.actions.act_window">
+        <field name="name">Property Terms</field>
+        <field name="res_model">property.terms</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_property_terms"
+        name="Property Terms"
+        action="property_terms_action"
+        parent="menu_property_config"
+        sequence="31"/>
+
+
+    <!-- Property Stage -->
+
+    <record id="property_stage_view_tree" model="ir.ui.view">
+        <field name="name">property.stage.view.tree</field>
+        <field name="model">property.stage</field>
+        <field name="arch" type="xml">
+            <tree string="Property Stages" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="property_stages_action" model="ir.actions.act_window">
+        <field name="name">Property Stages</field>
+        <field name="res_model">property.stage</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem
+        id="menu_property_stages"
+        name="Property Stages"
+        action="property_stages_action"
+        parent="menu_property_config"
+        sequence="35"/>
+
+</data>
+</odoo>

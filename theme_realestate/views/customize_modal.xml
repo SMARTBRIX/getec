@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--
+    <template id="theme_customize" inherit_id="website.theme_customize">
+        <xpath expr="//content[last()]" position="after">
+            <content id="theme_customize_content_headers" string="Headers" title="Choose your header style">
+                <list string="Header Style" data-col="12">
+                    <opt string="Default" data-reload="/" data-xmlid=""/>
+                    <opt string="Header 1" data-reload="/" data-xmlid="theme_realestate.header_style_1, theme_realestate.option_header_style_1"/>
+                </list>
+                <list string="Header Options" data-col="12">
+                    <opt data-widget="color" data-color="preheader" string="Pre-Header Color"/>
+                </list>
+            </content>
+            <content id="theme_customize_content_property_detail" string="Property Detail" title="Choose your property detail style">
+                <list string="Icons Style" data-col="6">
+                    <opt string="Default" data-reload="/" data-xmlid=""/>
+                    <opt string="Left Side" data-reload="/" data-xmlid="theme_realestate.left_side_icons"/>
+                </list>
+            </content>
+        </xpath>
+    </template>-->
+
+    <!-- Headers -->
+<!--
+    <template id="option_header_style_1" inherit_id="website.assets_frontend" name="Option Header Style 1" active="False">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/theme_realestate/static/src/scss/options/headers/header_style_1.scss"/>
+        </xpath>
+    </template>
+-->
+
+    <template id="left_side_icons" inherit_id="theme_realestate.property" name="Left side icons" active="False"/>
+
+</odoo>

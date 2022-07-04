@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="property_stage_property_administration_list_view" model="ir.ui.view">
+        <field name="name">property.stage.view.property.administration.list</field>
+        <field name="model">property.stage</field>
+        <field name="inherit_id" ref="property_management.property_stage_view_tree"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//field[@name='name']" position="after">
+        		<field name="administration_stage"/>
+        	</xpath>
+        </field>
+    </record>
+
+     <record id="property_property_administration_form_view" model="ir.ui.view">
+        <field name="name">property.property.view.property.administration.form</field>
+        <field name="model">property.property</field>
+        <field name="inherit_id" ref="property_management.property_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_public_photos']" position="after">
+                <field name="administration_stage" invisible="1"/>
+                <button class="oe_stat_button" type="object"
+                    name="action_redirect_administration" icon="fa-database" string="Go to Administration" attrs="{'invisible': [('administration_stage', '=', False)]}">
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='provision_client']" position="before">
+                <field name="analytic_account_id" attrs="{'invisible': [('administration_stage', '=', False)], 'required': [('administration_stage', '!=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='heating_space']" position="after">
+                <field name="co_owenership"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="property_property_administration_list_view" model="ir.ui.view">
+        <field name="name">property.property.view.property.administration.list</field>
+        <field name="model">property.property</field>
+        <field name="inherit_id" ref="property_administration.property_form_administration"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Responsibilities" name="responsibilities">
+                    <form string="Responsibilities">
+                        <group>
+                            <group>
+                                <field name="facility_manager_id"/>
+                                <field name="winter_service_id"/>
+                                <field name="gardener_id"/>
+                            </group>
+                            <group>
+                                <field name="cleaning_id"/>
+                                <field name="electrician_id"/>
+                                <field name="plumber_id"/>
+                                <field name="external_admin_id"/>
+                            </group>
+                        </group>
+                    </form>
+                </page>
+                 <page string="Further Data" name="further_data">
+                    <form string="Further Data">
+                        <group>
+                            <group>
+                                <field name="key_safe"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </form>
+                </page>
+            </xpath>
+           <!--  <xpath expr="//field[@name='cover_photo']" position="before">
+                <div name="button_box" class="oe_button_box">
+                    <button class="oe_stat_button" type="object" name="action_view_journal_entry" icon="fa-euro">
+                            <field string="Journal Entries" name="journal_entry_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="action_view_expenditure" icon="fa-euro">
+                            <field string="Expenditure" name="expenditure_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="action_view_data_acquisition" string="Switch to data acquisition" icon="fa-database">
+                    </button>
+                    <button class="oe_stat_button" type="object" name="action_view_tenancies" icon="fa-home">
+                            <field string="Tenancies" name="tenancy_count" widget="statinfo"/>
+                    </button>
+                </div>
+            </xpath> -->
+        </field>
+    </record>
+
+</odoo>

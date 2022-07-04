@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_crossovered_budget_form" model="ir.ui.view">
+            <field name="name">account.crossovered.budget</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field/tree/field[@name='general_budget_id']" position="after">
+                    <field name="budget_categ_id"/>
+                    <field name="parent_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//group/group" position="inside">
+                    <field name="project_id"/>
+                </xpath>
+            </field>
+        </record>  
+
+        <record id="view_account_crossovered_budget_line_tree" model="ir.ui.view">
+            <field name="name">account.crossovered.budget.line</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='general_budget_id']" position="after">
+                    <field name="budget_categ_id"/>
+                    <field name="parent_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_smartbrix_crossovered_budget_line_search" model="ir.ui.view">
+        <field name="name">account.budget.line.search.smartbrix</field>
+        <field name="model">crossovered.budget.lines</field>
+        <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="budget_categ_id"/>
+                <field name="parent_id"/>
+            </xpath>
+            <xpath expr="//search/group" position="inside">
+                <filter name="group_budgdet_cated_id" string="Budgetary Category" domain="[]" context="{'group_by':'budget_categ_id'}"/>
+                <filter name="group_parent_id" string="Parent Budgetary Category" domain="[]" context="{'group_by':'parent_id'}"/>
+            </xpath>
+        </field>
+    </record>
+       
+    </data>
+</odoo>

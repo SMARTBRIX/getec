@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+        id="menu_search_profile_main"
+        name="Search Profile"
+        parent="main_menu_real_estate"
+        sequence="20"/>
+
+        <!-- Property Search Profile -->
+	    <record id="property_search_profile_tree_view" model="ir.ui.view">
+	        <field name="name">property.search.profile.tree</field>
+	        <field name="model">property.search.profile</field>
+	        <field name="arch" type="xml">
+	            <tree string="Property Search Profile">
+                    <field name="partner_id"/>
+                    <field name="property_type_id"/>
+                    <field name="contract_type"/>
+                    <field name="min_living_space"/>
+                    <field name="max_living_space"/>
+                    <field name="max_price"/>
+                    <field name="max_distance"/>
+	            </tree>
+        	</field>
+	    </record>
+
+        <record id="property_search_profile_form_view" model="ir.ui.view">
+            <field name="name">property.search.profile.form</field>
+            <field name="model">property.search.profile</field>
+            <field name="arch" type="xml">
+                <form string="Property Search Profile">
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button class="oe_stat_button" type="object"
+                            name="action_view_property" icon="fa-building-o">
+                            <field string="Properties" name="property_ids_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                 <field name="partner_id"/>
+                                <field name="property_type_id"/>
+                                <field name="contract_type"/>
+                                <field name="auto_marketing"/>
+                            </group>
+                            <group>
+                                <field name="min_living_space"/>
+                                <field name="max_living_space"/>
+                                <field name="max_price"/>
+                                <field name="max_distance"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    	<record id="action_property_search_profile" model="ir.actions.act_window">
+	        <field name="name">Property Search Profile</field>
+	        <field name="res_model">property.search.profile</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="domain">[]</field>
+	        <field name="context">{}</field>
+    	</record>
+        
+        <menuitem
+        id="menu_property_search_profile"
+        name="Property Search Profile"
+        action="action_property_search_profile"
+        parent="menu_search_profile_main"
+        sequence="10"/>
+    </data>
+</odoo>

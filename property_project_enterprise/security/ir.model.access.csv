@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_budgetary_category,access_budgetary_category,model_budgetary_category,base.group_user,1,1,1,1
