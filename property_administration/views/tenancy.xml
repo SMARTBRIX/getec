@@ -6,7 +6,7 @@
     <field name="arch" type="xml">
         <form string="Tenancy Form">
             <header>
-                <field name="stage_id" widget="statusbar" options="{'clickable': '1'}" />
+                <field name="stage_id" widget="statusbar" clickable="1"/>
             </header>
             <sheet>
                 <group>

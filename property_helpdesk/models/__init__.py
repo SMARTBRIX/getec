@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import property
+from . import tenancy
 from . import helpdesk
+

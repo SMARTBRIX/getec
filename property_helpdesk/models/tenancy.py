@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class Property(models.Model):
@@ -14,7 +14,7 @@ class Property(models.Model):
 
     def show_tickets(self):
         return {
-            'name': 'Ticket',
+            'name': _('Tickets'),
             'view_mode': 'tree,form',
             'res_model': 'helpdesk.ticket',
             'domain': [('tenancy_id', '=', self.id)],
